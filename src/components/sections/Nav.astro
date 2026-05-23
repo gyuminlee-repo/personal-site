@@ -1,0 +1,88 @@
+---
+interface Props { lang?: 'en' | 'ko'; currentPath?: string; }
+const { lang = 'en', currentPath = '/' } = Astro.props;
+// currentPath is reserved for future active-section highlighting (Phase 4.1+)
+void currentPath;
+
+const copy = {
+  en: {
+    brand: 'Gyumin Lee',
+    links: [
+      { href: '#about', label: 'About' },
+      { href: '#software', label: 'Software' },
+      { href: '#publications', label: 'Publications' },
+      { href: '#contact', label: 'Contact' }
+    ],
+    menuLabel: 'Menu'
+  },
+  ko: {
+    brand: '이규민',
+    links: [
+      { href: '#about', label: '소개' },
+      { href: '#software', label: '소프트웨어' },
+      { href: '#publications', label: '논문' },
+      { href: '#contact', label: '연락처' }
+    ],
+    menuLabel: '메뉴'
+  }
+} as const;
+
+const t = copy[lang];
+const enHome = '/';
+const koHome = '/ko/';
+const isEnActive = lang === 'en';
+---
+<nav
+  id="site-nav"
+  class="sticky top-0 z-sticky w-full backdrop-blur-md bg-background/80 border-b border-border"
+>
+  <div class="mx-auto max-w-grid w-full px-6 md:px-12 h-16 flex items-center justify-between gap-4">
+    <a
+      href={isEnActive ? enHome : koHome}
+      class="font-sans font-semibold text-foreground tracking-tight text-base md:text-lg hover:text-primary transition"
+    >{t.brand}</a>
+
+    <div class="hidden md:flex items-center gap-8">
+      {t.links.map((l) => (
+        <a
+          href={l.href}
+          class="text-sm text-muted-foreground hover:text-foreground transition"
+        >{l.label}</a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-4">
+      <kbd class="hidden lg:inline-flex items-center px-2 py-1 rounded border border-border bg-secondary text-xs font-mono text-muted-foreground">⌘K</kbd>
+      <div class="text-xs font-mono">
+        <a
+          href={enHome}
+          class={`hover:text-foreground transition ${isEnActive ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
+          aria-current={isEnActive ? 'page' : undefined}
+        >EN</a>
+        <span class="text-muted-foreground mx-1">/</span>
+        <a
+          href={koHome}
+          class={`hover:text-foreground transition ${!isEnActive ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
+          aria-current={!isEnActive ? 'page' : undefined}
+        >KO</a>
+      </div>
+
+      <details class="md:hidden relative">
+        <summary
+          class="list-none cursor-pointer p-2 text-foreground"
+          aria-label={t.menuLabel}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </summary>
+        <div class="absolute right-0 mt-2 w-48 rounded-md border border-border bg-card shadow-md p-2 flex flex-col">
+          {t.links.map((l) => (
+            <a
+              href={l.href}
+              class="px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition"
+            >{l.label}</a>
+          ))}
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>

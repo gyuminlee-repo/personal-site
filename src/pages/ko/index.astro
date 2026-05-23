@@ -1,8 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Nav from '../../components/sections/Nav.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Footer from '../../components/sections/Footer.astro';
 ---
-<Base title="이규민" description="메탄자화균 엔지니어 · 합성생물학 포닥" lang="ko">
-  <main class="min-h-screen flex items-center justify-center">
-    <p class="text-2xl text-muted-foreground">Wave 0 스캐폴드 완료. Wave 1 대기 중.</p>
+<Base title="이규민" description="메탄자화균 엔지니어 · 합성생물학 박사후연구원" lang="ko">
+  <Nav lang="ko" currentPath="/ko/" />
+  <main>
+    <Hero lang="ko" />
+    {/* Phase 2.2 mounts AboutSection here */}
+    <section id="about" class="scroll-mt-24" />
+    {/* Phase 2.3 mounts Software cards here */}
+    <section id="software" class="scroll-mt-24" />
+    {/* Phase 3.x mounts Publications here */}
+    <section id="publications" class="scroll-mt-24" />
+    {/* Contact placeholder */}
+    <section id="contact" class="scroll-mt-24" />
   </main>
+  <Footer lang="ko" />
 </Base>
