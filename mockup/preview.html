@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gyu Min Lee — Mockup Preview</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root{
+    --bg:#FAFAF7;
+    --text:#1A1A1A;
+    --accent:#0F766E;
+    --border:#E5E5E5;
+    --muted:#6B6B6B;
+  }
+  html{ font-family:'Inter','Pretendard',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+  body{ font-size:16px; line-height:1.5; }
+  .lang-ko{ font-family:'Pretendard','Inter',system-ui,sans-serif; line-height:1.7; }
+  .text-accent{ color:var(--accent); }
+  .bg-accent{ background:var(--accent); }
+  .border-default{ border-color:var(--border); }
+  .text-muted{ color:var(--muted); }
+  h1{ font-size:48px; line-height:1.15; letter-spacing:-0.02em; font-weight:700; text-wrap:pretty; }
+  h2{ font-size:32px; line-height:1.25; letter-spacing:-0.015em; font-weight:600; text-wrap:pretty; }
+  h3{ font-size:20px; line-height:1.3; font-weight:600; }
+  .caption{ font-size:14px; color:var(--muted); }
+  @media (max-width:767px){
+    h1{ font-size:36px; }
+    h2{ font-size:24px; }
+    h3{ font-size:18px; }
+  }
+  .section-mark{ display:inline-block; padding:2px 10px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:4px; font-weight:500; }
+  .vibe-mark{ display:inline-block; padding:2px 8px; font-size:11px; background:#FEF3C7; color:#92400E; border-radius:4px; font-weight:500; margin-left:8px; }
+  .card{ background:#fff; border:1px solid var(--border); border-radius:10px; padding:24px; transition:all 200ms; }
+  .card:hover{ transform:translateY(-2px) rotate(0.5deg); box-shadow:0 8px 24px rgba(0,0,0,0.06); }
+  .chip{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; background:#fff; border:1px solid var(--border); border-radius:999px; font-size:14px; font-weight:500; }
+  .chip-num{ font-weight:700; color:var(--accent); }
+  .nav-link{ color:var(--muted); font-size:14px; font-weight:500; }
+  .nav-link:hover{ color:var(--text); }
+  .kbd{ display:inline-flex; align-items:center; padding:2px 6px; background:#F3F4F6; border:1px solid var(--border); border-radius:4px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); }
+  .typewriter-cursor{ display:inline-block; width:8px; height:20px; background:var(--accent); margin-left:2px; animation: blink 1s infinite; vertical-align:text-bottom; }
+  @keyframes blink{ 50%{ opacity:0; } }
+  .demo-divider{ border-top:1px dashed var(--border); margin:80px 0 24px; padding-top:8px; font-size:12px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+  .max-chrome{ max-width:1280px; }
+  .max-grid{ max-width:1024px; }
+  .max-body{ max-width:680px; }
+  .pulse-dot{ display:inline-block; width:8px; height:8px; background:#10B981; border-radius:50%; box-shadow:0 0 0 0 rgba(16,185,129,0.5); animation:pulse 2s infinite; }
+  @keyframes pulse{ 0%{ box-shadow:0 0 0 0 rgba(16,185,129,0.5); } 70%{ box-shadow:0 0 0 8px rgba(16,185,129,0); } 100%{ box-shadow:0 0 0 0 rgba(16,185,129,0); } }
+</style>
+</head>
+<body>
+
+<!-- =========================== TOP BAR =========================== -->
+<header class="sticky top-0 z-50 bg-[#FAFAF7]/85 backdrop-blur border-b border-default">
+  <div class="max-chrome mx-auto px-8 py-4 flex items-center justify-between">
+    <div class="font-semibold tracking-tight">Gyu Min Lee</div>
+    <nav class="hidden md:flex items-center gap-7">
+      <a href="#now" class="nav-link">Now</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#software" class="nav-link">Software</a>
+      <a href="#publications" class="nav-link">Publications</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="hidden md:flex items-center gap-1.5 text-muted text-sm border border-default rounded px-2 py-1">
+        <span>Press</span><span class="kbd">⌘</span><span class="kbd">K</span>
+      </div>
+      <div class="flex items-center text-sm gap-1">
+        <button class="px-2 py-1 font-semibold text-accent">EN</button>
+        <span class="text-muted">|</span>
+        <button class="px-2 py-1 text-muted hover:text-[#1A1A1A]">KO</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =========================== HERO =========================== -->
+<section class="max-grid mx-auto px-8 pt-20 pb-16">
+  <div class="grid md:grid-cols-[1fr,auto] gap-12 items-center">
+    <div>
+      <div class="section-mark mb-4">Postdoctoral researcher · KRIBB</div>
+      <h1 class="mb-6">Engineering C1 microbes with biofoundry automation and AI-driven design</h1>
+      <p class="text-lg text-muted mb-3">
+        I am
+        <span class="text-accent font-medium">building KURO</span><span class="typewriter-cursor"></span>
+        <span class="vibe-mark">VIBE: typewriter cycles 5 statements</span>
+      </p>
+      <p class="text-base text-muted">
+        Postdoctoral researcher · KRIBB Synthetic Biology Research Center<br>
+        PhD (UNIST 2026), systems-level methanol-stress response in <em>Methylorubrum extorquens</em>
+      </p>
+      <div class="flex flex-wrap gap-2 mt-7">
+        <span class="chip"><span class="chip-num">286</span> citations</span>
+        <span class="chip"><span class="chip-num">h-6</span> index</span>
+        <span class="chip"><span class="chip-num">10</span> public repos</span>
+        <span class="chip"><span class="chip-num">3</span> in-house tools</span>
+        <span class="vibe-mark self-center">VIBE: count-up on scroll</span>
+      </div>
+    </div>
+    <div>
+      <div class="w-[240px] h-[240px] rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-200 flex items-center justify-center text-muted text-sm border border-default">
+        [profile photo<br>240×240]
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== NOW (2026) =========================== -->
+<section id="now" class="max-grid mx-auto px-8 py-12">
+  <div class="card">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="!text-xl">Now (2026)</h2>
+      <span class="caption">quarterly refresh · last updated 2026-05-13</span>
+    </div>
+    <ul class="space-y-3 text-base">
+      <li class="flex gap-3"><span class="text-accent mt-1.5">●</span> Building <strong>KURO</strong>, AI-driven primer design (React + Tauri + Python)</li>
+      <li class="flex gap-3"><span class="text-accent mt-1.5">●</span> Biofoundry DBTL workflow automation at KRIBB</li>
+      <li class="flex gap-3"><span class="text-accent mt-1.5">●</span> PA1 ALE characterization, <em>Bioresource Technology</em> under revision</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================== 3-CARD GRID =========================== -->
+<section class="max-grid mx-auto px-8 py-16">
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="card">
+      <div class="caption mb-2">RESEARCH</div>
+      <h3 class="mb-3">5 themes</h3>
+      <ul class="text-sm space-y-1.5 text-muted">
+        <li>• Microbial adaptation under stress</li>
+        <li>• C1 metabolism and methylotrophy</li>
+        <li>• Multi-omics integration for engineering</li>
+        <li>• Evolutionary approaches to robustness</li>
+        <li>• Systems and synthetic biology</li>
+      </ul>
+      <a class="text-accent text-sm font-medium mt-4 inline-block" href="#research">Read more →</a>
+    </div>
+    <div class="card">
+      <div class="caption mb-2">SOFTWARE</div>
+      <h3 class="mb-3">3 in-house · 7 public</h3>
+      <ul class="text-sm space-y-1.5 text-muted">
+        <li>• <strong>KURO</strong> — AI primer design</li>
+        <li>• <strong>PrimerBench</strong> — primer evaluation</li>
+        <li>• <strong>kuma</strong> — open Tauri app</li>
+        <li>• Claude Code tooling (5 repos)</li>
+      </ul>
+      <a class="text-accent text-sm font-medium mt-4 inline-block" href="#software">View all →</a>
+    </div>
+    <div class="card">
+      <div class="caption mb-2">PUBLICATIONS</div>
+      <h3 class="mb-3">9 peer-reviewed · 1 in revision</h3>
+      <ul class="text-sm space-y-1.5 text-muted">
+        <li>• 6 first-author / co-first</li>
+        <li>• PNAS 2020 (178 cit)</li>
+        <li>• J Biol Eng 2026 (1<sup>st</sup>, press)</li>
+        <li>• Live Scholar feed below</li>
+      </ul>
+      <a class="text-accent text-sm font-medium mt-4 inline-block" href="#publications">See list →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== KURO MINI-DEMO =========================== -->
+<section class="max-grid mx-auto px-8 py-16">
+  <div class="card border-accent" style="border-color:var(--accent); border-width:1.5px;">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <div class="caption mb-1">INTERACTIVE DEMO <span class="vibe-mark">VIBE</span></div>
+        <h2 class="!text-2xl">Try KURO mini-demo</h2>
+      </div>
+      <span class="text-xs text-muted">100 lines of client-side JS</span>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="caption block mb-2">Paste DNA sequence (50-2000 bp)</label>
+        <textarea class="w-full h-32 p-3 border border-default rounded font-mono text-xs" readonly>ATGCGTAACGTAGCTAGCTAGCATGCATCGTAGCTACGTAGCTAGCATCGTAGCTAGCATCGATCGTAGCTAGCTACGTAG...</textarea>
+        <button class="mt-3 bg-accent text-white px-4 py-2 rounded text-sm font-medium">Design primers</button>
+      </div>
+      <div class="bg-[#FAFAF7] border border-default rounded p-4 font-mono text-xs">
+        <div class="text-muted mb-2">→ Output</div>
+        <div class="space-y-2">
+          <div><span class="text-accent">Forward:</span> ATGCGTAACGTAGCTAGC<br><span class="text-muted">Tm 58.2°C · GC 50% · 18 bp</span></div>
+          <div><span class="text-accent">Reverse:</span> CGTAGCTAGCTACGTAGC<br><span class="text-muted">Tm 57.9°C · GC 56% · 18 bp</span></div>
+          <div class="text-muted pt-2 border-t border-default mt-3">ΔTm: 0.3°C ✓</div>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-muted mt-4 leading-relaxed">
+      This is a 100-line subset of KURO basic primer design. Full KURO includes AI-driven specificity prediction, Gibson Assembly aware design, and database integration. Available on request: <span class="text-accent">sysbio.gyumin@gmail.com</span>
+    </p>
+  </div>
+</section>
+
+<!-- =========================== FEATURED PUBLICATION =========================== -->
+<section class="max-grid mx-auto px-8 py-16">
+  <div class="caption mb-3">FEATURED PUBLICATION</div>
+  <div class="card">
+    <div class="flex items-start gap-5">
+      <div class="hidden md:block flex-shrink-0">
+        <div class="w-20 h-24 bg-gradient-to-b from-emerald-50 to-emerald-100 border border-default rounded flex items-center justify-center text-xs text-muted">
+          J Biol Eng<br>2026
+        </div>
+      </div>
+      <div class="flex-1">
+        <h3 class="mb-2 leading-snug">Integrated genomic and transcriptomic insights into methanol tolerance mechanisms in <em>Methylobacterium extorquens</em> AM1</h3>
+        <p class="text-sm text-muted mb-3"><strong>Lee GM</strong>, Pham KN, Bang I, Ko S*, Kim D*. <em>Journal of Biological Engineering</em>. 2026; 19:72.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="chip text-xs">First author</span>
+          <span class="chip text-xs">Press: UNIST</span>
+          <span class="chip text-xs">Press: 뉴스1</span>
+          <a href="#" class="chip text-xs text-accent">DOI ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="demo-divider max-grid mx-auto px-8">CV depth sections (traditional)</div>
+
+<!-- =========================== RESEARCH INTERESTS =========================== -->
+<section id="research" class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Research Interests</h2>
+  <div class="max-body grid sm:grid-cols-2 gap-x-8 gap-y-3">
+    <div class="text-base"><strong class="text-accent">·</strong> Microbial adaptation to environmental and chemical stress</div>
+    <div class="text-base"><strong class="text-accent">·</strong> C1-based metabolism and methylotrophy</div>
+    <div class="text-base"><strong class="text-accent">·</strong> Multi-omics integration for metabolic engineering</div>
+    <div class="text-base"><strong class="text-accent">·</strong> Evolutionary approaches to microbial robustness</div>
+    <div class="text-base"><strong class="text-accent">·</strong> Systems and synthetic biology for strain optimization</div>
+  </div>
+</section>
+
+<!-- =========================== EDUCATION =========================== -->
+<section class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Education</h2>
+  <div class="max-body space-y-6">
+    <div>
+      <div class="flex justify-between items-baseline">
+        <h3>Ph.D. in Chemical Engineering</h3>
+        <span class="caption">2019.03 – 2026.02</span>
+      </div>
+      <p class="text-base mt-1">Ulsan National Institute of Science and Technology (UNIST)</p>
+      <p class="text-sm text-muted mt-1">Thesis: <em>Systems-Level Dissection of Methanol Adaptation in Methylorubrum extorquens</em></p>
+      <p class="text-sm text-muted">Advisor: Prof. Donghyuk Kim</p>
+    </div>
+    <div>
+      <div class="flex justify-between items-baseline">
+        <h3>B.S. in Genetic Engineering</h3>
+        <span class="caption">2011.03 – 2017.02</span>
+      </div>
+      <p class="text-base mt-1">Kyung Hee University, Yongin, Korea</p>
+      <p class="text-sm text-muted mt-1">Advisor: Prof. In Sik Chung</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== EXPERIENCE =========================== -->
+<section class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Experience</h2>
+  <div class="max-body space-y-6">
+    <div>
+      <div class="flex justify-between items-baseline">
+        <h3>Postdoctoral Researcher</h3>
+        <span class="caption">2026.03 – present</span>
+      </div>
+      <p class="text-base mt-1">KRIBB Synthetic Biology Research Center, under Dr. Hyewon Lee</p>
+      <p class="text-sm text-muted mt-1">Methanotroph metabolic engineering · Biofoundry workflow automation · NGS pipelines</p>
+    </div>
+    <div>
+      <div class="flex justify-between items-baseline">
+        <h3>Research Assistant</h3>
+        <span class="caption">2017 – 2019</span>
+      </div>
+      <p class="text-base mt-1">Systems Biology Lab, UNIST · Prof. Donghyuk Kim</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SKILLS =========================== -->
+<section class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Skills</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="card">
+      <h3 class="mb-3">Wet Lab</h3>
+      <p class="text-sm text-muted leading-relaxed">Adaptive laboratory evolution (ALE), gene editing (cre-loxP, sacB), RNA extraction, rRNA-depleted library prep, bacteria handling</p>
+    </div>
+    <div class="card">
+      <h3 class="mb-3">Computational & Bioinformatics</h3>
+      <p class="text-sm text-muted leading-relaxed">WGS (breseq), RNA-seq (STAR, DESeq2), pan-genome (BPGA, OrthoFinder), GEM (COBRApy), AlphaFold3, Boltz-2, ESM-2</p>
+    </div>
+    <div class="card">
+      <h3 class="mb-3">Programming</h3>
+      <p class="text-sm text-muted leading-relaxed">Python (6yr), R (3yr), Shell, TypeScript, React, Tauri, Docker, Git/GitHub</p>
+    </div>
+    <div class="card">
+      <h3 class="mb-3">Visualization</h3>
+      <p class="text-sm text-muted leading-relaxed">Matplotlib, Seaborn, ggplot2, Adobe Illustrator (5+ paper figures)</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SOFTWARE & TOOLS =========================== -->
+<section id="software" class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Software & Tools</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="card">
+      <div class="caption mb-1">IN-HOUSE · soft disclosure</div>
+      <h3 class="mb-2">KURO</h3>
+      <p class="text-sm text-muted mb-3">AI-driven primer design (React + Tauri + Python). Used by KRIBB C1 team for cloning workflow.</p>
+      <span class="caption">Demo above ↑ · contact for full access</span>
+    </div>
+    <div class="card">
+      <div class="caption mb-1">IN-HOUSE · soft disclosure</div>
+      <h3 class="mb-2">PrimerBench</h3>
+      <p class="text-sm text-muted mb-3">Primer evaluation and benchmarking platform. Method paper companion to PA1 ALE paper.</p>
+      <span class="caption">contact for full access</span>
+    </div>
+    <div class="card">
+      <div class="caption mb-1">PUBLIC · ★ 1</div>
+      <h3 class="mb-2">kuma</h3>
+      <p class="text-sm text-muted mb-3">Tauri-based research utility, English UI. Updated 2026-05-12.</p>
+      <a href="#" class="text-accent text-sm">github.com/gyuminlee-repo/kuma →</a>
+    </div>
+    <div class="card">
+      <div class="caption mb-1">PUBLIC · ★ 0</div>
+      <h3 class="mb-2">claude-goal</h3>
+      <p class="text-sm text-muted mb-3">Codex-style /goal command for Claude Code, persistent objective state.</p>
+      <a href="#" class="text-accent text-sm">github.com/gyuminlee-repo/claude-goal →</a>
+    </div>
+    <div class="card">
+      <div class="caption mb-1">PUBLIC · ★ 1</div>
+      <h3 class="mb-2">ClipStock</h3>
+      <p class="text-sm text-muted mb-3">macOS menu bar app for saving URLs, files, text, clipboard history.</p>
+      <a href="#" class="text-accent text-sm">github.com/gyuminlee-repo/ClipStock →</a>
+    </div>
+    <div class="card">
+      <div class="caption mb-1">PUBLIC · ★ 0</div>
+      <h3 class="mb-2">md2pdf</h3>
+      <p class="text-sm text-muted mb-3">Markdown to PDF converter (Go).</p>
+      <a href="#" class="text-accent text-sm">github.com/gyuminlee-repo/md2pdf →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== PUBLICATIONS =========================== -->
+<section id="publications" class="max-grid mx-auto px-8 py-12">
+  <div class="flex items-center justify-between mb-6">
+    <h2>Publications</h2>
+    <span class="caption flex items-center gap-2"><span class="pulse-dot"></span> Live Scholar feed · 47 entries · 3 abstracts auto-excluded</span>
+  </div>
+  <div class="max-body space-y-5">
+    <div class="border-l-2 border-accent pl-4">
+      <p class="text-base"><strong>Lee GM</strong>, Pham KN, Bang I, Ko S, Kim D. <em>Integrated genomic and transcriptomic insights into methanol tolerance mechanisms in Methylobacterium extorquens AM1.</em></p>
+      <p class="caption mt-1">Journal of Biological Engineering · 2026 · 1<sup>st</sup> author · Press coverage</p>
+    </div>
+    <div class="border-l-2 border-default pl-4">
+      <p class="text-base">Cho JH#, <strong>Lee GM</strong>#, Ko S, Kim Y, Kim D. <em>Characterization and therapeutic potential of newly isolated bacteriophages.</em></p>
+      <p class="caption mt-1">Journal of Virology · 2025 · co-1<sup>st</sup> author · 10 cit</p>
+    </div>
+    <div class="border-l-2 border-accent pl-4">
+      <p class="text-base"><strong>Lee GM</strong>, Scott-Nevros ZK, Lee SM, Kim D. <em>Pan-genome analysis reveals comparative genomic features in Methylorubrum extorquens.</em></p>
+      <p class="caption mt-1">Biotechnol Bioprocess Eng · 2023 · 1<sup>st</sup> author · 7 cit</p>
+    </div>
+    <div class="border-l-2 border-accent pl-4">
+      <p class="text-base"><strong>Lee GM</strong>, Ko S, Oh EJ et al. <em>Comparative Genome Analysis Reveals Natural Variations in Erwinia pyrifoliae.</em></p>
+      <p class="caption mt-1">Plant Pathology Journal · 2020 · 1<sup>st</sup> author · 15 cit</p>
+    </div>
+    <div class="border-l-2 border-default pl-4">
+      <p class="text-base">Song Y, ..., <strong>Lee GM</strong> et al. <em>Functional cooperation of glycine synthase-reductase and Wood-Ljungdahl pathways.</em></p>
+      <p class="caption mt-1">PNAS · 2020 · co-author · 178 cit · 한국을 빛낸 사람들 등재</p>
+    </div>
+    <button class="text-accent text-sm font-medium">Show all 9 published + 1 in revision ↓</button>
+  </div>
+</section>
+
+<!-- =========================== PRESENTATIONS =========================== -->
+<section class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Presentations</h2>
+  <div class="max-body">
+    <div>
+      <div class="caption">ORAL</div>
+      <p class="text-base mt-1"><em>Pan-genome analysis reveals comparative genomic features of central metabolic pathways in Methylorubrum extorquens.</em></p>
+      <p class="caption">Korean Society for Biotechnology and Bioengineering (KSBB) · 2022.09</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== AWARDS & MEDIA =========================== -->
+<section class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Awards & Media</h2>
+  <div class="max-body space-y-4">
+    <div class="card">
+      <p class="text-base"><strong>한국을 빛낸 사람들 등재</strong> (2건)</p>
+      <p class="caption mt-1">PNAS 2020 paper, Vet Res 2021 paper</p>
+    </div>
+    <div class="card">
+      <p class="text-base"><strong>UNIST 보도자료</strong> · 메탄올 내성 '슈퍼 균주' 개발</p>
+      <p class="caption mt-1">2026 J Biol Eng paper · 뉴스1 보도</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== ABOUT =========================== -->
+<section id="about" class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">About</h2>
+  <div class="max-body space-y-4 text-base leading-relaxed">
+    <p>Postdoctoral researcher at KRIBB Synthetic Biology Research Center. PhD work focused on systems-level dissection of methanol stress adaptation in <em>Methylorubrum extorquens</em>, combining adaptive laboratory evolution with multi-omics integration to identify engineering targets for industrial strain development.</p>
+    <p>Current postdoc work expands toward methanotroph metabolic engineering and biofoundry workflow automation. Build software in parallel: <strong>KURO</strong> (AI-driven primer design), <strong>PrimerBench</strong> (primer evaluation), and <strong>kuma</strong> (research utility) reduce manual cloning and analysis cycles for the lab.</p>
+    <p>The making of these tools follows a deliberate <strong class="text-accent">AI-augmented coding</strong> practice — Claude Code as the primary editor, structured prompts as the source of truth, generated TypeScript and Python as the artifact. Repositories on GitHub demonstrate the pattern, this site is one of them.</p>
+  </div>
+
+  <!-- AI Q&A WIDGET -->
+  <div class="card mt-10 max-body">
+    <div class="caption mb-2">ASK ME ANYTHING <span class="vibe-mark">VIBE: Claude Haiku via Pages Function</span></div>
+    <h3 class="mb-3">Have a question about my research or tools?</h3>
+    <div class="flex gap-2 mb-3">
+      <input type="text" class="flex-1 p-3 border border-default rounded text-sm" placeholder="e.g., How does M. extorquens tolerate methanol stress?" readonly>
+      <button class="bg-accent text-white px-5 rounded text-sm font-medium">Ask</button>
+    </div>
+    <div class="bg-[#FAFAF7] border border-default rounded p-4 text-sm leading-relaxed">
+      <p class="caption mb-2">→ AI answer (sample)</p>
+      <p>Methanol tolerance in <em>M. extorquens</em> AM1 involves coordinated remodeling of central carbon metabolism and oxidative stress response. In <strong>[Lee et al. 2026, J Biol Eng]</strong>, integrated transcriptomic and genomic analysis identified key targets including <em>mxaF</em> and the formaldehyde activating enzyme. ALE-derived mutations cluster in regulators of the serine cycle and tetrahydromethanopterin pathway.</p>
+      <p class="caption mt-3">5 queries / hour / IP · cached 24h</p>
+    </div>
+  </div>
+
+  <!-- BUILD PIPELINE DIAGRAM -->
+  <div class="mt-12 max-body">
+    <div class="caption mb-3">HOW THIS SITE WAS BUILT <span class="vibe-mark">VIBE</span></div>
+    <svg viewBox="0 0 600 480" class="w-full" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .node{ fill:#fff; stroke:#1A1A1A; stroke-width:2; }
+        .node-accent{ fill:#fff; stroke:#0F766E; stroke-width:2.5; }
+        .label{ font-family:'Inter',system-ui; font-size:13px; fill:#1A1A1A; }
+        .label-mono{ font-family:'JetBrains Mono',monospace; font-size:11px; fill:#6B6B6B; }
+        .arrow{ stroke:#1A1A1A; stroke-width:2; fill:none; marker-end:url(#arr); }
+      </style>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#1A1A1A"/>
+        </marker>
+      </defs>
+      <rect x="200" y="20" width="200" height="50" rx="6" class="node"/>
+      <text x="300" y="42" text-anchor="middle" class="label">GitHub commit (owner)</text>
+      <text x="300" y="58" text-anchor="middle" class="label-mono">git push origin main</text>
+      <line x1="300" y1="70" x2="300" y2="100" class="arrow"/>
+      <rect x="160" y="100" width="280" height="50" rx="6" class="node"/>
+      <text x="300" y="122" text-anchor="middle" class="label">GitHub Actions cron</text>
+      <text x="300" y="138" text-anchor="middle" class="label-mono">04:00 KST daily · scholar-sync.yml</text>
+      <line x1="300" y1="150" x2="300" y2="180" class="arrow"/>
+      <rect x="140" y="180" width="320" height="50" rx="6" class="node"/>
+      <text x="300" y="202" text-anchor="middle" class="label">scholarly fetch → abstract filter</text>
+      <text x="300" y="218" text-anchor="middle" class="label-mono">publications.json + auto-merge PR</text>
+      <line x1="300" y1="230" x2="300" y2="260" class="arrow"/>
+      <rect x="160" y="260" width="280" height="50" rx="6" class="node-accent"/>
+      <text x="300" y="282" text-anchor="middle" class="label">Claude API (Sonnet 4.6)</text>
+      <text x="300" y="298" text-anchor="middle" class="label-mono">EN markdown → KO with glossary</text>
+      <line x1="300" y1="310" x2="300" y2="340" class="arrow"/>
+      <rect x="200" y="340" width="200" height="50" rx="6" class="node"/>
+      <text x="300" y="362" text-anchor="middle" class="label">Astro static build</text>
+      <text x="300" y="378" text-anchor="middle" class="label-mono">bun run build</text>
+      <line x1="300" y1="390" x2="300" y2="420" class="arrow"/>
+      <rect x="180" y="420" width="240" height="50" rx="6" class="node-accent"/>
+      <text x="300" y="442" text-anchor="middle" class="label">Cloudflare Pages global edge</text>
+      <text x="300" y="458" text-anchor="middle" class="label-mono">personal-site.pages.dev</text>
+    </svg>
+    <p class="caption mt-3 italic">Made with AI-augmented coding (Vibe Coding). Verified by author. No template, no manual deploys.</p>
+  </div>
+</section>
+
+<!-- =========================== REFERENCES =========================== -->
+<section class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">References</h2>
+  <div class="max-body grid sm:grid-cols-2 gap-6">
+    <div>
+      <h3>Prof. Donghyuk Kim</h3>
+      <p class="caption">PhD advisor</p>
+      <p class="text-sm text-muted mt-1">Department of Chemical Engineering, UNIST</p>
+      <p class="text-sm mt-1"><span class="text-accent">dkim@unist.ac.kr</span></p>
+    </div>
+    <div>
+      <h3>Dr. Hyewon Lee</h3>
+      <p class="caption">Current PI · pending confirmation</p>
+      <p class="text-sm text-muted mt-1">KRIBB Synthetic Biology Research Center</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CONTACT =========================== -->
+<section id="contact" class="max-grid mx-auto px-8 py-12">
+  <h2 class="mb-6">Contact</h2>
+  <div class="max-body grid sm:grid-cols-2 gap-4">
+    <a class="card block" href="mailto:sysbio.gyumin@gmail.com">
+      <div class="caption mb-1">PRIMARY EMAIL</div>
+      <p class="text-base text-accent">sysbio.gyumin@gmail.com</p>
+    </a>
+    <a class="card block" href="mailto:kyumin1012@unist.ac.kr">
+      <div class="caption mb-1">INSTITUTIONAL (alumni)</div>
+      <p class="text-base text-accent">kyumin1012@unist.ac.kr</p>
+    </a>
+    <a class="card block" href="https://github.com/gyuminlee-repo">
+      <div class="caption mb-1">GITHUB</div>
+      <p class="text-base text-accent">github.com/gyuminlee-repo</p>
+    </a>
+    <a class="card block" href="https://scholar.google.com/citations?user=cnTN6OkAAAAJ">
+      <div class="caption mb-1">GOOGLE SCHOLAR</div>
+      <p class="text-base text-accent">cnTN6OkAAAAJ</p>
+    </a>
+  </div>
+</section>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="border-t border-default mt-16">
+  <div class="max-chrome mx-auto px-8 py-8">
+    <div class="caption flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span class="vibe-mark">VIBE: live build status</span>
+      <span class="flex items-center gap-1.5"><span class="pulse-dot"></span> Last build: 2h ago</span>
+      <span>·</span>
+      <span>Scholar synced 47 pubs</span>
+      <span>·</span>
+      <span>3 abstracts auto-excluded</span>
+      <span>·</span>
+      <span>KO translated by Claude API in 12s</span>
+      <span>·</span>
+      <span>Made with 0 hand-typed lines</span>
+    </div>
+    <div class="caption mt-4">
+      © 2026 Gyu Min Lee · Source on <a class="text-accent" href="#">GitHub</a> · MIT
+    </div>
+  </div>
+</footer>
+
+<!-- =========================== CMD+K PALETTE PREVIEW (static) =========================== -->
+<section class="max-grid mx-auto px-8 py-16">
+  <div class="demo-divider">VIBE LAYER PREVIEW · Cmd+K palette (overlay simulation)</div>
+  <div class="bg-black/30 p-8 rounded-xl">
+    <div class="bg-white rounded-xl shadow-2xl max-w-xl mx-auto overflow-hidden">
+      <div class="border-b border-default p-3 flex items-center gap-2">
+        <span class="text-muted text-sm">›</span>
+        <input class="flex-1 outline-none text-base" placeholder="Type a command or search..." value="pub" readonly>
+        <span class="kbd">esc</span>
+      </div>
+      <div class="p-2">
+        <div class="caption px-3 py-1">NAVIGATE</div>
+        <div class="px-3 py-2 hover:bg-gray-50 rounded flex items-center justify-between">
+          <span class="text-sm">📄 Go to Publications</span>
+          <span class="caption">↵</span>
+        </div>
+        <div class="px-3 py-2 bg-emerald-50 rounded flex items-center justify-between">
+          <span class="text-sm">📊 View Scholar metrics</span>
+          <span class="caption">↵</span>
+        </div>
+        <div class="caption px-3 py-1 mt-2">DEMOS</div>
+        <div class="px-3 py-2 hover:bg-gray-50 rounded flex items-center justify-between">
+          <span class="text-sm">🔬 Try KURO mini-demo</span>
+          <span class="caption">↵</span>
+        </div>
+        <div class="px-3 py-2 hover:bg-gray-50 rounded flex items-center justify-between">
+          <span class="text-sm">💬 Ask AI about my work</span>
+          <span class="caption">↵</span>
+        </div>
+      </div>
+      <div class="border-t border-default p-2 flex items-center gap-3 caption">
+        <span><span class="kbd">↑</span><span class="kbd">↓</span> navigate</span>
+        <span><span class="kbd">↵</span> select</span>
+        <span><span class="kbd">esc</span> close</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

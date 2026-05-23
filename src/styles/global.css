@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tokens populated by phase 1.2 merge (placeholders below) */
+    --background: 60 9% 97%;
+    --foreground: 0 0% 4%;
+    --primary: 174 77% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 5% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 60 4% 94%;
+    --muted-foreground: 0 0% 32%;
+    --accent: 174 77% 26%;
+    --accent-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --border: 60 5% 88%;
+    --input: 60 5% 88%;
+    --ring: 174 77% 26%;
+    --radius: 0.5rem;
+  }
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
