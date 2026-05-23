@@ -1,4 +1,5 @@
 ---
+import Typewriter from '../../islands/Typewriter';
 interface Props { lang?: 'en' | 'ko'; }
 const { lang = 'en' } = Astro.props;
 
@@ -42,15 +43,11 @@ const t = copy[lang];
 
     <p class="text-2xl md:text-3xl text-foreground mb-6 max-w-3xl">
       {t.leadBefore}
-      {/* TODO Phase 4.1: replace with <Typewriter client:idle lang={lang} /> island
-            cycling labels (EN ["Methanotroph Engineer","Synthetic Biology Postdoc","Vibe Coder"],
-            KO ["메탄자화균 엔지니어","합성생물학 박사후연구원","바이브 코더"]).
-            Mount selector: span#typewriter-slot. */}
       <span
         id="typewriter-slot"
-        class="font-mono text-primary inline-block min-w-[16ch] align-baseline"
+        class="inline-block min-w-[16ch] align-baseline"
         data-lang={lang}
-      >{t.role}</span>{t.leadAfter}
+      ><Typewriter client:idle lang={lang} /></span>{t.leadAfter}
     </p>
 
     <p class="text-base md:text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed">
