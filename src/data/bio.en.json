@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "name": "Gyu Min Lee",
+    "korean_name": "이규민",
+    "title": "Postdoctoral Researcher",
+    "affiliation": "KRIBB (Korea Research Institute of Bioscience and Biotechnology), C1 Refinery Research Center",
+    "pi": "Hyewon Lee, Ph.D.",
+    "location": "Daejeon, South Korea",
+    "focus_areas": [
+      "Methanotroph and methylotroph engineering",
+      "Adaptive laboratory evolution",
+      "Multi-omics integration",
+      "Agentic engineering for synthetic biology"
+    ],
+    "contact": {
+      "email": "rbals1012@gmail.com",
+      "github": "gyuminlee-repo",
+      "scholar": "cnTN6OkAAAAJ"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "heading": "Systems biology, applied to C1 carbon.",
+    "lede": "I work on engineering methanotrophic and methylotrophic bacteria so that methane and methanol can serve as starting carbons for synthetic biology. The wet-lab spine of my work is adaptive laboratory evolution (ALE) coupled with multi-omics sequencing; the read-out is mechanism, not just phenotype. Lately I run an increasing share of that pipeline through AI coding agents, which compresses the slow seam between an experiment finishing and the next one being designed.",
+    "paragraphs": [
+      "My doctoral work at UNIST traced how Methylorubrum extorquens reorganizes its C1 metabolism under sustained methanol stress: 700+ generations of ALE, whole-genome and transcriptome integration, and AlphaFold3 structural analysis to read the convergent mutations as a coherent stress-response network.",
+      "At KRIBB I continue along the same axis with new methanotroph hosts, and I build the tooling layer (primer design, RNA-seq pipelines, lab-notebook automation) on top of Claude Code agents so the dry-lab side keeps up with the wet-lab side."
+    ]
+  },
+  "education": {
+    "heading": "Education",
+    "items": [
+      {
+        "degree": "Ph.D., Chemical Engineering",
+        "institution": "Ulsan National Institute of Science and Technology (UNIST)",
+        "lab": "Systems Biology Lab, advisor: Donghyuk Kim, Ph.D.",
+        "period": "2019.03 – 2026.02",
+        "highlight": "Dissertation: Systems-level characterization of adaptive responses to methanol stress in Methylorubrum extorquens."
+      },
+      {
+        "degree": "B.S., Genetic Engineering",
+        "institution": "Kyung Hee University",
+        "lab": null,
+        "period": "2010.03 – 2017.02",
+        "highlight": null
+      }
+    ]
+  },
+  "experience": {
+    "heading": "Experience",
+    "items": [
+      {
+        "role": "Postdoctoral Researcher",
+        "org": "KRIBB, C1 Refinery Research Center",
+        "lab": "Hyewon Lee Lab",
+        "period": "2026.03 – present",
+        "highlight": "Methanotroph strain engineering, multi-omics pipelines, agentic tooling for the C1 team."
+      },
+      {
+        "role": "Graduate Researcher",
+        "org": "UNIST, Department of Chemical Engineering",
+        "lab": "Systems Biology Lab (Donghyuk Kim)",
+        "period": "2019.03 – 2026.02",
+        "highlight": "Methylotroph ALE, pan-genome and DEG analysis, bacteriophage and plant-pathogen comparative genomics."
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Skills",
+    "columns": [
+      {
+        "label": "Wet lab",
+        "items": [
+          "Adaptive laboratory evolution (ALE)",
+          "Methylotroph and methanotroph cultivation",
+          "Allelic exchange and mutation reconstruction",
+          "Growth phenotyping",
+          "RNA-seq library prep"
+        ]
+      },
+      {
+        "label": "Omics and modeling",
+        "items": [
+          "Whole-genome sequencing analysis",
+          "Pan-genome comparative analysis",
+          "RNA-seq and DEG analysis",
+          "AlphaFold3 structure-function interpretation",
+          "COBRApy genome-scale metabolic modeling"
+        ]
+      },
+      {
+        "label": "Engineering",
+        "items": [
+          "Python and R omics pipelines",
+          "Visualization automation",
+          "Claude Code agent workflows for synthetic biology",
+          "GitHub Actions CI and cron jobs",
+          "TypeScript / Astro for research tooling"
+        ]
+      }
+    ]
+  }
+}

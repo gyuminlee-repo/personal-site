@@ -1,0 +1,86 @@
+{
+  "_note": "TODO Phase 3.2 i18n: translate every string below from src/content/bio.en.json. Keys mirror EN exactly. Latin organism names (Methylorubrum extorquens) must stay italicized. Declarative '~다' tone, no '~합니다'. Glossary applies (methylotroph 메틸영양균, methanotroph 메탄자화균, ALE 적응진화).",
+  "meta": {
+    "name": "Gyu Min Lee",
+    "korean_name": "이규민",
+    "title": "박사후연구원",
+    "affiliation": "한국생명공학연구원 (KRIBB), C1 리파이너리 연구센터",
+    "pi": "이혜원 박사님",
+    "location": "대한민국 대전",
+    "focus_areas": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "contact": {
+      "email": "rbals1012@gmail.com",
+      "github": "gyuminlee-repo",
+      "scholar": "cnTN6OkAAAAJ"
+    }
+  },
+  "about": {
+    "eyebrow": "소개",
+    "heading": "",
+    "lede": "",
+    "paragraphs": [
+      "",
+      ""
+    ]
+  },
+  "education": {
+    "heading": "학력",
+    "items": [
+      {
+        "degree": "박사, 화학공학",
+        "institution": "울산과학기술원 (UNIST)",
+        "lab": "시스템 생물학 연구실, 지도교수 김동혁 교수님",
+        "period": "2019.03 – 2026.02",
+        "highlight": ""
+      },
+      {
+        "degree": "학사, 유전공학",
+        "institution": "경희대학교",
+        "lab": null,
+        "period": "2010.03 – 2017.02",
+        "highlight": null
+      }
+    ]
+  },
+  "experience": {
+    "heading": "경력",
+    "items": [
+      {
+        "role": "박사후연구원",
+        "org": "한국생명공학연구원 (KRIBB), C1 리파이너리 연구센터",
+        "lab": "이혜원 박사님 lab",
+        "period": "2026.03 – 현재",
+        "highlight": ""
+      },
+      {
+        "role": "박사과정 연구원",
+        "org": "UNIST 화학공학과",
+        "lab": "시스템 생물학 연구실 (김동혁 교수님)",
+        "period": "2019.03 – 2026.02",
+        "highlight": ""
+      }
+    ]
+  },
+  "skills": {
+    "heading": "기술 역량",
+    "columns": [
+      {
+        "label": "실험",
+        "items": ["", "", "", "", ""]
+      },
+      {
+        "label": "오믹스 및 모델링",
+        "items": ["", "", "", "", ""]
+      },
+      {
+        "label": "엔지니어링",
+        "items": ["", "", "", "", ""]
+      }
+    ]
+  }
+}
