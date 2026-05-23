@@ -1,0 +1,40 @@
+name: Scholar Sync
+
+on:
+  schedule:
+    - cron: '0 18 * * *'  # 03:00 KST daily
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install scholarly
+        run: pip install --quiet scholarly
+
+      - name: Run sync
+        env:
+          SCHOLAR_ID: ${{ vars.SCHOLAR_ID || 'cnTN6OkAAAAJ' }}
+        run: python scripts/scholar_sync.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name 'scholar-sync-bot'
+          git config user.email 'bot@gyuminlee.dev'
+          git add src/data/publications.json src/data/scholar_metrics.json
+          if ! git --no-pager diff --staged --quiet; then
+            git commit --quiet -m "chore: scholar sync $(date -u +%Y-%m-%d)"
+            git push --quiet
+          else
+            echo "no changes"
+          fi

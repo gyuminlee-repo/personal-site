@@ -3,17 +3,17 @@ import Base from '../layouts/Base.astro';
 import Nav from '../components/sections/Nav.astro';
 import Hero from '../components/sections/Hero.astro';
 import Footer from '../components/sections/Footer.astro';
+import About from '../components/sections/About.astro';
 import Software from '../components/sections/Software.astro';
+import Publications from '../components/sections/Publications.astro';
 ---
 <Base title="Gyumin Lee" description="Methanotroph engineer · synthetic biology postdoc">
   <Nav lang="en" currentPath="/" />
   <main>
     <Hero lang="en" />
-    {/* Phase 2.2 mounts AboutSection here */}
-    <section id="about" class="scroll-mt-24" />
+    <About lang="en" />
     <Software lang="en" />
-    {/* Phase 3.x mounts Publications here */}
-    <section id="publications" class="scroll-mt-24" />
+    <Publications lang="en" />
     {/* Contact placeholder */}
     <section id="contact" class="scroll-mt-24" />
   </main>

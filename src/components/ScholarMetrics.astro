@@ -1,0 +1,53 @@
+---
+import metrics from '../data/scholar_metrics.json';
+
+export interface Props {
+  lang: 'en' | 'ko';
+}
+
+const { lang } = Astro.props;
+
+const labels = lang === 'ko'
+  ? {
+      citations: '총 인용수',
+      h: 'h-index',
+      i10: 'i10-index',
+      synced: '최근 동기화',
+      seeding: '(초기 시드 데이터, Scholar 동기화 대기 중)',
+    }
+  : {
+      citations: 'Citations',
+      h: 'h-index',
+      i10: 'i10-index',
+      synced: 'Last synced',
+      seeding: '(seeding; awaiting first Scholar sync)',
+    };
+
+const syncedAt = metrics.synced_at
+  ? new Date(metrics.synced_at).toISOString().slice(0, 10)
+  : '—';
+
+const isSeeded = (metrics as { seeded?: boolean }).seeded === true;
+
+const stats: Array<{ value: string | number; label: string; mono?: boolean }> = [
+  { value: metrics.total_citations ?? 0, label: labels.citations },
+  { value: metrics.h_index ?? 0, label: labels.h },
+  { value: metrics.i10_index ?? 0, label: labels.i10 },
+  { value: syncedAt, label: labels.synced, mono: true },
+];
+---
+<div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+  {stats.map((stat) => (
+    <div class="rounded-md border border-border bg-card px-4 py-5 md:px-5 md:py-6">
+      <div class={`text-2xl md:text-3xl font-semibold text-foreground tabular-nums ${stat.mono ? 'font-mono text-xl md:text-2xl' : ''}`}>
+        {stat.value}
+      </div>
+      <div class="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+        {stat.label}
+      </div>
+    </div>
+  ))}
+</div>
+{isSeeded && (
+  <p class="mt-3 text-xs text-muted-foreground italic">{labels.seeding}</p>
+)}

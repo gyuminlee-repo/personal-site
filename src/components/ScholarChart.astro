@@ -1,0 +1,76 @@
+---
+import metrics from '../data/scholar_metrics.json';
+
+export interface Props {
+  lang: 'en' | 'ko';
+}
+
+const { lang } = Astro.props;
+
+const cpy = (metrics.cites_per_year ?? {}) as Record<string, number>;
+const years = Object.keys(cpy).sort();
+const values = years.map((y) => cpy[y] ?? 0);
+const maxVal = values.length > 0 ? Math.max(...values, 1) : 1;
+
+// SVG sized to scale within max-w-[480px]; viewBox keeps proportions.
+const W = 480;
+const H = 80;
+const PAD_X = 4;
+const PAD_BOTTOM = 14; // room for year labels
+const PAD_TOP = 4;
+const barAreaH = H - PAD_BOTTOM - PAD_TOP;
+const innerW = W - PAD_X * 2;
+const barCount = years.length || 1;
+const gap = 6;
+const barW = Math.max(8, (innerW - gap * (barCount - 1)) / barCount);
+
+const heading = lang === 'ko' ? '연도별 인용수' : 'Citations per year';
+const empty = lang === 'ko' ? '데이터 없음' : 'No data';
+---
+<div class="w-full max-w-[480px]">
+  <div class="mb-2 text-xs uppercase tracking-wider text-muted-foreground">
+    {heading}
+  </div>
+  {years.length === 0 ? (
+    <div class="text-xs text-muted-foreground">{empty}</div>
+  ) : (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      width="100%"
+      height="auto"
+      role="img"
+      aria-label={heading}
+      class="block"
+    >
+      {years.map((year, i) => {
+        const v = values[i];
+        const h = (v / maxVal) * barAreaH;
+        const x = PAD_X + i * (barW + gap);
+        const y = PAD_TOP + (barAreaH - h);
+        return (
+          <g>
+            <rect
+              x={x}
+              y={y}
+              width={barW}
+              height={Math.max(h, 1)}
+              rx="2"
+              class="fill-primary"
+            >
+              <title>{`${year}: ${v}`}</title>
+            </rect>
+            <text
+              x={x + barW / 2}
+              y={H - 3}
+              text-anchor="middle"
+              class="fill-muted-foreground"
+              style="font-size: 9px; font-family: ui-monospace, monospace;"
+            >
+              {year.slice(-2)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  )}
+</div>

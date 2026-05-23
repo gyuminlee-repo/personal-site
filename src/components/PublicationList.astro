@@ -1,0 +1,74 @@
+---
+import pubsData from '../data/publications.json';
+
+export interface Props {
+  lang: 'en' | 'ko';
+}
+
+const { lang } = Astro.props;
+
+interface Publication {
+  title: string;
+  authors: string[];
+  year: string | number;
+  journal: string;
+  volume?: string;
+  pages?: string;
+  url?: string;
+  citations: number;
+  citedby_url?: string;
+}
+
+const publications = (pubsData.publications ?? []) as unknown as Publication[];
+
+const labels = lang === 'ko'
+  ? { citations: '인용', noPubs: '아직 출판물이 없습니다.' }
+  : { citations: 'cites', noPubs: 'No publications yet.' };
+
+const formatAuthors = (authors: string[]): string => {
+  if (!authors || authors.length === 0) return '';
+  if (authors.length <= 3) return authors.join(', ');
+  return `${authors.slice(0, 3).join(', ')}, et al.`;
+};
+
+const formatVenue = (pub: Publication): string => {
+  const parts: string[] = [];
+  if (pub.journal) parts.push(pub.journal);
+  if (pub.volume) parts.push(pub.volume);
+  if (pub.pages) parts.push(pub.pages);
+  if (pub.year) parts.push(String(pub.year));
+  return parts.join(' · ');
+};
+---
+{publications.length === 0 ? (
+  <p class="text-sm text-muted-foreground">{labels.noPubs}</p>
+) : (
+  <ol class="space-y-6">
+    {publications.map((pub) => (
+      <li class="border-l-2 border-border pl-4 md:pl-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-base md:text-lg font-medium text-foreground leading-snug">
+            {pub.url ? (
+              <a href={pub.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary hover:underline underline-offset-4">
+                {pub.title}
+              </a>
+            ) : (
+              pub.title
+            )}
+          </h3>
+          {pub.citations > 0 && (
+            <span class="shrink-0 inline-flex items-center rounded-md bg-card border border-border px-2 py-0.5 text-xs font-mono tabular-nums text-muted-foreground">
+              {pub.citations} {labels.citations}
+            </span>
+          )}
+        </div>
+        <p class="mt-1 text-sm text-muted-foreground">
+          {formatAuthors(pub.authors)}
+        </p>
+        <p class="mt-0.5 text-xs text-muted-foreground italic">
+          {formatVenue(pub)}
+        </p>
+      </li>
+    ))}
+  </ol>
+)}
