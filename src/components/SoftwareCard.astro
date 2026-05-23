@@ -1,0 +1,101 @@
+---
+export interface ProjectShape {
+  slug: string;
+  title: string;
+  tagline_en: string;
+  tagline_ko: string;
+  description_en: string;
+  description_ko: string;
+  stack: string[];
+  github: string | null;
+  show_repo_link: boolean;
+  demo: string | null;
+  featured: boolean;
+  has_minidemo: boolean;
+  year: string;
+  inferred?: boolean;
+}
+
+export interface Props {
+  project: ProjectShape;
+  lang: 'en' | 'ko';
+}
+
+const { project, lang } = Astro.props;
+const tagline = lang === 'ko' && project.tagline_ko ? project.tagline_ko : project.tagline_en;
+const description = lang === 'ko' && project.description_ko ? project.description_ko : project.description_en;
+const demoLabel = lang === 'ko' ? '데모 보기' : 'Try demo';
+const githubLabel = lang === 'ko' ? 'GitHub' : 'GitHub';
+const srGithubLabel = `${githubLabel}: ${project.title}`;
+---
+
+<article class="group relative rounded-md border border-border bg-card p-6 md:p-8 transition-colors duration-slow ease-emphasized hover:border-primary/40 hover:shadow-md flex flex-col gap-4">
+  {project.featured && (
+    <span
+      class="absolute top-4 right-4 text-primary/70 group-hover:text-primary transition-colors"
+      aria-label={lang === 'ko' ? '주요 프로젝트' : 'Featured project'}
+      title={lang === 'ko' ? '주요 프로젝트' : 'Featured'}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27Z"/>
+      </svg>
+    </span>
+  )}
+
+  <header class="flex items-baseline justify-between gap-3 pr-6">
+    <h3 class="text-2xl font-semibold tracking-tight text-card-foreground group-hover:text-primary transition-colors">
+      {project.title}
+    </h3>
+    <span class="text-xs text-muted-foreground tabular-nums shrink-0">{project.year}</span>
+  </header>
+
+  <p class="text-base text-card-foreground">{tagline}</p>
+
+  <p class="text-sm text-muted-foreground">{description}</p>
+
+  <ul class="flex flex-wrap gap-1.5" aria-label={lang === 'ko' ? '기술 스택' : 'Tech stack'}>
+    {project.stack.map((tech) => (
+      <li>
+        <span class="inline-block px-2 py-0.5 text-xs rounded-full bg-muted text-muted-foreground border border-border">
+          {tech}
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  <footer class="mt-auto pt-4 border-t border-border flex items-center gap-4 text-sm">
+    {project.show_repo_link && project.github && (
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-1.92c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.16 1.18a10.97 10.97 0 0 1 5.74 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.77.11 3.06.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5Z"/>
+        </svg>
+        <span class="sr-only">{srGithubLabel}</span>
+        <span aria-hidden="true">{githubLabel}</span>
+      </a>
+    )}
+
+    {project.has_minidemo && (
+      <a
+        href={`#${project.slug}-demo`}
+        class="inline-flex items-center gap-1.5 text-primary hover:underline transition-colors"
+        data-minidemo-trigger={project.slug}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="5 3 19 12 5 21 5 3"/>
+        </svg>
+        <span>{demoLabel}</span>
+      </a>
+    )}
+
+    {!project.show_repo_link && !project.has_minidemo && (
+      <span class="text-xs text-muted-foreground italic">
+        {lang === 'ko' ? '비공개 도구' : 'Private tool'}
+      </span>
+    )}
+  </footer>
+</article>
