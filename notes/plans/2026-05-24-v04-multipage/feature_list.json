@@ -40,8 +40,8 @@
     {
       "id": "W4-verify",
       "description": "clean build + 14+ route 존재 검증 + dist HTML grep + posts_sync 무결성 + 보고서",
-      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && rm -rf dist .astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1 && for r in / about tools publications presentations posts cv contact; do [ -f \"dist${r}/index.html\" ] || [ -f \"dist${r}.html\" ] || exit 1; done && for r in / about tools publications presentations posts cv contact; do [ -f \"dist/ko${r}/index.html\" ] || [ -f \"dist/ko${r}.html\" ] || exit 1; done && ! grep -rq \"EntryNav\\|kuro-demo\" dist/'",
-      "state": "in_progress",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && rm -rf dist .astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1 && for p in / /about /tools /publications /presentations /posts /cv /contact; do [ -f \"dist${p}/index.html\" ] || exit 1; done && for p in /ko /ko/about /ko/tools /ko/publications /ko/presentations /ko/posts /ko/cv /ko/contact; do [ -f \"dist${p}/index.html\" ] || exit 1; done && ! grep -rq \"EntryNav\\|kuro-demo\" dist/'",
+      "state": "done",
       "depends_on": [
         "W3-posts-pipeline-home"
       ]
