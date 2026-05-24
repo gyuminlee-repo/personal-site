@@ -43,7 +43,7 @@
       {
         "degree": "Ph.D. (Integrated M.S./Ph.D.), Chemical Engineering",
         "institution": "Ulsan National Institute of Science and Technology (UNIST)",
-        "lab": "Systems Biology Lab, advisor: Donghyuk Kim, Ph.D.",
+        "lab": "Systems Biology and Machine Learning Lab, advisor: Donghyuk Kim, Ph.D.",
         "period": "2019.03 – 2026.02",
         "highlight": "Dissertation: Systems-level characterization of adaptive responses to methanol stress in *Methylorubrum extorquens*."
       },
@@ -69,7 +69,7 @@
       {
         "role": "Graduate Researcher",
         "org": "UNIST, Department of Chemical Engineering",
-        "lab": "Systems Biology Lab (Donghyuk Kim)",
+        "lab": "Systems Biology and Machine Learning Lab (Donghyuk Kim)",
         "period": "2019.03 – 2026.02",
         "highlight": "Methylotroph ALE, pan-genome and DEG analysis, bacteriophage and plant-pathogen comparative genomics."
       }
