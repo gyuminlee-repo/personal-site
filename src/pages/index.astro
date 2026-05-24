@@ -2,20 +2,16 @@
 import Base from '../layouts/Base.astro';
 import Nav from '../components/sections/Nav.astro';
 import Hero from '../components/sections/Hero.astro';
+import Now from '../components/sections/Now.astro';
+import Latest from '../components/sections/Latest.astro';
 import Footer from '../components/sections/Footer.astro';
-import About from '../components/sections/About.astro';
-import Software from '../components/sections/Software.astro';
-import Publications from '../components/sections/Publications.astro';
 ---
 <Base title="Gyumin Lee" description="Methanotroph engineer · synthetic biology postdoc" path="/">
   <Nav lang="en" currentPath="/" />
   <main>
     <Hero lang="en" />
-    <About lang="en" />
-    <Software lang="en" />
-    <Publications lang="en" />
-    {/* Contact placeholder */}
-    <section id="contact" class="scroll-mt-24" />
+    <Now lang="en" />
+    <Latest lang="en" />
   </main>
   <Footer lang="en" />
 </Base>

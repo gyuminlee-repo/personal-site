@@ -1,0 +1,29 @@
+---
+import nowData from '../../data/now.json';
+
+interface Props { lang?: 'en' | 'ko'; }
+const { lang = 'en' } = Astro.props;
+
+const heading = lang === 'ko' ? '지금' : 'Now';
+const updatedLabel = lang === 'ko' ? '업데이트' : 'Last updated';
+const items = lang === 'ko' ? nowData.items_ko : nowData.items_en;
+---
+<section id="now" class="py-16 md:py-24 border-t border-border">
+  <div class="mx-auto max-w-grid w-full px-6 md:px-12">
+    <div class="flex items-baseline justify-between mb-8">
+      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">{heading}</h2>
+      <span class="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+        {updatedLabel} · {nowData.updated_at}
+      </span>
+    </div>
+
+    <ul class="space-y-3 max-w-3xl">
+      {items.map((item) => (
+        <li class="flex gap-3 text-base md:text-lg leading-relaxed text-foreground">
+          <span aria-hidden="true" class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-muted-foreground"></span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

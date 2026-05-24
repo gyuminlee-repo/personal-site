@@ -2,20 +2,16 @@
 import Base from '../../layouts/Base.astro';
 import Nav from '../../components/sections/Nav.astro';
 import Hero from '../../components/sections/Hero.astro';
+import Now from '../../components/sections/Now.astro';
+import Latest from '../../components/sections/Latest.astro';
 import Footer from '../../components/sections/Footer.astro';
-import About from '../../components/sections/About.astro';
-import Software from '../../components/sections/Software.astro';
-import Publications from '../../components/sections/Publications.astro';
 ---
 <Base title="이규민" description="메탄자화균 엔지니어 · 합성생물학 박사후연구원" lang="ko" path="/ko/">
   <Nav lang="ko" currentPath="/ko/" />
   <main>
     <Hero lang="ko" />
-    <About lang="ko" />
-    <Software lang="ko" />
-    <Publications lang="ko" />
-    {/* Contact placeholder */}
-    <section id="contact" class="scroll-mt-24" />
+    <Now lang="ko" />
+    <Latest lang="ko" />
   </main>
   <Footer lang="ko" />
 </Base>

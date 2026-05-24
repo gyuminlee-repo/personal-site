@@ -1,0 +1,102 @@
+---
+import { getLatest } from '../../lib/latest';
+
+interface Props { lang?: 'en' | 'ko'; }
+const { lang = 'en' } = Astro.props;
+
+const { latestPub, latestPres, latestPost } = await getLatest(lang);
+
+const t = lang === 'ko'
+  ? {
+      heading: '최신 활동',
+      pubEyebrow: '논문',
+      presEyebrow: '발표',
+      postEyebrow: '글',
+      read: '보기',
+      noPost: '아직 글이 없습니다.',
+      pubsHref: '/ko/publications',
+      presHref: '/ko/presentations',
+      postsBase: '/ko/posts/',
+      postsIndexHref: '/ko/posts',
+    }
+  : {
+      heading: 'Latest',
+      pubEyebrow: 'Publication',
+      presEyebrow: 'Presentation',
+      postEyebrow: 'Post',
+      read: 'Read',
+      noPost: 'No posts yet.',
+      pubsHref: '/publications',
+      presHref: '/presentations',
+      postsBase: '/posts/',
+      postsIndexHref: '/posts',
+    };
+
+const presTitle = lang === 'ko' && (latestPres as any).title_ko ? (latestPres as any).title_ko : latestPres.title;
+const postHref = latestPost ? t.postsBase + latestPost.slug : t.postsIndexHref;
+const postDateStr = latestPost ? latestPost.data.date.toISOString().split('T')[0] : '';
+---
+<section class="py-16 md:py-24 border-t border-border">
+  <div class="mx-auto max-w-grid w-full px-6 md:px-12">
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-8">{t.heading}</h2>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {/* Latest publication */}
+      <a
+        href={t.pubsHref}
+        class="group flex flex-col rounded-lg border border-border bg-card p-6 transition hover:border-foreground/40"
+      >
+        <span class="text-xs font-mono uppercase tracking-wider text-muted-foreground">{t.pubEyebrow}</span>
+        <h3 class="mt-3 text-lg font-semibold leading-snug tracking-tight text-foreground transition group-hover:text-primary line-clamp-3">
+          {latestPub.title}
+        </h3>
+        <div class="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+          <span class="font-mono tabular-nums">{latestPub.year}</span>
+          {latestPub.journal && <span class="italic">{latestPub.journal}</span>}
+        </div>
+        <span class="mt-auto pt-4 text-sm text-muted-foreground group-hover:text-primary">{t.read} →</span>
+      </a>
+
+      {/* Latest presentation */}
+      <a
+        href={t.presHref}
+        class="group flex flex-col rounded-lg border border-border bg-card p-6 transition hover:border-foreground/40"
+      >
+        <span class="text-xs font-mono uppercase tracking-wider text-muted-foreground">{t.presEyebrow}</span>
+        <h3 class="mt-3 text-lg font-semibold leading-snug tracking-tight text-foreground transition group-hover:text-primary line-clamp-3">
+          {presTitle}
+        </h3>
+        <div class="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+          <time class="font-mono tabular-nums" datetime={latestPres.date}>{latestPres.date}</time>
+          <span>·</span>
+          <span>{latestPres.venue}</span>
+        </div>
+        <span class="mt-auto pt-4 text-sm text-muted-foreground group-hover:text-primary">{t.read} →</span>
+      </a>
+
+      {/* Latest post */}
+      <a
+        href={postHref}
+        class="group flex flex-col rounded-lg border border-border bg-card p-6 transition hover:border-foreground/40"
+      >
+        <span class="text-xs font-mono uppercase tracking-wider text-muted-foreground">{t.postEyebrow}</span>
+        {latestPost ? (
+          <>
+            <h3 class="mt-3 text-lg font-semibold leading-snug tracking-tight text-foreground transition group-hover:text-primary line-clamp-3">
+              {latestPost.data.title}
+            </h3>
+            <div class="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
+              <time class="font-mono tabular-nums" datetime={postDateStr}>{postDateStr}</time>
+            </div>
+            <span class="mt-auto pt-4 text-sm text-muted-foreground group-hover:text-primary">{t.read} →</span>
+          </>
+        ) : (
+          <>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{t.noPost}</p>
+            <span class="mt-auto pt-4 text-sm text-muted-foreground group-hover:text-primary">{t.read} →</span>
+          </>
+        )}
+      </a>
+    </div>
+  </div>
+</section>

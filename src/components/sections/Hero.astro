@@ -1,6 +1,5 @@
 ---
 import Typewriter from '../../islands/Typewriter';
-import EntryNav from './EntryNav.astro';
 interface Props { lang?: 'en' | 'ko'; }
 const { lang = 'en' } = Astro.props;
 
@@ -11,7 +10,6 @@ const copy = {
     leadBefore: 'I ',
     leadAfter: '.',
     bio: 'Engineering microbes that turn methane into useful molecules, increasingly with the help of agentic coding tools.',
-    cta: { projects: 'View Projects', publications: 'Read Publications', email: 'Email me' },
     scroll: 'scroll'
   },
   ko: {
@@ -20,7 +18,6 @@ const copy = {
     leadBefore: '',
     leadAfter: '',
     bio: '메탄을 유용한 물질로 전환하는 미생물을 만든다. 에이전틱 코딩 도구를 적극 활용한다.',
-    cta: { projects: '프로젝트 보기', publications: '논문 보기', email: '이메일' },
     scroll: '아래로'
   }
 } as const;
@@ -53,21 +50,8 @@ const t = copy[lang];
       {t.bio}
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-      <a
-        href="#software"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium shadow-sm hover:shadow-md transition focus:outline-none focus:shadow-focus"
-      >{t.cta.projects}</a>
-      <a
-        href="#publications"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-border bg-background text-foreground font-medium hover:bg-secondary transition focus:outline-none focus:shadow-focus"
-      >{t.cta.publications}</a>
-      <a
-        href="mailto:rbals1012@gmail.com"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-md text-foreground font-medium hover:bg-secondary transition focus:outline-none focus:shadow-focus"
-      >{t.cta.email}</a>
-    </div>
+    <p aria-hidden="true" class="mt-12 text-xs font-mono uppercase tracking-wider text-muted-foreground">
+      ↓ {t.scroll}
+    </p>
   </div>
-
-  <EntryNav lang={lang} />
 </section>
