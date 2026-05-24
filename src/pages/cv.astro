@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/sections/Nav.astro';
+import Footer from '../components/sections/Footer.astro';
+import CvFull from '../components/sections/CvFull.astro';
+import CvDownloadButton from '../components/CvDownloadButton.astro';
+---
+<Base
+  title="CV — Gyumin Lee"
+  description="Curriculum vitae: education, experience, skills, and selected publications."
+  lang="en"
+  path="/cv"
+>
+  <Nav lang="en" currentPath="/cv" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">CV</h1>
+        <CvDownloadButton lang="en" />
+      </div>
+    </div>
+    <div class="mt-12 px-6 md:px-8">
+      <CvFull lang="en" />
+    </div>
+  </main>
+  <Footer lang="en" />
+</Base>

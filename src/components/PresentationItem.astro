@@ -1,0 +1,36 @@
+---
+export interface Props {
+  entry: {
+    title: string;
+    title_ko?: string;
+    date: string; // YYYY-MM-DD
+    venue: string;
+    audience: 'internal' | 'external' | string;
+  };
+  lang: 'en' | 'ko';
+}
+
+const { entry, lang } = Astro.props;
+const title = lang === 'ko' && entry.title_ko ? entry.title_ko : entry.title;
+const audienceLabel = (() => {
+  if (lang === 'ko') return entry.audience === 'internal' ? '내부' : '외부';
+  return entry.audience === 'internal' ? 'Internal' : 'External';
+})();
+---
+<li class="border-t border-border py-6 first:border-t-0">
+  <div class="grid gap-2 md:grid-cols-12 md:gap-6">
+    <div class="md:col-span-2">
+      <time class="font-mono text-xs text-muted-foreground" datetime={entry.date}>{entry.date}</time>
+    </div>
+    <div class="md:col-span-10">
+      <h3 class="text-base font-medium text-foreground md:text-lg">{title}</h3>
+      <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+        <span>{entry.venue}</span>
+        <span aria-hidden="true">·</span>
+        <span class="inline-flex items-center rounded border border-border bg-secondary px-2 py-0.5 text-xs">
+          {audienceLabel}
+        </span>
+      </div>
+    </div>
+  </div>
+</li>

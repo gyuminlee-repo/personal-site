@@ -1,0 +1,26 @@
+---
+import PresentationItem from '../PresentationItem.astro';
+import data from '../../data/presentations.json';
+
+export interface Props {
+  lang: 'en' | 'ko';
+}
+const { lang } = Astro.props;
+
+const entries = [...data.presentations].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+const empty = lang === 'ko'
+  ? '등록된 발표가 아직 없습니다.'
+  : 'No presentations recorded yet.';
+---
+<section class="mx-auto max-w-4xl">
+  {entries.length === 0 ? (
+    <p class="text-sm text-muted-foreground">{empty}</p>
+  ) : (
+    <ul class="border-b border-border">
+      {entries.map((entry) => (
+        <PresentationItem entry={entry} lang={lang} />
+      ))}
+    </ul>
+  )}
+</section>

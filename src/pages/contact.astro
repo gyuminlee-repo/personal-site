@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/sections/Nav.astro';
+import Footer from '../components/sections/Footer.astro';
+import ContactInfo from '../components/ContactInfo.astro';
+---
+<Base
+  title="Contact — Gyumin Lee"
+  description="Email, GitHub, Google Scholar, and KRIBB lab address."
+  lang="en"
+  path="/contact"
+>
+  <Nav lang="en" currentPath="/contact" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">Contact</h1>
+      <p class="mt-3 max-w-2xl text-base text-muted-foreground">
+        Best reached by email for collaboration, talks, or questions.
+      </p>
+    </div>
+    <div class="mt-12 px-6 md:px-8">
+      <ContactInfo lang="en" />
+    </div>
+  </main>
+  <Footer lang="en" />
+</Base>

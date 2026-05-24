@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/sections/Nav.astro';
+import Footer from '../components/sections/Footer.astro';
+import Software from '../components/sections/Software.astro';
+---
+<Base
+  title="Tools — Gyumin Lee"
+  description="Open and lab-internal tools bridging synthetic biology experiments with operations."
+  lang="en"
+  path="/tools"
+>
+  <Nav lang="en" currentPath="/tools" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">Tools</h1>
+    </div>
+    <Software lang="en" />
+  </main>
+  <Footer lang="en" />
+</Base>
