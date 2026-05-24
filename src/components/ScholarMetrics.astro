@@ -25,7 +25,7 @@ const labels = lang === 'ko'
 
 const syncedAt = metrics.synced_at
   ? new Date(metrics.synced_at).toISOString().slice(0, 10)
-  : '—';
+  : '-';
 
 const isSeeded = (metrics as { seeded?: boolean }).seeded === true;
 

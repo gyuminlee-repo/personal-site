@@ -9,7 +9,7 @@ const all = await getCollection('posts', ({ data }) => !data.draft && data.lang 
 const posts = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <Base
-  title="포스트 — 이규민"
+  title="포스트 | 이규민"
   description="합성생물학·메탄자화균·AI 에이전트 워크플로우 기록."
   lang="ko"
   path="/ko/posts"
