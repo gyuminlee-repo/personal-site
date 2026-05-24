@@ -72,14 +72,14 @@ export default function CmdK({ lang }: Props) {
         ];
 
   const projects: Project[] = [
-    { name: 'kuma', url: 'https://github.com/gyuminlee-repo/kuma' },
+    { name: 'kuma', url: null },
     { name: 'PrimerBench', url: null },
   ];
 
   const links: LinkItem[] = [
     { label: 'GitHub', url: 'https://github.com/gyuminlee-repo' },
     { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=cnTN6OkAAAAJ' },
-    { label: 'Email', url: 'mailto:rbals1012@gmail.com' },
+    { label: 'Email', url: 'mailto:sysbiogyumin@kribb.re.kr' },
   ];
 
   const closeAnd = (fn: () => void) => () => {

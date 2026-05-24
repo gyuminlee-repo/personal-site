@@ -6,7 +6,7 @@ interface Props {
 }
 
 const DEFAULT_LABELS: Record<'en' | 'ko', string[]> = {
-  en: ['engineer methane-eating microbes', 'evolve strains under stress', 'ship lab tools with AI agents'],
+  en: ['engineer methane-eating microbes', 'evolve strains under stress', 'build lab tools with AI agents'],
   ko: ['메탄을 먹는 미생물을 공학합니다', '스트레스 하에서 균주를 진화시킵니다', 'AI 에이전트로 실험실 도구를 만듭니다'],
 };
 

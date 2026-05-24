@@ -9,7 +9,7 @@ const all = await getCollection('posts', ({ data }) => !data.draft && data.lang 
 const posts = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <Base
-  title="Posts — Gyumin Lee"
+  title="Posts — Gyu Min Lee"
   description="Writing on synthetic biology, methanotroph engineering, and agentic tooling."
   lang="en"
   path="/posts"
