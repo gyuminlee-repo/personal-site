@@ -4,5 +4,5 @@
     "types": ["@cloudflare/workers-types"],
     "lib": ["ES2022", "WebWorker"]
   },
-  "include": ["**/*.ts", "../src/**/*"]
+  "include": ["**/*.ts", "../src/lib/auth.ts"]
 }

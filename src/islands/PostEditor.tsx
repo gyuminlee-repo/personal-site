@@ -113,7 +113,10 @@ export default function PostEditor({ lang, csrf }: Props) {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      const data = await res.json().catch(() => ({}));
+      const data = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        post_url?: string;
+      };
       if (!res.ok) {
         setResult({ ok: false, msg: data.error || `HTTP ${res.status}` });
         return;
