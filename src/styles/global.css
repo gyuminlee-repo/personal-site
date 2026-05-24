@@ -110,6 +110,18 @@
     --container-chrome: 1280px;
   }
 
+
+  /* CLS mitigation: pin hero typography to stable line-boxes
+     so font-swap reflow does not bubble down through the block. */
+  #hero h1 {
+    line-height: 1;
+    min-height: 1em;
+  }
+  #hero p.text-2xl {
+    line-height: 1.3;
+    min-height: 1.3em;
+  }
+
   /* Korean language adjustment */
   :lang(ko),
   [lang="ko"] {

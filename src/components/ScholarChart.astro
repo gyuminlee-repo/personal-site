@@ -32,45 +32,46 @@ const empty = lang === 'ko' ? '데이터 없음' : 'No data';
     {heading}
   </div>
   {years.length === 0 ? (
-    <div class="text-xs text-muted-foreground">{empty}</div>
+    <div class="h-20 text-xs text-muted-foreground">{empty}</div>
   ) : (
-    <svg
-      viewBox={`0 0 ${W} ${H}`}
-      width="100%"
-      height="auto"
-      role="img"
-      aria-label={heading}
-      class="block"
-    >
-      {years.map((year, i) => {
-        const v = values[i];
-        const h = (v / maxVal) * barAreaH;
-        const x = PAD_X + i * (barW + gap);
-        const y = PAD_TOP + (barAreaH - h);
-        return (
-          <g>
-            <rect
-              x={x}
-              y={y}
-              width={barW}
-              height={Math.max(h, 1)}
-              rx="2"
-              class="fill-primary"
-            >
-              <title>{`${year}: ${v}`}</title>
-            </rect>
-            <text
-              x={x + barW / 2}
-              y={H - 3}
-              text-anchor="middle"
-              class="fill-muted-foreground"
-              style="font-size: 9px; font-family: ui-monospace, monospace;"
-            >
-              {year.slice(-2)}
-            </text>
-          </g>
-        );
-      })}
-    </svg>
+    <div class="h-20 w-full">
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label={heading}
+        class="block w-full h-full"
+      >
+        {years.map((year, i) => {
+          const v = values[i];
+          const h = (v / maxVal) * barAreaH;
+          const x = PAD_X + i * (barW + gap);
+          const y = PAD_TOP + (barAreaH - h);
+          return (
+            <g>
+              <rect
+                x={x}
+                y={y}
+                width={barW}
+                height={Math.max(h, 1)}
+                rx="2"
+                class="fill-primary"
+              >
+                <title>{`${year}: ${v}`}</title>
+              </rect>
+              <text
+                x={x + barW / 2}
+                y={H - 3}
+                text-anchor="middle"
+                class="fill-muted-foreground"
+                style="font-size: 9px; font-family: ui-monospace, monospace;"
+              >
+                {year.slice(-2)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
   )}
 </div>

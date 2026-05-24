@@ -5,6 +5,9 @@ dist
 .env.local
 .DS_Store
 bun.lockb
+.claude/
+.codex-review-passed
+notes/handoffs/
 
 # Translation cache (commit-safe but optional)
 # .translation-cache/

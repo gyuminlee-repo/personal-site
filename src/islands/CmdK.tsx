@@ -109,6 +109,8 @@ export default function CmdK({ lang }: Props) {
           >
             <Command.Input
               autoFocus
+              id="cmdk-input"
+              name="cmdk-search"
               placeholder={lang === 'ko' ? '검색 또는 명령…' : 'Search or run a command…'}
               className="w-full px-4 py-3 bg-card text-foreground border-b border-border outline-none placeholder:text-muted-foreground"
             />

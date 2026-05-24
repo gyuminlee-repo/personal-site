@@ -138,6 +138,9 @@ export default function AskWidget({ lang: initialLang }: Props) {
                 className="flex items-end gap-2"
               >
                 <textarea
+                  id="ask-question"
+                  name="ask-question"
+                  aria-label={lang === 'ko' ? '이규민에 대해 질문' : 'Ask a question about Gyumin'}
                   value={q}
                   onChange={(e) => setQ(e.target.value)}
                   rows={1}
