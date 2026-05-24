@@ -53,17 +53,19 @@
 
     /* ----------------------------------------------------------------------
      * 3. TYPOGRAPHY
+     * Metric-adjusted fallbacks (defined below in top-level @font-face)
+     * sit between the web font and system-ui to prevent CLS during swap.
      * -------------------------------------------------------------------- */
     --font-sans:
-      "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Inter", "Inter Fallback", system-ui, -apple-system, BlinkMacSystemFont,
       "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
     --font-sans-kr:
-      "Pretendard", "Inter", system-ui, -apple-system,
+      "Pretendard", "Pretendard Fallback", "Inter", "Inter Fallback", system-ui, -apple-system,
       BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
 
     --font-mono:
-      "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular,
+      "JetBrains Mono", "JetBrains Mono Fallback", "IBM Plex Mono", ui-monospace, SFMono-Regular,
       Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
     /* ----------------------------------------------------------------------
@@ -112,14 +114,23 @@
 
 
   /* CLS mitigation: pin hero typography to stable line-boxes
-     so font-swap reflow does not bubble down through the block. */
+     so font-swap reflow does not bubble down through the block.
+     The hero is in min-h-[88vh] flex items-center, so ANY height
+     change in inner elements re-centers the entire block and
+     triggers a large CLS event. Lock heights aggressively. */
   #hero h1 {
     line-height: 1;
-    min-height: 1em;
+    height: 1em;
+    overflow: hidden;
   }
   #hero p.text-2xl {
     line-height: 1.3;
-    min-height: 1.3em;
+    height: 1.3em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  #hero #typewriter-slot {
+    overflow: hidden;
   }
 
   /* Korean language adjustment */
@@ -169,4 +180,39 @@
     70%  { box-shadow: 0 0 0 8px rgb(16 185 129 / 0); }
     100% { box-shadow: 0 0 0 0 rgb(16 185 129 / 0); }
   }
+}
+
+/* ----- Font fallback metric overrides ---------------------------------
+   Prevent CLS by matching the metrics of a system fallback to the web font
+   that will eventually load. See https://web.dev/articles/css-size-adjust
+   --------------------------------------------------------------------- */
+
+/* Inter fallback - based on Arial */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  size-adjust: 107.4%;
+  ascent-override: 90.5%;
+  descent-override: 22.5%;
+  line-gap-override: 0%;
+}
+
+/* Pretendard fallback - based on Apple SD Gothic Neo / Malgun Gothic */
+@font-face {
+  font-family: 'Pretendard Fallback';
+  src: local('Apple SD Gothic Neo'), local('Malgun Gothic'), local('Arial');
+  size-adjust: 105%;
+  ascent-override: 92.5%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+/* JetBrains Mono fallback - based on Menlo / Consolas */
+@font-face {
+  font-family: 'JetBrains Mono Fallback';
+  src: local('Menlo'), local('Consolas'), local('Courier New');
+  size-adjust: 100%;
+  ascent-override: 75%;
+  descent-override: 23%;
+  line-gap-override: 0%;
 }
