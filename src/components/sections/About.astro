@@ -19,7 +19,14 @@ const t = <T,>(koValue: T, enValue: T): T => {
 const about = {
   eyebrow: t(bio.about.eyebrow, fallback.about.eyebrow),
   heading: t(bio.about.heading, fallback.about.heading),
-  paragraphs: bio.about.paragraphs.map((p, i) => t(p, fallback.about.paragraphs[i] ?? '')),
+  lead: t(bio.about.lead, fallback.about.lead),
+  facets: bio.about.facets.map((f, i) => {
+    const fb = fallback.about.facets[i] ?? f;
+    return {
+      label: t(f.label, fb.label),
+      body: t(f.body, fb.body),
+    };
+  }),
 };
 
 const education = {
@@ -74,52 +81,57 @@ const skills = {
       {about.heading}
     </h2>
 
-    <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-x-12">
-      <div class="md:col-span-7">
-        <div class="space-y-4 text-lg leading-relaxed text-foreground md:text-xl">
-          {about.paragraphs.map((p) => <p set:html={italicize(p)} />)}
+    <p
+      class="mt-8 max-w-prose text-lg leading-relaxed text-muted-foreground md:text-xl"
+      set:html={italicize(about.lead)}
+    />
+    <dl class="mt-8 grid gap-4 md:grid-cols-3">
+      {about.facets.map((f) => (
+        <div class="rounded-md border border-border bg-card p-5 md:p-6">
+          <dt class="mb-2 text-xs font-medium uppercase tracking-[0.14em] text-primary">{f.label}</dt>
+          <dd class="text-sm leading-relaxed text-foreground" set:html={italicize(f.body)} />
         </div>
+      ))}
+    </dl>
+
+    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div class="rounded-lg border border-border bg-card p-6 md:p-7">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
+          {education.heading}
+        </h3>
+        <ul class="mt-4 space-y-5">
+          {education.items.map((item) => (
+            <li class="text-sm">
+              <div class="font-medium text-foreground">{item.degree}</div>
+              <div class="mt-0.5 text-muted-foreground">{item.institution}</div>
+              {item.lab && <div class="mt-0.5 text-xs text-muted-foreground">{item.lab}</div>}
+              <div class="mt-1 font-mono text-xs text-muted-foreground">{item.period}</div>
+              {item.highlight && (
+                <div class="mt-2 text-xs leading-relaxed text-muted-foreground">{item.highlight}</div>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <aside class="md:col-span-5 md:pl-4">
-        <div class="rounded-lg border border-border bg-card p-6 md:p-7">
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
-            {education.heading}
-          </h3>
-          <ul class="mt-4 space-y-5">
-            {education.items.map((item) => (
-              <li class="text-sm">
-                <div class="font-medium text-foreground">{item.degree}</div>
-                <div class="mt-0.5 text-muted-foreground">{item.institution}</div>
-                {item.lab && <div class="mt-0.5 text-xs text-muted-foreground">{item.lab}</div>}
-                <div class="mt-1 font-mono text-xs text-muted-foreground">{item.period}</div>
-                {item.highlight && (
-                  <div class="mt-2 text-xs leading-relaxed text-muted-foreground">{item.highlight}</div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div class="mt-6 rounded-lg border border-border bg-card p-6 md:p-7">
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
-            {experience.heading}
-          </h3>
-          <ul class="mt-4 space-y-5">
-            {experience.items.map((item) => (
-              <li class="text-sm">
-                <div class="font-medium text-foreground">{item.role}</div>
-                <div class="mt-0.5 text-muted-foreground">{item.org}</div>
-                {item.lab && <div class="mt-0.5 text-xs text-muted-foreground">{item.lab}</div>}
-                <div class="mt-1 font-mono text-xs text-muted-foreground">{item.period}</div>
-                {item.highlight && (
-                  <div class="mt-2 text-xs leading-relaxed text-muted-foreground">{item.highlight}</div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </aside>
+      <div class="rounded-lg border border-border bg-card p-6 md:p-7">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
+          {experience.heading}
+        </h3>
+        <ul class="mt-4 space-y-5">
+          {experience.items.map((item) => (
+            <li class="text-sm">
+              <div class="font-medium text-foreground">{item.role}</div>
+              <div class="mt-0.5 text-muted-foreground">{item.org}</div>
+              {item.lab && <div class="mt-0.5 text-xs text-muted-foreground">{item.lab}</div>}
+              <div class="mt-1 font-mono text-xs text-muted-foreground">{item.period}</div>
+              {item.highlight && (
+                <div class="mt-2 text-xs leading-relaxed text-muted-foreground">{item.highlight}</div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
 
     <div class="mt-16">

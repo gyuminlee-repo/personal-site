@@ -117,9 +117,21 @@ const labels = {
 
   <section class="mt-10">
     <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">{labels.bio}</h3>
-    <div class="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
-      {bio.about.paragraphs.map((p, i) => <p set:html={italicize(t(p, fallback.about.paragraphs[i] ?? ''))} />)}
-    </div>
+    <p
+      class="mt-3 text-sm leading-relaxed text-muted-foreground"
+      set:html={italicize(t(bio.about.lead, fallback.about.lead))}
+    />
+    <dl class="mt-4 grid gap-3 md:grid-cols-3">
+      {bio.about.facets.map((f, i) => {
+        const fb = fallback.about.facets[i] ?? f;
+        return (
+          <div class="rounded-md border border-border bg-card p-4">
+            <dt class="mb-1 text-xs font-medium uppercase tracking-[0.14em] text-primary">{t(f.label, fb.label)}</dt>
+            <dd class="text-sm leading-relaxed text-muted-foreground" set:html={italicize(t(f.body, fb.body))} />
+          </div>
+        );
+      })}
+    </dl>
   </section>
 
   <section class="mt-10">
