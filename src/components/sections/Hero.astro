@@ -7,8 +7,7 @@ const copy = {
   en: {
     eyebrow: 'KRIBB · C1 Team · Postdoc',
     name: 'Gyumin Lee',
-    role: 'Methanotroph Engineer',
-    leadBefore: 'I build ',
+    leadBefore: 'I ',
     leadAfter: '.',
     bio: 'Engineering microbes that turn methane into useful molecules, increasingly with the help of agentic coding tools.',
     cta: { projects: 'View Projects', publications: 'Read Publications', email: 'Email me' },
@@ -17,9 +16,8 @@ const copy = {
   ko: {
     eyebrow: 'KRIBB · C1팀 · 박사후연구원',
     name: '이규민',
-    role: '메탄자화균 엔지니어',
     leadBefore: '',
-    leadAfter: '를 만든다.',
+    leadAfter: '',
     bio: '메탄을 유용한 물질로 전환하는 미생물을 만든다. 에이전틱 코딩 도구를 적극 활용한다.',
     cta: { projects: '프로젝트 보기', publications: '논문 보기', email: '이메일' },
     scroll: '아래로'
@@ -45,7 +43,7 @@ const t = copy[lang];
       {t.leadBefore}
       <span
         id="typewriter-slot"
-        class="inline-block min-w-[26ch] align-baseline whitespace-nowrap"
+        class="inline-block min-w-[34ch] align-baseline whitespace-nowrap"
         data-lang={lang}
       ><Typewriter client:load lang={lang} /></span>{t.leadAfter}
     </p>
