@@ -7,7 +7,7 @@
       "id": "W0-foundation",
       "description": "Content Collection 등록 + now/presentations.json 시드 + CV PDF asset + posts images dir",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f public/이규민_CV.pdf ] && [ -f src/content/config.ts ] && [ -f src/data/now.json ] && [ -f src/data/presentations.json ] && bun run typecheck >/dev/null 2>&1'",
-      "state": "pending",
+      "state": "in_progress",
       "depends_on": []
     },
     {
@@ -15,28 +15,36 @@
       "description": "Nav 8 메뉴 + Software→Tools 라벨 + CmdK Sections route navigation + Base canonical/hreflang",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && grep -q \"Tools\" src/components/sections/Nav.astro && grep -q \"rel=\\\"canonical\\\"\" src/layouts/Base.astro && grep -q \"/about\\|/tools\\|/publications\" src/islands/CmdK.tsx && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
       "state": "pending",
-      "depends_on": ["W0-foundation"]
+      "depends_on": [
+        "W0-foundation"
+      ]
     },
     {
       "id": "W2-pages-en-ko",
       "description": "EN 6 + KO 6 콘텐츠 페이지 + posts/index + posts/[slug] + RSS + PostCard/PresentationsList/CvFull/ContactInfo 컴포넌트",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && for p in about tools publications presentations cv contact; do [ -f \"src/pages/${p}.astro\" ] || exit 1; [ -f \"src/pages/ko/${p}.astro\" ] || exit 1; done && [ -f src/pages/posts/index.astro ] && [ -f src/pages/posts/\\[slug\\].astro ] && [ -f src/pages/ko/posts/index.astro ] && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
       "state": "pending",
-      "depends_on": ["W1-nav-meta"]
+      "depends_on": [
+        "W1-nav-meta"
+      ]
     },
     {
       "id": "W3-posts-pipeline-home",
       "description": "posts_sync.py + GHA posts-sync.yml + Home 재구성 (Hero+Now+Latest 3) + EntryNav 삭제",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f scripts/posts_sync.py ] && [ -f .github/workflows/posts-sync.yml ] && [ -f src/components/sections/Now.astro ] && [ -f src/components/sections/Latest.astro ] && [ -f src/lib/latest.ts ] && [ ! -f src/components/sections/EntryNav.astro ] && python3 -c \"import ast; ast.parse(open(\\\"scripts/posts_sync.py\\\").read())\" && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
       "state": "pending",
-      "depends_on": ["W2-pages-en-ko"]
+      "depends_on": [
+        "W2-pages-en-ko"
+      ]
     },
     {
       "id": "W4-verify",
       "description": "clean build + 14+ route 존재 검증 + dist HTML grep + posts_sync 무결성 + 보고서",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && rm -rf dist .astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1 && for r in / about tools publications presentations posts cv contact; do [ -f \"dist${r}/index.html\" ] || [ -f \"dist${r}.html\" ] || exit 1; done && for r in / about tools publications presentations posts cv contact; do [ -f \"dist/ko${r}/index.html\" ] || [ -f \"dist/ko${r}.html\" ] || exit 1; done && ! grep -rq \"EntryNav\\|kuro-demo\" dist/'",
       "state": "pending",
-      "depends_on": ["W3-posts-pipeline-home"]
+      "depends_on": [
+        "W3-posts-pipeline-home"
+      ]
     }
   ]
 }

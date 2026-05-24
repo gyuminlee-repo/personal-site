@@ -1,0 +1,13 @@
+{
+  "updated_at": "2026-05-24",
+  "items_en": [
+    "ALE paper revision (1st-author, methanol stress in M. extorquens)",
+    "PrimerBench: off-target performance tuning for new host strains",
+    "Wiring KRIBB C1 lab notebook automation through Claude Code agents"
+  ],
+  "items_ko": [
+    "ALE 1저자 논문 리비전 (M. extorquens 메탄올 스트레스)",
+    "PrimerBench: 신규 host strain용 off-target 성능 튜닝",
+    "KRIBB C1 lab notebook 자동화 Claude Code 에이전트 연결"
+  ]
+}
