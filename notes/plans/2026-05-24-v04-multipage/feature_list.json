@@ -23,7 +23,7 @@
       "id": "W2-pages-en-ko",
       "description": "EN 6 + KO 6 콘텐츠 페이지 + posts/index + posts/[slug] + RSS + PostCard/PresentationsList/CvFull/ContactInfo 컴포넌트",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && for p in about tools publications presentations cv contact; do [ -f \"src/pages/${p}.astro\" ] || exit 1; [ -f \"src/pages/ko/${p}.astro\" ] || exit 1; done && [ -f src/pages/posts/index.astro ] && [ -f src/pages/posts/\\[slug\\].astro ] && [ -f src/pages/ko/posts/index.astro ] && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
-      "state": "in_progress",
+      "state": "done",
       "depends_on": [
         "W1-nav-meta"
       ]
