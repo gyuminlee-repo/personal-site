@@ -1,10 +1,10 @@
 {
-  "_note": "TODO Phase 3.2 i18n: translate every string below from src/content/bio.en.json. Keys mirror EN exactly. Latin organism names (Methylorubrum extorquens) must stay italicized. Declarative '~다' tone, no '~합니다'. Glossary applies (methylotroph 메틸영양균, methanotroph 메탄자화균, ALE 적응진화).",
+  "_note": "TODO Phase 3.2 i18n: translate every string below from src/content/bio.en.json. Keys mirror EN exactly. Latin organism names (*Methylorubrum extorquens*) must stay italicized — wrap with single asterisks so the italicize() helper renders <em>. Declarative '~다' tone, no '~합니다'. Glossary applies (methylotroph 메틸영양균, methanotroph 메탄자화균, ALE 적응진화).",
   "meta": {
     "name": "Gyu Min Lee",
     "korean_name": "이규민",
     "title": "박사후연구원",
-    "affiliation": "한국생명공학연구원 (KRIBB), C1 리파이너리 연구센터",
+    "affiliation": "한국생명공학연구원 (KRIBB), 합성생물학연구센터",
     "pi": "이혜원 박사님",
     "location": "대한민국 대전",
     "focus_areas": [
@@ -14,7 +14,7 @@
       ""
     ],
     "contact": {
-      "email": "rbals1012@gmail.com",
+      "email": "sysbiogyumin@kribb.re.kr",
       "github": "gyuminlee-repo",
       "scholar": "cnTN6OkAAAAJ"
     }
@@ -23,14 +23,14 @@
     "eyebrow": "소개",
     "heading": "C1 탄소에 적용하는 시스템 생물학.",
     "paragraphs": [
-      "한국생명공학연구원(KRIBB) C1 팀 박사후연구원. UNIST 박사 과정에서 Methylorubrum extorquens가 장기간 메탄올 스트레스 하에서 C1 대사를 어떻게 재편하는지를 700세대 이상의 ALE와 멀티오믹스, AlphaFold3 구조 분석으로 추적했습니다. KRIBB에서는 같은 축을 새로운 메탄자화균 숙주로 확장하고, AI 코딩 에이전트 위에 dry lab 도구를 쌓아 wet lab 주기가 멈추지 않도록 합니다."
+      "한국생명공학연구원(KRIBB) 이혜원 박사님 C1 team 박사후연구원. UNIST 석박통합과정에서 *Methylorubrum extorquens*가 장기간 메탄올 스트레스 하에서 C1 대사를 어떻게 재편하는지를 700세대 이상의 ALE와 멀티오믹스, AlphaFold3 구조 분석으로 추적했다. KRIBB에서는 같은 축을 새로운 메탄자화균 숙주로 확장하고, AI 코딩 에이전트 위에 dry lab 도구를 쌓아 wet lab 주기가 멈추지 않도록 한다."
     ]
   },
   "education": {
     "heading": "학력",
     "items": [
       {
-        "degree": "박사, 화학공학",
+        "degree": "박사 (석박통합과정), 화학공학",
         "institution": "울산과학기술원 (UNIST)",
         "lab": "시스템 생물학 연구실, 지도교수 김동혁 교수님",
         "period": "2019.03 – 2026.02",
@@ -40,7 +40,7 @@
         "degree": "학사, 유전공학",
         "institution": "경희대학교",
         "lab": null,
-        "period": "2010.03 – 2017.02",
+        "period": "2011.03 – 2017.02",
         "highlight": null
       }
     ]
@@ -50,13 +50,13 @@
     "items": [
       {
         "role": "박사후연구원",
-        "org": "한국생명공학연구원 (KRIBB), C1 리파이너리 연구센터",
-        "lab": "이혜원 박사님 lab",
+        "org": "한국생명공학연구원 (KRIBB), 합성생물학연구센터",
+        "lab": "이혜원 박사님 C1 team",
         "period": "2026.03 – 현재",
         "highlight": ""
       },
       {
-        "role": "박사과정 연구원",
+        "role": "석박통합과정 연구원",
         "org": "UNIST 화학공학과",
         "lab": "시스템 생물학 연구실 (김동혁 교수님)",
         "period": "2019.03 – 2026.02",

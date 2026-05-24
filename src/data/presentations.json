@@ -3,23 +3,16 @@
     {
       "title": "Claude Code agentic workflows for biotech",
       "title_ko": "Claude Code 에이전틱 워크플로우 (바이오텍)",
-      "date": "2026-05-29",
-      "venue": "KRIBB C1 Team Seminar",
-      "audience": "internal"
+      "date": "2026-05-22",
+      "venue": "KRIBB internal seminar / KRIBB 합성생물학연구센터 내부 세미나",
+      "audience": "internal / 내부"
     },
     {
       "title": "Methanol stress adaptation in M. extorquens via ALE",
       "title_ko": "ALE를 통한 M. extorquens 메탄올 스트레스 적응",
       "date": "2026-05-23",
-      "venue": "양동수 교수 연구실 (UNIST)",
-      "audience": "external"
-    },
-    {
-      "title": "PrimerBench: off-target benchmarking for primer design",
-      "title_ko": "PrimerBench: 프라이머 설계 off-target 벤치마킹",
-      "date": "2026-04-18",
-      "venue": "KRIBB C1 Team Seminar",
-      "audience": "internal"
+      "venue": "UNIST 화공생명공학부 초청 세미나 (양동수 교수님 연구실)",
+      "audience": "UNIST Dept. of Chemical and Biomolecular Engineering — graduate students and faculty / UNIST 화공생명공학부 대학원생·교수진"
     }
   ]
 }

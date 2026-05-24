@@ -3,7 +3,7 @@
     "name": "Gyu Min Lee",
     "korean_name": "이규민",
     "title": "Postdoctoral Researcher",
-    "affiliation": "KRIBB (Korea Research Institute of Bioscience and Biotechnology), C1 Refinery Research Center",
+    "affiliation": "KRIBB (Korea Research Institute of Bioscience and Biotechnology), Center for Synthetic Biology",
     "pi": "Hyewon Lee, Ph.D.",
     "location": "Daejeon, South Korea",
     "focus_areas": [
@@ -13,7 +13,7 @@
       "Agentic engineering for synthetic biology"
     ],
     "contact": {
-      "email": "rbals1012@gmail.com",
+      "email": "sysbiogyumin@kribb.re.kr",
       "github": "gyuminlee-repo",
       "scholar": "cnTN6OkAAAAJ"
     }
@@ -22,24 +22,24 @@
     "eyebrow": "About",
     "heading": "Systems biology, applied to C1 carbon.",
     "paragraphs": [
-      "Postdoctoral researcher at KRIBB C1 Team. My PhD at UNIST traced how Methylorubrum extorquens reorganizes C1 metabolism under sustained methanol stress through 700+ generation ALE coupled with multi-omics and AlphaFold3 structural analysis. At KRIBB I extend the same axis to new methanotroph hosts and build the dry-lab tooling on top of AI coding agents so the wet-lab cycle never has to wait."
+      "Postdoctoral researcher in the C1 team led by Hyewon Lee, Ph.D. PhD at UNIST traced how *Methylorubrum extorquens* reorganizes C1 metabolism under sustained methanol stress through 700+ generation ALE coupled with multi-omics and AlphaFold3 structural analysis. At KRIBB the same axis extends to new methanotroph hosts, with dry-lab tooling built on top of AI coding agents so the wet-lab cycle never has to wait."
     ]
   },
   "education": {
     "heading": "Education",
     "items": [
       {
-        "degree": "Ph.D., Chemical Engineering",
+        "degree": "Ph.D. (Integrated M.S./Ph.D.), Chemical Engineering",
         "institution": "Ulsan National Institute of Science and Technology (UNIST)",
         "lab": "Systems Biology Lab, advisor: Donghyuk Kim, Ph.D.",
         "period": "2019.03 – 2026.02",
-        "highlight": "Dissertation: Systems-level characterization of adaptive responses to methanol stress in Methylorubrum extorquens."
+        "highlight": "Dissertation: Systems-level characterization of adaptive responses to methanol stress in *Methylorubrum extorquens*."
       },
       {
         "degree": "B.S., Genetic Engineering",
         "institution": "Kyung Hee University",
         "lab": null,
-        "period": "2010.03 – 2017.02",
+        "period": "2011.03 – 2017.02",
         "highlight": null
       }
     ]
@@ -49,8 +49,8 @@
     "items": [
       {
         "role": "Postdoctoral Researcher",
-        "org": "KRIBB, C1 Refinery Research Center",
-        "lab": "Hyewon Lee Lab",
+        "org": "KRIBB, Center for Synthetic Biology",
+        "lab": "C1 team led by Hyewon Lee, Ph.D.",
         "period": "2026.03 – present",
         "highlight": "Methanotroph strain engineering, multi-omics pipelines, agentic tooling for the C1 team."
       },
