@@ -32,7 +32,7 @@
       "id": "W3-posts-pipeline-home",
       "description": "posts_sync.py + GHA posts-sync.yml + Home 재구성 (Hero+Now+Latest 3) + EntryNav 삭제",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f scripts/posts_sync.py ] && [ -f .github/workflows/posts-sync.yml ] && [ -f src/components/sections/Now.astro ] && [ -f src/components/sections/Latest.astro ] && [ -f src/lib/latest.ts ] && [ ! -f src/components/sections/EntryNav.astro ] && python3 -c \"import ast; ast.parse(open(\\\"scripts/posts_sync.py\\\").read())\" && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
-      "state": "pending",
+      "state": "done",
       "depends_on": [
         "W2-pages-en-ko"
       ]
@@ -41,7 +41,7 @@
       "id": "W4-verify",
       "description": "clean build + 14+ route 존재 검증 + dist HTML grep + posts_sync 무결성 + 보고서",
       "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && rm -rf dist .astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1 && for r in / about tools publications presentations posts cv contact; do [ -f \"dist${r}/index.html\" ] || [ -f \"dist${r}.html\" ] || exit 1; done && for r in / about tools publications presentations posts cv contact; do [ -f \"dist/ko${r}/index.html\" ] || [ -f \"dist/ko${r}.html\" ] || exit 1; done && ! grep -rq \"EntryNav\\|kuro-demo\" dist/'",
-      "state": "pending",
+      "state": "in_progress",
       "depends_on": [
         "W3-posts-pipeline-home"
       ]
