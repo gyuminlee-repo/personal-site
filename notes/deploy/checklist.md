@@ -90,6 +90,38 @@ Decisions deferred during planning. Sweep before announcing the site:
 7. **Profile photo** — none yet. Add `src/assets/profile.{jpg,webp}` and wire into Hero or About.
 8. **Custom domain** — deferred (e.g. `gyuminlee.dev`). Add via Cloudflare Pages → Custom domains when ready.
 
+### Posts in-site editor 활성화 (v0.05+)
+
+1. **로컬에서 환경변수 생성**
+   ```bash
+   cd /Users/gml/_workspace/personal-site
+   bun scripts/hash_password.ts
+   # password 입력 (12+ chars) → 3개 env 값 출력 (PASSWORD_HASH, PASSWORD_SALT, COOKIE_SECRET)
+   ```
+
+2. **GitHub Fine-grained PAT 생성**
+   - https://github.com/settings/personal-access-tokens/new
+   - Repository access: Only select repositories → gyuminlee-repo/personal-site
+   - Permissions: Contents → Read and write
+   - Expiration: 90 days
+   - 토큰 복사 (한 번만 표시됨)
+
+3. **Cloudflare Pages 환경변수 설정** (Production + Preview):
+   - `PASSWORD_HASH` = (CLI 출력)
+   - `PASSWORD_SALT` = (CLI 출력)
+   - `COOKIE_SECRET` = (CLI 출력)
+   - `GITHUB_PAT` = (위 2단계 PAT)
+   - `GITHUB_REPO` = `gyuminlee-repo/personal-site`
+   - (선택) `SITE_ORIGIN` = `https://gyuminlee.dev` (Referer 검증용)
+
+4. **첫 로그인 + 발행**
+   - https://<your-site>/post/login → 비밀번호 입력 → /post/new 자동 이동
+   - 첫 post 작성 → Publish → ~2분 후 https://<your-site>/posts/<slug> 게재 확인
+
+5. **PAT 갱신**: 90일마다. GitHub UI에서 regenerate → Cloudflare env 갱신.
+
+6. **로그아웃**: POST `/api/post/logout` 또는 cookie 자체 만료(24h).
+
 ## Future iterations
 
 - Dark mode (tokens already prepped with `[data-theme="dark"]` placeholder)
