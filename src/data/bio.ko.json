@@ -21,11 +21,9 @@
   },
   "about": {
     "eyebrow": "소개",
-    "heading": "",
-    "lede": "",
+    "heading": "C1 탄소에 적용하는 시스템 생물학.",
     "paragraphs": [
-      "",
-      ""
+      "한국생명공학연구원(KRIBB) C1 팀 박사후연구원. UNIST 박사 과정에서 Methylorubrum extorquens가 장기간 메탄올 스트레스 하에서 C1 대사를 어떻게 재편하는지를 700세대 이상의 ALE와 멀티오믹스, AlphaFold3 구조 분석으로 추적했습니다. KRIBB에서는 같은 축을 새로운 메탄자화균 숙주로 확장하고, AI 코딩 에이전트 위에 dry lab 도구를 쌓아 wet lab 주기가 멈추지 않도록 합니다."
     ]
   },
   "education": {

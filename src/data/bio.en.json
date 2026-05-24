@@ -21,10 +21,8 @@
   "about": {
     "eyebrow": "About",
     "heading": "Systems biology, applied to C1 carbon.",
-    "lede": "I work on engineering methanotrophic and methylotrophic bacteria so that methane and methanol can serve as starting carbons for synthetic biology. The wet-lab spine of my work is adaptive laboratory evolution (ALE) coupled with multi-omics sequencing; the read-out is mechanism, not just phenotype. Lately I run an increasing share of that pipeline through AI coding agents, which compresses the slow seam between an experiment finishing and the next one being designed.",
     "paragraphs": [
-      "My doctoral work at UNIST traced how Methylorubrum extorquens reorganizes its C1 metabolism under sustained methanol stress: 700+ generations of ALE, whole-genome and transcriptome integration, and AlphaFold3 structural analysis to read the convergent mutations as a coherent stress-response network.",
-      "At KRIBB I continue along the same axis with new methanotroph hosts, and I build the tooling layer (primer design, RNA-seq pipelines, lab-notebook automation) on top of Claude Code agents so the dry-lab side keeps up with the wet-lab side."
+      "Postdoctoral researcher at KRIBB C1 Team. My PhD at UNIST traced how Methylorubrum extorquens reorganizes C1 metabolism under sustained methanol stress through 700+ generation ALE coupled with multi-omics and AlphaFold3 structural analysis. At KRIBB I extend the same axis to new methanotroph hosts and build the dry-lab tooling on top of AI coding agents so the wet-lab cycle never has to wait."
     ]
   },
   "education": {
