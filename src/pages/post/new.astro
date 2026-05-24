@@ -1,0 +1,41 @@
+---
+// Owner-only editor. SSR for session check + fresh CSRF cookie.
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+import {
+  verifySession,
+  parseCookie,
+  generateCSRF,
+  serializeCookie,
+} from '../../lib/auth';
+import PostEditor from '../../islands/PostEditor';
+
+// Cloudflare Pages adapter exposes bindings via Astro.locals.runtime.env.
+// Fallback to import.meta.env for local astro dev (without wrangler).
+const runtimeEnv =
+  (Astro.locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
+const cookieSecret = runtimeEnv.COOKIE_SECRET ?? import.meta.env.COOKIE_SECRET ?? '';
+
+const session = parseCookie(Astro.request.headers.get('cookie'), 'session');
+const authed = await verifySession(cookieSecret, session);
+if (!authed) {
+  return Astro.redirect('/post/login');
+}
+
+const csrf = generateCSRF();
+Astro.response.headers.append(
+  'Set-Cookie',
+  serializeCookie('csrf', csrf, {
+    maxAge: 900,
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Strict',
+  }),
+);
+---
+<Base title="New post" path="/post/new" lang="en" noindex>
+  <main class="max-w-3xl mx-auto px-6 md:px-12 py-12">
+    <h1 class="text-3xl font-semibold tracking-tight mb-8">New post</h1>
+    <PostEditor client:load lang="en" csrf={csrf} />
+  </main>
+</Base>

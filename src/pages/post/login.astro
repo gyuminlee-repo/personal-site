@@ -1,0 +1,71 @@
+---
+// Owner-only sign-in. SSR so we can mint a fresh CSRF cookie per request.
+export const prerender = false;
+import Base from '../../layouts/Base.astro';
+import { generateCSRF, serializeCookie } from '../../lib/auth';
+
+const csrf = generateCSRF();
+Astro.response.headers.append(
+  'Set-Cookie',
+  serializeCookie('csrf', csrf, {
+    maxAge: 900,
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Strict',
+  }),
+);
+---
+<Base title="Sign in" path="/post/login" lang="en" noindex>
+  <main class="min-h-screen flex items-center justify-center px-6">
+    <form id="login-form" class="w-full max-w-sm space-y-4 rounded-md border border-border bg-card p-6 md:p-8">
+      <h1 class="text-2xl font-semibold tracking-tight">Sign in</h1>
+      <input type="hidden" name="csrf" value={csrf} />
+      <label class="block text-sm">
+        <span class="block text-muted-foreground text-xs mb-1">Password</span>
+        <input
+          type="password"
+          name="password"
+          required
+          minlength="12"
+          autocomplete="current-password"
+          class="w-full bg-background border border-border rounded-md px-3 py-2 text-sm outline-none focus:border-primary"
+        />
+      </label>
+      <button
+        type="submit"
+        class="w-full rounded-md bg-primary text-primary-foreground py-2 text-sm font-medium"
+      >
+        Sign in
+      </button>
+      <p id="login-error" class="text-xs text-destructive hidden"></p>
+    </form>
+  </main>
+  <script is:inline data-next="/post/new">
+    (() => {
+      const form = document.getElementById('login-form');
+      const errorEl = document.getElementById('login-error');
+      const nextPath = document.currentScript?.dataset.next || '/post/new';
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!errorEl) return;
+        errorEl.classList.add('hidden');
+        const fd = new FormData(form);
+        const res = await fetch('/api/post/login', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            password: fd.get('password'),
+            csrf: fd.get('csrf'),
+          }),
+        });
+        if (res.ok) {
+          window.location.href = nextPath;
+          return;
+        }
+        const data = await res.json().catch(() => ({}));
+        errorEl.textContent = data.error || `HTTP ${res.status}`;
+        errorEl.classList.remove('hidden');
+      });
+    })();
+  </script>
+</Base>

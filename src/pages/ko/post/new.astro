@@ -1,0 +1,39 @@
+---
+// Owner-only editor (KO mirror). SSR for session check + fresh CSRF cookie.
+export const prerender = false;
+import Base from '../../../layouts/Base.astro';
+import {
+  verifySession,
+  parseCookie,
+  generateCSRF,
+  serializeCookie,
+} from '../../../lib/auth';
+import PostEditor from '../../../islands/PostEditor';
+
+const runtimeEnv =
+  (Astro.locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
+const cookieSecret = runtimeEnv.COOKIE_SECRET ?? import.meta.env.COOKIE_SECRET ?? '';
+
+const session = parseCookie(Astro.request.headers.get('cookie'), 'session');
+const authed = await verifySession(cookieSecret, session);
+if (!authed) {
+  return Astro.redirect('/ko/post/login');
+}
+
+const csrf = generateCSRF();
+Astro.response.headers.append(
+  'Set-Cookie',
+  serializeCookie('csrf', csrf, {
+    maxAge: 900,
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Strict',
+  }),
+);
+---
+<Base title="새 글" path="/ko/post/new" lang="ko" noindex>
+  <main class="max-w-3xl mx-auto px-6 md:px-12 py-12">
+    <h1 class="text-3xl font-semibold tracking-tight mb-8">새 글</h1>
+    <PostEditor client:load lang="ko" csrf={csrf} />
+  </main>
+</Base>
