@@ -1,5 +1,5 @@
 {
-  "_note": "TODO Phase 3.2 i18n: translate every string below from src/content/bio.en.json. Keys mirror EN exactly. Latin organism names (*Methylorubrum extorquens*) must stay italicized — wrap with single asterisks so the italicize() helper renders <em>. Declarative '~다' tone, no '~합니다'. Glossary applies (methylotroph 메틸영양균, methanotroph 메탄자화균, ALE 적응진화).",
+  "_note": "TODO Phase 3.2 i18n: translate every string below from src/content/bio.en.json. Keys mirror EN exactly. Latin organism names (*Methylorubrum extorquens*) must stay italicized, wrap with single asterisks so the italicize() helper renders <em>. Polite tone '~합니다' (per v0.04.08.x decision). Glossary applies (methylotroph 메틸영양균, methanotroph 메탄자화균, ALE 적응진화).",
   "meta": {
     "name": "Gyu Min Lee",
     "korean_name": "이규민",
@@ -22,19 +22,19 @@
   "about": {
     "eyebrow": "소개",
     "heading": "C1 탄소에 적용하는 시스템 생물학.",
-    "lead": "한국생명공학연구원(KRIBB) 합성생물학연구센터 박사후연구원. AI 코딩 에이전트를 결합한 C1 미생물 공학을 합니다.",
+    "lead": "한국생명공학연구원(KRIBB) 합성생물학연구센터에서 박사후연구원으로 일합니다. C1 미생물을 공학하고, AI 코딩 에이전트를 워크플로우 곳곳에 둡니다.",
     "facets": [
       {
         "label": "연구",
-        "body": "C1 화학용 메탄자화균·메틸영양균 공학. UNIST 박사 과정에서 *Methylorubrum extorquens*를 메탄올 스트레스 하에서 700세대 이상 ALE."
+        "body": "C1 화학을 위한 메탄자화균·메틸영양균을 공학합니다. UNIST 박사 과정에서 *Methylorubrum extorquens*를 메탄올 스트레스 환경에서 700세대 이상 ALE로 진화시켰습니다."
       },
       {
         "label": "방법",
-        "body": "전장 유전체 시퀀싱 + RNA-seq + AlphaFold3 구조 분석으로 변이를 일관된 스트레스 응답 네트워크로 해석."
+        "body": "전장 유전체 시퀀싱, RNA-seq, AlphaFold3 구조 분석을 결합해 변이들을 하나의 스트레스 응답 네트워크로 읽어냅니다."
       },
       {
         "label": "도구",
-        "body": "AI 코딩 에이전트 위에 dry-lab 도구를 직접 만듭니다 — 프라이머 설계, NGS 검증, lab notebook 자동화 — wet-lab 주기가 멈추지 않도록."
+        "body": "AI 코딩 에이전트를 발판으로 dry-lab 도구를 직접 만듭니다. 프라이머 설계, NGS 검증, 실험 노트 자동화 등을 갖춰 wet-lab 주기가 멈추지 않도록 합니다."
       }
     ]
   },
