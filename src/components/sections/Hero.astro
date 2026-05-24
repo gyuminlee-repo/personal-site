@@ -1,5 +1,6 @@
 ---
 import Typewriter from '../../islands/Typewriter';
+import EntryNav from './EntryNav.astro';
 interface Props { lang?: 'en' | 'ko'; }
 const { lang = 'en' } = Astro.props;
 
@@ -28,9 +29,9 @@ const t = copy[lang];
 ---
 <section
   id="hero"
-  class="relative w-full min-h-[88vh] bg-background"
+  class="relative w-full min-h-[88vh] bg-background pb-16 md:pb-24"
 >
-  <div class="mx-auto max-w-grid w-full px-6 md:px-12 py-24 md:py-32">
+  <div class="mx-auto max-w-grid w-full px-6 md:px-12 pt-24 md:pt-32 pb-12 md:pb-16">
     <p class="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-6">
       {t.eyebrow}
     </p>
@@ -68,12 +69,5 @@ const t = copy[lang];
     </div>
   </div>
 
-  <a
-    href="#about"
-    aria-label={t.scroll}
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground transition text-sm font-mono inline-flex items-center gap-2"
-  >
-    <span>↓</span>
-    <span>{t.scroll}</span>
-  </a>
+  <EntryNav lang={lang} />
 </section>
