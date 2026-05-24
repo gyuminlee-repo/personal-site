@@ -51,16 +51,24 @@ export default function CmdK({ lang }: Props) {
   const sections: Array<[string, string]> =
     lang === 'ko'
       ? [
-          ['소개', '#about'],
-          ['소프트웨어', '#software'],
-          ['논문', '#publications'],
-          ['연락처', '#contact'],
+          ['홈', '/ko/'],
+          ['소개', '/ko/about'],
+          ['도구', '/ko/tools'],
+          ['논문', '/ko/publications'],
+          ['발표', '/ko/presentations'],
+          ['포스트', '/ko/posts'],
+          ['이력서', '/ko/cv'],
+          ['연락처', '/ko/contact'],
         ]
       : [
-          ['About', '#about'],
-          ['Software', '#software'],
-          ['Publications', '#publications'],
-          ['Contact', '#contact'],
+          ['Home', '/'],
+          ['About', '/about'],
+          ['Tools', '/tools'],
+          ['Publications', '/publications'],
+          ['Presentations', '/presentations'],
+          ['Posts', '/posts'],
+          ['CV', '/cv'],
+          ['Contact', '/contact'],
         ];
 
   const projects: Project[] = [
@@ -124,7 +132,7 @@ export default function CmdK({ lang }: Props) {
                     key={href}
                     value={`section ${label} ${href}`}
                     onSelect={closeAnd(() => {
-                      window.location.hash = href;
+                      window.location.href = href;
                     })}
                     className="px-3 py-2 rounded-md text-sm hover:bg-muted aria-selected:bg-muted cursor-pointer"
                   >
@@ -143,7 +151,7 @@ export default function CmdK({ lang }: Props) {
                     value={`project ${p.name}`}
                     onSelect={closeAnd(() => {
                       if (p.url) window.open(p.url, '_blank', 'noopener');
-                      else window.location.hash = '#software';
+                      else window.location.href = lang === 'ko' ? '/ko/tools' : '/tools';
                     })}
                     className="px-3 py-2 rounded-md text-sm hover:bg-muted aria-selected:bg-muted cursor-pointer flex items-center justify-between"
                   >

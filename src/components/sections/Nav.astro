@@ -1,27 +1,37 @@
 ---
 interface Props { lang?: 'en' | 'ko'; currentPath?: string; }
 const { lang = 'en', currentPath = '/' } = Astro.props;
-// currentPath is reserved for future active-section highlighting (Phase 4.1+)
-void currentPath;
+
+const enPrefix = '';
+const koPrefix = '/ko';
+const prefix = lang === 'ko' ? koPrefix : enPrefix;
 
 const copy = {
   en: {
     brand: 'Gyumin Lee',
     links: [
-      { href: '#about', label: 'About' },
-      { href: '#software', label: 'Software' },
-      { href: '#publications', label: 'Publications' },
-      { href: '#contact', label: 'Contact' }
+      { href: `${enPrefix}/`, label: 'Home', match: '/' },
+      { href: `${enPrefix}/about`, label: 'About', match: '/about' },
+      { href: `${enPrefix}/tools`, label: 'Tools', match: '/tools' },
+      { href: `${enPrefix}/publications`, label: 'Publications', match: '/publications' },
+      { href: `${enPrefix}/presentations`, label: 'Presentations', match: '/presentations' },
+      { href: `${enPrefix}/posts`, label: 'Posts', match: '/posts' },
+      { href: `${enPrefix}/cv`, label: 'CV', match: '/cv' },
+      { href: `${enPrefix}/contact`, label: 'Contact', match: '/contact' }
     ],
     menuLabel: 'Menu'
   },
   ko: {
     brand: '이규민',
     links: [
-      { href: '#about', label: '소개' },
-      { href: '#software', label: '소프트웨어' },
-      { href: '#publications', label: '논문' },
-      { href: '#contact', label: '연락처' }
+      { href: `${koPrefix}/`, label: '홈', match: '/ko/' },
+      { href: `${koPrefix}/about`, label: '소개', match: '/ko/about' },
+      { href: `${koPrefix}/tools`, label: '도구', match: '/ko/tools' },
+      { href: `${koPrefix}/publications`, label: '논문', match: '/ko/publications' },
+      { href: `${koPrefix}/presentations`, label: '발표', match: '/ko/presentations' },
+      { href: `${koPrefix}/posts`, label: '포스트', match: '/ko/posts' },
+      { href: `${koPrefix}/cv`, label: '이력서', match: '/ko/cv' },
+      { href: `${koPrefix}/contact`, label: '연락처', match: '/ko/contact' }
     ],
     menuLabel: '메뉴'
   }
@@ -31,6 +41,25 @@ const t = copy[lang];
 const enHome = '/';
 const koHome = '/ko/';
 const isEnActive = lang === 'en';
+
+// Normalize currentPath for active-link detection
+const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1
+  ? currentPath.slice(0, -1)
+  : currentPath;
+
+const isActive = (match: string) => {
+  if (match === '/' || match === '/ko/') {
+    return currentPath === match;
+  }
+  return normalizedPath === match || normalizedPath.startsWith(match + '/');
+};
+
+// EN/KO toggle target: prefer mirror of current path
+const stripKo = (p: string) => (p.startsWith('/ko/') ? p.slice(3) || '/' : p);
+const addKo = (p: string) => (p === '/' ? '/ko/' : `/ko${p}`);
+const enHref = isEnActive ? currentPath : stripKo(currentPath);
+const koHref = !isEnActive ? currentPath : addKo(currentPath);
+void prefix;
 ---
 <nav
   id="site-nav"
@@ -42,11 +71,12 @@ const isEnActive = lang === 'en';
       class="font-sans font-semibold text-foreground tracking-tight text-base md:text-lg hover:text-primary transition"
     >{t.brand}</a>
 
-    <div class="hidden md:flex items-center gap-8">
+    <div class="hidden md:flex items-center gap-6 lg:gap-7">
       {t.links.map((l) => (
         <a
           href={l.href}
-          class="text-sm text-muted-foreground hover:text-foreground transition"
+          class={`text-sm transition ${isActive(l.match) ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`}
+          aria-current={isActive(l.match) ? 'page' : undefined}
         >{l.label}</a>
       ))}
     </div>
@@ -55,13 +85,13 @@ const isEnActive = lang === 'en';
       <kbd class="hidden lg:inline-flex items-center px-2 py-1 rounded border border-border bg-secondary text-xs font-mono text-muted-foreground">⌘K</kbd>
       <div class="text-xs font-mono">
         <a
-          href={enHome}
+          href={enHref}
           class={`hover:text-foreground transition ${isEnActive ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
           aria-current={isEnActive ? 'page' : undefined}
         >EN</a>
         <span class="text-muted-foreground mx-1">/</span>
         <a
-          href={koHome}
+          href={koHref}
           class={`hover:text-foreground transition ${!isEnActive ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
           aria-current={!isEnActive ? 'page' : undefined}
         >KO</a>
@@ -78,7 +108,8 @@ const isEnActive = lang === 'en';
           {t.links.map((l) => (
             <a
               href={l.href}
-              class="px-3 py-2 text-sm text-foreground hover:bg-secondary rounded transition"
+              class={`px-3 py-2 text-sm rounded transition ${isActive(l.match) ? 'bg-secondary text-foreground font-medium' : 'text-foreground hover:bg-secondary'}`}
+              aria-current={isActive(l.match) ? 'page' : undefined}
             >{l.label}</a>
           ))}
         </div>
