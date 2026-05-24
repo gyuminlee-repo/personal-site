@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/sections/Nav.astro';
+import Footer from '../../components/sections/Footer.astro';
+import PostCard from '../../components/PostCard.astro';
+
+const all = await getCollection('posts', ({ data }) => !data.draft && data.lang === 'en');
+const posts = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base
+  title="Posts — Gyumin Lee"
+  description="Writing on synthetic biology, methanotroph engineering, and agentic tooling."
+  lang="en"
+  path="/posts"
+>
+  <Nav lang="en" currentPath="/posts" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">Posts</h1>
+        <a
+          href="/posts/feed.xml"
+          class="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-primary"
+        >RSS</a>
+      </div>
+      <p class="mt-3 max-w-2xl text-base text-muted-foreground">
+        Notes on synthetic biology, methanotroph engineering, and agentic dev workflows.
+      </p>
+    </div>
+    <div class="mt-12 mx-auto max-w-6xl px-6 md:px-8">
+      {posts.length === 0 ? (
+        <div class="rounded-lg border border-dashed border-border bg-card p-12 text-center">
+          <p class="text-sm text-muted-foreground">No posts yet — first one coming soon.</p>
+        </div>
+      ) : (
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => <PostCard post={post} lang="en" />)}
+        </div>
+      )}
+    </div>
+  </main>
+  <Footer lang="en" />
+</Base>

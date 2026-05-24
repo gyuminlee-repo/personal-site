@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/sections/Nav.astro';
+import Footer from '../../components/sections/Footer.astro';
+import Publications from '../../components/sections/Publications.astro';
+---
+<Base
+  title="논문 — 이규민"
+  description="피어 리뷰 논문 및 학회 발표. Google Scholar에서 매일 자동 갱신."
+  lang="ko"
+  path="/ko/publications"
+>
+  <Nav lang="ko" currentPath="/ko/publications" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">논문</h1>
+    </div>
+    <Publications lang="ko" />
+  </main>
+  <Footer lang="ko" />
+</Base>

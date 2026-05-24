@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Nav from '../../../components/sections/Nav.astro';
+import Footer from '../../../components/sections/Footer.astro';
+import PostCard from '../../../components/PostCard.astro';
+
+const all = await getCollection('posts', ({ data }) => !data.draft && data.lang === 'ko');
+const posts = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base
+  title="포스트 — 이규민"
+  description="합성생물학·메탄자화균·AI 에이전트 워크플로우 기록."
+  lang="ko"
+  path="/ko/posts"
+>
+  <Nav lang="ko" currentPath="/ko/posts" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">포스트</h1>
+        <a
+          href="/posts/feed.xml"
+          class="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-primary"
+        >RSS</a>
+      </div>
+      <p class="mt-3 max-w-2xl text-base text-muted-foreground">
+        합성생물학, 메탄자화균 엔지니어링, AI 에이전트 워크플로우 메모.
+      </p>
+    </div>
+    <div class="mt-12 mx-auto max-w-6xl px-6 md:px-8">
+      {posts.length === 0 ? (
+        <div class="rounded-lg border border-dashed border-border bg-card p-12 text-center">
+          <p class="text-sm text-muted-foreground">아직 포스트가 없습니다. 첫 글 곧 올라옵니다.</p>
+        </div>
+      ) : (
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => <PostCard post={post} lang="ko" />)}
+        </div>
+      )}
+    </div>
+  </main>
+  <Footer lang="ko" />
+</Base>

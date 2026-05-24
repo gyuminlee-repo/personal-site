@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/sections/Nav.astro';
+import Footer from '../../components/sections/Footer.astro';
+import About from '../../components/sections/About.astro';
+---
+<Base
+  title="소개 — 이규민"
+  description="KRIBB C1팀 박사후연구원. 메탄자화균·메틸로트로프 엔지니어링, ALE, AI 에이전트 기반 도구 개발."
+  lang="ko"
+  path="/ko/about"
+>
+  <Nav lang="ko" currentPath="/ko/about" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">소개</h1>
+    </div>
+    <About lang="ko" />
+  </main>
+  <Footer lang="ko" />
+</Base>

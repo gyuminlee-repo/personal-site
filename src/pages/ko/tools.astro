@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/sections/Nav.astro';
+import Footer from '../../components/sections/Footer.astro';
+import Software from '../../components/sections/Software.astro';
+---
+<Base
+  title="도구 — 이규민"
+  description="합성생물학 실험과 운영을 잇는 공개·내부 도구."
+  lang="ko"
+  path="/ko/tools"
+>
+  <Nav lang="ko" currentPath="/ko/tools" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">도구</h1>
+    </div>
+    <Software lang="ko" />
+  </main>
+  <Footer lang="ko" />
+</Base>

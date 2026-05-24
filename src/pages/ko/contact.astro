@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/sections/Nav.astro';
+import Footer from '../../components/sections/Footer.astro';
+import ContactInfo from '../../components/ContactInfo.astro';
+---
+<Base
+  title="연락처 — 이규민"
+  description="이메일·GitHub·Google Scholar·KRIBB 소속 주소."
+  lang="ko"
+  path="/ko/contact"
+>
+  <Nav lang="ko" currentPath="/ko/contact" />
+  <main class="pt-24 pb-32">
+    <div class="mx-auto max-w-6xl px-6 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">연락처</h1>
+      <p class="mt-3 max-w-2xl text-base text-muted-foreground">협업·발표·문의는 이메일로 연락주시면 빠릅니다.</p>
+    </div>
+    <div class="mt-12 px-6 md:px-8">
+      <ContactInfo lang="ko" />
+    </div>
+  </main>
+  <Footer lang="ko" />
+</Base>

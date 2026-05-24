@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Base from '../../../layouts/Base.astro';
+import Nav from '../../../components/sections/Nav.astro';
+import Footer from '../../../components/sections/Footer.astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('posts', ({ data }) => !data.draft && data.lang === 'ko');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+};
+
+type Props = { post: CollectionEntry<'posts'> };
+const { post } = Astro.props as Props;
+const { Content } = await post.render();
+const dateStr = post.data.date.toISOString().split('T')[0];
+const path = `/ko/posts/${post.slug}`;
+---
+<Base
+  title={`${post.data.title} — 이규민`}
+  description={post.data.title}
+  lang="ko"
+  path={path}
+>
+  <Nav lang="ko" currentPath="/ko/posts" />
+  <main class="pt-24 pb-32">
+    <article class="mx-auto max-w-3xl px-6 md:px-8">
+      <a
+        href="/ko/posts"
+        class="text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-primary"
+      >← 포스트 목록</a>
+      <header class="mt-6 border-b border-border pb-8">
+        <div class="flex items-center gap-3 text-xs">
+          <time class="font-mono tabular-nums text-muted-foreground" datetime={dateStr}>{dateStr}</time>
+          {post.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              {post.data.tags.map((tag) => (
+                <span class="inline-flex items-center rounded border border-border bg-secondary px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-muted-foreground">{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+        <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
+          {post.data.title}
+        </h1>
+        {post.data.cover_image && (
+          <img
+            src={post.data.cover_image}
+            alt=""
+            class="mt-8 w-full rounded-md object-cover"
+          />
+        )}
+      </header>
+      <div class="prose-content mt-10 text-base leading-relaxed text-foreground">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer lang="ko" />
+</Base>
+
+<style>
+  .prose-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .prose-content :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-content :global(p) {
+    margin: 1rem 0;
+  }
+  .prose-content :global(ul),
+  .prose-content :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+  .prose-content :global(li) {
+    margin: 0.4rem 0;
+  }
+  .prose-content :global(a) {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .prose-content :global(code) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    background: hsl(var(--secondary));
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+  }
+  .prose-content :global(pre) {
+    background: hsl(var(--secondary));
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .prose-content :global(pre code) {
+    background: transparent;
+    padding: 0;
+  }
+  .prose-content :global(blockquote) {
+    border-left: 3px solid hsl(var(--border));
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: hsl(var(--muted-foreground));
+  }
+  .prose-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+  }
+</style>
