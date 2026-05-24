@@ -1,0 +1,49 @@
+{
+  "plan_id": "2026-05-24-v03-redesign",
+  "spec": "notes/specs/2026-05-24-personal-homepage-v3-redesign.md",
+  "base_commit": "bc0ad2e",
+  "features": [
+    {
+      "id": "T1-data",
+      "description": "bio.{en,ko}.json about narrative 1문단 + projects.json kuma+primerbench만 + has_minidemo 키 삭제",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && for f in src/data/bio.en.json src/data/bio.ko.json src/data/projects.json; do python3 -c \"import json; json.load(open(\\\"$f\\\"))\" || exit 1; done && [ $(python3 -c \"import json; d=json.load(open(\\\"src/data/projects.json\\\")); print(len(d[\\\"projects\\\"]))\") -eq 2 ]'",
+      "state": "pending",
+      "depends_on": []
+    },
+    {
+      "id": "T2-components",
+      "description": "About.astro lede 참조 제거 + SoftwareCard.astro has_minidemo 분기 제거",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && ! grep -q \"about.lede\\|has_minidemo\\|minidemo-trigger\" src/components/sections/About.astro src/components/SoftwareCard.astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": ["T1-data"]
+    },
+    {
+      "id": "T3-kurodemo-removal",
+      "description": "KuroDemo.tsx 삭제 + pages KuroDemo import/section 제거 + CmdK.tsx projects 정리",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ ! -f src/islands/KuroDemo.tsx ] && ! grep -rq \"KuroDemo\" src/ && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": ["T2-components"]
+    },
+    {
+      "id": "T4-typewriter-hero-copy",
+      "description": "Typewriter.tsx DEFAULT_LABELS 동사구 교체 + Hero.astro I-pattern 문장 + KO 어순 분기",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && grep -q \"engineer methane-eating microbes\" src/islands/Typewriter.tsx && grep -q \"메탄을 먹는 미생물을 공학합니다\" src/islands/Typewriter.tsx && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": ["T3-kurodemo-removal"]
+    },
+    {
+      "id": "T5-entrynav",
+      "description": "EntryNav.astro 신규 (3 nav cards) + Hero.astro 하단 마운트",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f src/components/sections/EntryNav.astro ] && grep -q \"EntryNav\" src/components/sections/Hero.astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": ["T4-typewriter-hero-copy"]
+    },
+    {
+      "id": "T6-verify",
+      "description": "통합 typecheck + build + dist HTML grep 검증 + 보고서 기록",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1 && grep -q \"engineer methane-eating microbes\" dist/index.html && ! grep -q \"kuro-demo\\|KuroDemo\" dist/index.html dist/ko/index.html && grep -q \"kuma\" dist/index.html'",
+      "state": "pending",
+      "depends_on": ["T5-entrynav"]
+    }
+  ]
+}
