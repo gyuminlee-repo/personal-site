@@ -107,7 +107,7 @@ const skills = {
               {item.lab && <div class="mt-0.5 text-xs text-muted-foreground">{item.lab}</div>}
               <div class="mt-1 font-mono text-xs text-muted-foreground">{item.period}</div>
               {item.highlight && (
-                <div class="mt-2 text-xs leading-relaxed text-muted-foreground">{item.highlight}</div>
+                <div class="mt-2 text-xs leading-relaxed text-muted-foreground" set:html={italicize(item.highlight)} />
               )}
             </li>
           ))}
@@ -126,7 +126,7 @@ const skills = {
               {item.lab && <div class="mt-0.5 text-xs text-muted-foreground">{item.lab}</div>}
               <div class="mt-1 font-mono text-xs text-muted-foreground">{item.period}</div>
               {item.highlight && (
-                <div class="mt-2 text-xs leading-relaxed text-muted-foreground">{item.highlight}</div>
+                <div class="mt-2 text-xs leading-relaxed text-muted-foreground" set:html={italicize(item.highlight)} />
               )}
             </li>
           ))}
