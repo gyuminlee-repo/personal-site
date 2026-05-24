@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
+import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://gyuminlee.dev',
@@ -13,6 +14,7 @@ export default defineConfig({
     locales: ['en', 'ko'],
     routing: { prefixDefaultLocale: false }
   },
-  output: 'static',
+  output: 'hybrid',
+  adapter: cloudflare(),
   build: { format: 'directory' }
 });
