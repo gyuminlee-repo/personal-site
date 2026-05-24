@@ -180,21 +180,6 @@ export default function CmdK({ lang }: Props) {
               </Command.Group>
 
               <Command.Group
-                heading={lang === 'ko' ? '액션' : 'Actions'}
-                className="text-xs uppercase tracking-wide text-muted-foreground px-2 py-1 mt-2"
-              >
-                <Command.Item
-                  value="action ask ai gyumin"
-                  onSelect={closeAnd(() => {
-                    window.dispatchEvent(new CustomEvent('personal-site:open-ask'));
-                  })}
-                  className="px-3 py-2 rounded-md text-sm hover:bg-muted aria-selected:bg-muted cursor-pointer"
-                >
-                  {lang === 'ko' ? 'AI에게 질문하기 (Ask AI)' : 'Ask AI about Gyumin…'}
-                </Command.Item>
-              </Command.Group>
-
-              <Command.Group
                 heading={lang === 'ko' ? '언어' : 'Language'}
                 className="text-xs uppercase tracking-wide text-muted-foreground px-2 py-1 mt-2"
               >

@@ -9,7 +9,7 @@ Generated 2026-05-24. Owner runs each step manually. Subagent did NOT push or de
 - [x] `bun run typecheck` — 0 errors, 0 warnings, 20 files
 - [x] `bun run build` — exit 0, 2 pages, 1.05 s, 1.7 MB dist
 - [x] Dev server smoke — `/` 200, `/ko/` 200
-- [x] Bundle sizes within budget (CSS 52 KB, largest JS AskWidget 162 KB)
+- [x] Bundle sizes within budget (CSS 52 KB)
 - [x] Lighthouse — see scores below
 
 ## Lighthouse scores (local, headless Chrome)
@@ -46,7 +46,7 @@ EN performance hit by CLS=0.375 (Pretendard CDN font load + Typewriter swap). Be
   - Root directory: *(blank)*
   - Production branch: `main` (or `feat/v0.02-rebuild` until merged)
 - [ ] Environment variables (Production + Preview):
-  - `ANTHROPIC_API_KEY` = *(owner's key from console.anthropic.com — required for Ask AI widget)*
+  - `ANTHROPIC_API_KEY` = *(owner's key from console.anthropic.com — required for build-time KO translation via `src/lib/translate.ts`)*
   - Optional `SCHOLAR_ID` = `cnTN6OkAAAAJ` (also hardcoded as fallback in workflow)
 - [ ] First deploy: trigger from Cloudflare UI (~2 min)
 
@@ -64,7 +64,6 @@ EN performance hit by CLS=0.375 (Pretendard CDN font load + Typewriter swap). Be
 - [ ] `/` renders Hero + Nav + About + Software + KURO demo + Publications + Footer
 - [ ] `/ko/` renders Korean throughout (translator hits cache after first build)
 - [ ] ⌘K opens command palette, fuzzy search works
-- [ ] Ask AI button → ask "What is KURO?" → streaming reply (only e2e backend test)
 - [ ] KURO demo: type sequence, position, base → 3 primer candidates with copy buttons
 - [ ] Scholar metrics row shows current numbers (286 cites, h-index 6)
 - [ ] Re-run Lighthouse mobile audit against prod URL — confirm scores ≥90 (TLS + headers may shift numbers vs local)
@@ -76,7 +75,7 @@ Flagged during verification, not blocking deploy:
 1. **SVG `height="auto"` console error** — `src/components/ScholarChart.astro` line ~14. SVG attribute spec requires a length or percentage, not the keyword `auto`. Visual unchanged, but throws DOM error and hits Best Practices score. Fix: remove `height="auto"` (let the explicit `viewBox` handle aspect ratio) or replace with a percentage. One-line change.
 2. **Favicon 404** — no `public/favicon.svg` or `.ico`. Add a tiny SVG (initials `GL` on the accent color) or remove the `<link rel="icon">` if any.
 3. **CLS 0.375 on EN** — caused by Pretendard CDN font swap + Typewriter island swapping height. Mitigations: (a) preload Pretendard subset locally (`@fontsource/pretendard` then `display: swap`), (b) reserve fixed height on Typewriter wrapper. Not blocking deploy; bring perf back to 90+ in a follow-up.
-4. **3 form fields without `id`/`name`** — likely the AskWidget textarea or CmdK search input. Add `name="query"` and `id="ask-input"` for a11y conformance.
+4. **Form fields without `id`/`name`** — CmdK search input. Add `name="query"` for a11y conformance.
 
 ## Owner confirmation items (collected from all phases)
 
@@ -97,5 +96,3 @@ Decisions deferred during planning. Sweep before announcing the site:
 - Blog/notes section
 - Per-paper detail pages (Publications is summary only)
 - ⌘K palette: inline preview pane for projects
-- Replace per-isolate rate limit with Cloudflare KV
-- Auto-sync `functions/api/ask.ts` `SITE_CONTEXT` from `src/data/*.json` at build time
