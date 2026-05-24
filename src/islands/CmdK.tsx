@@ -64,12 +64,8 @@ export default function CmdK({ lang }: Props) {
         ];
 
   const projects: Project[] = [
-    { name: 'KURO', url: null },
-    { name: 'PrimerBench', url: null },
     { name: 'kuma', url: 'https://github.com/gyuminlee-repo/kuma' },
-    { name: 'hermes_universe', url: 'https://github.com/gyuminlee-repo/hermes_universe' },
-    { name: 'scout-feed', url: 'https://github.com/gyuminlee-repo/scout-feed' },
-    { name: 'qol', url: 'https://github.com/gyuminlee-repo/qol' },
+    { name: 'PrimerBench', url: null },
   ];
 
   const links: LinkItem[] = [

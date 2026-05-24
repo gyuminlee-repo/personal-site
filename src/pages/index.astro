@@ -6,7 +6,6 @@ import Footer from '../components/sections/Footer.astro';
 import About from '../components/sections/About.astro';
 import Software from '../components/sections/Software.astro';
 import Publications from '../components/sections/Publications.astro';
-import KuroDemo from '../islands/KuroDemo';
 ---
 <Base title="Gyumin Lee" description="Methanotroph engineer · synthetic biology postdoc">
   <Nav lang="en" currentPath="/" />
@@ -14,9 +13,6 @@ import KuroDemo from '../islands/KuroDemo';
     <Hero lang="en" />
     <About lang="en" />
     <Software lang="en" />
-    <section id="kuro-demo" class="scroll-mt-24 max-w-grid mx-auto px-6 md:px-12 pb-24">
-      <KuroDemo client:visible lang="en" />
-    </section>
     <Publications lang="en" />
     {/* Contact placeholder */}
     <section id="contact" class="scroll-mt-24" />
