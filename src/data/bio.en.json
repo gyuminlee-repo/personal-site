@@ -21,8 +21,20 @@
   "about": {
     "eyebrow": "About",
     "heading": "Systems biology, applied to C1 carbon.",
-    "paragraphs": [
-      "Postdoctoral researcher in the C1 team led by Hyewon Lee, Ph.D. PhD at UNIST traced how *Methylorubrum extorquens* reorganizes C1 metabolism under sustained methanol stress through 700+ generation ALE coupled with multi-omics and AlphaFold3 structural analysis. At KRIBB the same axis extends to new methanotroph hosts, with dry-lab tooling built on top of AI coding agents so the wet-lab cycle never has to wait."
+    "lead": "Postdoctoral researcher at KRIBB Center for Synthetic Biology, working on C1 microbe engineering with AI coding agents in the loop.",
+    "facets": [
+      {
+        "label": "Research",
+        "body": "Methanotroph and methylotroph engineering for C1 chemistry. Adaptive laboratory evolution (ALE) of *Methylorubrum extorquens* under methanol stress (700+ generations, PhD work at UNIST)."
+      },
+      {
+        "label": "Methods",
+        "body": "Whole-genome sequencing + RNA-seq + AlphaFold3 structural analysis to read mutations as a coherent stress-response network."
+      },
+      {
+        "label": "Tools",
+        "body": "Custom dry-lab tooling on top of AI coding agents — primer design, NGS verification, lab notebook automation — so the wet-lab cycle never has to wait."
+      }
     ]
   },
   "education": {

@@ -22,8 +22,20 @@
   "about": {
     "eyebrow": "소개",
     "heading": "C1 탄소에 적용하는 시스템 생물학.",
-    "paragraphs": [
-      "한국생명공학연구원(KRIBB) 이혜원 박사님 C1 team 박사후연구원. UNIST 석박통합과정에서 *Methylorubrum extorquens*가 장기간 메탄올 스트레스 하에서 C1 대사를 어떻게 재편하는지를 700세대 이상의 ALE와 멀티오믹스, AlphaFold3 구조 분석으로 추적했다. KRIBB에서는 같은 축을 새로운 메탄자화균 숙주로 확장하고, AI 코딩 에이전트 위에 dry lab 도구를 쌓아 wet lab 주기가 멈추지 않도록 한다."
+    "lead": "한국생명공학연구원(KRIBB) 합성생물학연구센터 박사후연구원. AI 코딩 에이전트를 결합한 C1 미생물 공학을 합니다.",
+    "facets": [
+      {
+        "label": "연구",
+        "body": "C1 화학용 메탄자화균·메틸영양균 공학. UNIST 박사 과정에서 *Methylorubrum extorquens*를 메탄올 스트레스 하에서 700세대 이상 ALE."
+      },
+      {
+        "label": "방법",
+        "body": "전장 유전체 시퀀싱 + RNA-seq + AlphaFold3 구조 분석으로 변이를 일관된 스트레스 응답 네트워크로 해석."
+      },
+      {
+        "label": "도구",
+        "body": "AI 코딩 에이전트 위에 dry-lab 도구를 직접 만듭니다 — 프라이머 설계, NGS 검증, lab notebook 자동화 — wet-lab 주기가 멈추지 않도록."
+      }
     ]
   },
   "education": {
