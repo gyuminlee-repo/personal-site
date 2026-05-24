@@ -1,0 +1,35 @@
+{
+  "plan_id": "2026-05-25-posts-editor",
+  "spec": "notes/specs/2026-05-25-posts-in-site-editor.md",
+  "base_commit": "ea325f2",
+  "features": [
+    {
+      "id": "W0-auth-lib-cli",
+      "description": "auth.ts (PBKDF2 + HMAC cookie + CSRF) + hash_password.ts CLI + marked dep",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f src/lib/auth.ts ] && [ -f scripts/hash_password.ts ] && grep -q marked package.json && bun run typecheck >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": []
+    },
+    {
+      "id": "W1-functions",
+      "description": "functions/api/post/{login,logout,create}.ts — auth verify + rate limit + CSRF + GitHub Trees API commit",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f functions/api/post/login.ts ] && [ -f functions/api/post/logout.ts ] && [ -f functions/api/post/create.ts ] && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": ["W0-auth-lib-cli"]
+    },
+    {
+      "id": "W2-pages-editor",
+      "description": "EN+KO /post/login + /post/new pages (SSR, noindex) + PostEditor island (form + preview + image upload)",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && [ -f src/pages/post/login.astro ] && [ -f src/pages/post/new.astro ] && [ -f src/pages/ko/post/login.astro ] && [ -f src/pages/ko/post/new.astro ] && [ -f src/islands/PostEditor.tsx ] && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1'",
+      "state": "pending",
+      "depends_on": ["W0-auth-lib-cli"]
+    },
+    {
+      "id": "W3-checklist-verify",
+      "description": "deploy checklist update + clean build + noindex grep on 4 pages",
+      "verify_command": "bash -lc 'cd /Users/gml/_workspace/personal-site && rm -rf dist .astro && bun run typecheck >/dev/null 2>&1 && bun run build >/dev/null 2>&1 && for p in /post/login /post/new /ko/post/login /ko/post/new; do grep -q \"name=\\\"robots\\\" content=\\\"noindex\" \"dist${p}/index.html\" || exit 1; done'",
+      "state": "pending",
+      "depends_on": ["W1-functions", "W2-pages-editor"]
+    }
+  ]
+}
