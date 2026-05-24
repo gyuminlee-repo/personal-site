@@ -18,7 +18,6 @@ const t = <T,>(koValue: T, enValue: T): T => {
 const about = {
   eyebrow: t(bio.about.eyebrow, fallback.about.eyebrow),
   heading: t(bio.about.heading, fallback.about.heading),
-  lede: t(bio.about.lede, fallback.about.lede),
   paragraphs: bio.about.paragraphs.map((p, i) => t(p, fallback.about.paragraphs[i] ?? '')),
 };
 
@@ -76,10 +75,7 @@ const skills = {
 
     <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-x-12">
       <div class="md:col-span-7">
-        <p class="text-lg leading-relaxed text-foreground md:text-xl">
-          {about.lede}
-        </p>
-        <div class="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+        <div class="space-y-4 text-lg leading-relaxed text-foreground md:text-xl">
           {about.paragraphs.map((p) => <p>{p}</p>)}
         </div>
       </div>

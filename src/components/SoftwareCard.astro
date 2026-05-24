@@ -11,7 +11,6 @@ export interface ProjectShape {
   show_repo_link: boolean;
   demo: string | null;
   featured: boolean;
-  has_minidemo: boolean;
   year: string;
   inferred?: boolean;
 }
@@ -24,7 +23,6 @@ export interface Props {
 const { project, lang } = Astro.props;
 const tagline = lang === 'ko' && project.tagline_ko ? project.tagline_ko : project.tagline_en;
 const description = lang === 'ko' && project.description_ko ? project.description_ko : project.description_en;
-const demoLabel = lang === 'ko' ? '데모 보기' : 'Try demo';
 const githubLabel = lang === 'ko' ? 'GitHub' : 'GitHub';
 const srGithubLabel = `${githubLabel}: ${project.title}`;
 ---
@@ -80,20 +78,7 @@ const srGithubLabel = `${githubLabel}: ${project.title}`;
       </a>
     )}
 
-    {project.has_minidemo && (
-      <a
-        href={`#${project.slug}-demo`}
-        class="inline-flex items-center gap-1.5 text-primary hover:underline transition-colors"
-        data-minidemo-trigger={project.slug}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polygon points="5 3 19 12 5 21 5 3"/>
-        </svg>
-        <span>{demoLabel}</span>
-      </a>
-    )}
-
-    {!project.show_repo_link && !project.has_minidemo && (
+    {!project.show_repo_link && (
       <span class="text-xs text-muted-foreground italic">
         {lang === 'ko' ? '비공개 도구' : 'Private tool'}
       </span>
