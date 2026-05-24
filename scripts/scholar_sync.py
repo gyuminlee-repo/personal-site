@@ -199,7 +199,7 @@ def seed_minimal() -> dict:
             },
         ],
         "metrics": {
-            "name": "Gyumin Lee",
+            "name": "Gyu Min Lee",
             "affiliation": "KRIBB",
             "interests": [],
             "h_index": 0,
