@@ -1,17 +1,21 @@
 // POST /api/post/create — owner-only. Verifies session + CSRF + Referer,
 // validates payload, commits markdown (+ optional images) to GitHub via Trees API.
 // Returns commit SHA + post URL.
+// Astro endpoint (migrated from Pages Function).
 //
 // Assumptions:
 // - Body schema: { title, body, tags[], slug?, draft, lang, csrf, cover_image_b64?, cover_image_name?, attachments?[] }
-// - Limits: title 1-200, body 1-50000, tags ≤10, attachments ≤4. Image bytes not re-checked (Cloudflare body limit ~100MB).
+// - Limits: title 1-200, body 1-50000, tags ≤10, attachments ≤4. Image bytes not re-checked.
 // - Slug auto-prefix: YYMMDD-<slugified-title>. Conflict suffix -2..-9.
 // - GitHub repo + PAT come from env. Author/committer is the editor bot.
+import type { APIRoute } from 'astro';
 import {
   verifySession,
   parseCookie,
   safeCompare,
-} from '../../../src/lib/auth';
+} from '../../../lib/auth';
+
+export const prerender = false;
 
 interface Env {
   COOKIE_SECRET: string;
@@ -51,7 +55,9 @@ function cleanFilename(name: string): string {
   return name.replace(/[^\w.-]/g, '_').slice(0, 100);
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
+  const env = (locals as any).runtime.env as Env;
+
   // 1. Session
   const session = parseCookie(request.headers.get('cookie'), 'session');
   if (!(await verifySession(env.COOKIE_SECRET, session))) {

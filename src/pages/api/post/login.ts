@@ -1,15 +1,19 @@
 // POST /api/post/login — verify password, set session cookie.
+// Astro endpoint (migrated from Pages Function). Requires hybrid output + prerender=false.
 // Assumptions:
 // - In-memory rate limit (per-isolate). KV upgrade is v2.
 // - CSRF cookie must equal body.csrf (constant-time compare).
 // - On success, clears csrf cookie and sets session cookie (24h).
+import type { APIRoute } from 'astro';
 import {
   verifyPassword,
   signSession,
   safeCompare,
   serializeCookie,
   parseCookie,
-} from '../../../src/lib/auth';
+} from '../../../lib/auth';
+
+export const prerender = false;
 
 interface Env {
   PASSWORD_HASH: string;
@@ -34,7 +38,9 @@ function rateLimit(ip: string): { allowed: boolean; remaining: number } {
   return { allowed: true, remaining: MAX_ATTEMPTS - entry.count };
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
+  const env = (locals as any).runtime.env as Env;
+
   const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
   const rate = rateLimit(ip);
   if (!rate.allowed) {

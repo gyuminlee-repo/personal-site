@@ -1,7 +1,11 @@
 // POST /api/post/logout — clear session cookie.
-import { serializeCookie } from '../../../src/lib/auth';
+// Astro endpoint (migrated from Pages Function).
+import type { APIRoute } from 'astro';
+import { serializeCookie } from '../../../lib/auth';
 
-export const onRequestPost: PagesFunction = async () => {
+export const prerender = false;
+
+export const POST: APIRoute = async () => {
   const headers = new Headers({ 'content-type': 'application/json' });
   headers.append(
     'Set-Cookie',
