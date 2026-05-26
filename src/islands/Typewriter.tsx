@@ -81,7 +81,7 @@ export default function Typewriter({ lang, labels }: Props) {
   }, [phase, text, idx, list, reduced]);
 
   return (
-    <span className="font-mono text-primary inline-flex items-baseline min-h-[1.2em]">
+    <span className="font-mono text-primary inline align-baseline min-h-[1.2em]">
       <span>{text}</span>
       <span
         className="inline-block w-[0.6ch] h-[1em] bg-primary ml-[1px] animate-blink"

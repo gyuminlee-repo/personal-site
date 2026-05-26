@@ -1,8 +1,11 @@
 ---
+import { italicize } from '../lib/italic';
+
 export interface Props {
   entry: {
     title: string;
     title_ko?: string;
+    venue_ko?: string;
     date: string; // YYYY-MM-DD
     venue: string;
     audience: 'internal' | 'external' | string;
@@ -12,9 +15,16 @@ export interface Props {
 
 const { entry, lang } = Astro.props;
 const title = lang === 'ko' && entry.title_ko ? entry.title_ko : entry.title;
+const venue = lang === 'ko' && entry.venue_ko ? entry.venue_ko : entry.venue;
+const audienceKind = entry.audience.toLowerCase().includes('internal') || entry.audience.includes('내부')
+  ? 'internal'
+  : entry.audience.toLowerCase().includes('external') || entry.audience.toLowerCase().includes('invited') || entry.audience.includes('외부') || entry.audience.includes('초청')
+    ? 'external'
+    : entry.audience;
 const audienceLabel = (() => {
-  if (lang === 'ko') return entry.audience === 'internal' ? '내부' : '외부';
-  return entry.audience === 'internal' ? 'Internal' : 'External';
+  if (audienceKind === 'internal') return lang === 'ko' ? '내부' : 'Internal';
+  if (audienceKind === 'external') return lang === 'ko' ? '외부' : 'External';
+  return entry.audience;
 })();
 ---
 <li class="border-t border-border py-6 first:border-t-0">
@@ -23,9 +33,9 @@ const audienceLabel = (() => {
       <time class="font-mono text-xs text-muted-foreground" datetime={entry.date}>{entry.date}</time>
     </div>
     <div class="md:col-span-10">
-      <h3 class="text-base font-medium text-foreground md:text-lg">{title}</h3>
+      <h3 class="text-base font-medium text-foreground md:text-lg" set:html={italicize(title)} />
       <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-        <span>{entry.venue}</span>
+        <span>{venue}</span>
         <span aria-hidden="true">·</span>
         <span class="inline-flex items-center rounded border border-border bg-secondary px-2 py-0.5 text-xs">
           {audienceLabel}

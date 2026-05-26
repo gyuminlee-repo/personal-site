@@ -120,17 +120,29 @@
      triggers a large CLS event. Lock heights aggressively. */
   #hero h1 {
     line-height: 1;
-    height: 1em;
-    overflow: hidden;
+    min-height: 1em;
+    overflow: visible;
   }
   #hero p.text-2xl {
     line-height: 1.3;
-    height: 1.3em;
-    overflow: hidden;
-    white-space: nowrap;
+    min-height: 2.6em;
+    overflow: visible;
+    white-space: normal;
   }
   #hero #typewriter-slot {
     overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    #hero h1 {
+      height: 1em;
+      overflow: hidden;
+    }
+    #hero p.text-2xl {
+      height: 1.3em;
+      min-height: 1.3em;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 
   /* Korean language adjustment */
@@ -151,12 +163,23 @@
     font-size: 1rem;
     line-height: 1.6;
     font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   * { @apply border-border; }
 
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex-shrink: 0;
   }
 
   /* Reduced motion */

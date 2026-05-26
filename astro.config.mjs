@@ -15,6 +15,6 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false }
   },
   output: 'hybrid',
-  adapter: cloudflare(),
+  adapter: cloudflare({ imageService: 'passthrough' }),
   build: { format: 'directory' }
 });

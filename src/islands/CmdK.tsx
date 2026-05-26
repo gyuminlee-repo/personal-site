@@ -94,7 +94,7 @@ export default function CmdK({ lang }: Props) {
         type="button"
         onClick={() => setOpen(true)}
         aria-label={lang === 'ko' ? '명령 팔레트 열기' : 'Open command palette'}
-        className="fixed bottom-6 left-6 z-50 size-12 rounded-full bg-card border border-border shadow-md flex items-center justify-center text-foreground hover:border-primary md:hidden"
+        className="fixed bottom-5 right-5 z-50 hidden size-12 rounded-full bg-card border border-border shadow-md items-center justify-center text-foreground hover:border-primary sm:flex md:hidden"
       >
         ⌘
       </button>

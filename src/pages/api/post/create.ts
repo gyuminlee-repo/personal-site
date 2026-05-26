@@ -308,7 +308,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     {
       ok: true,
       commit_sha: commit.sha,
-      post_url: isDraft ? null : `https://gyuminlee.dev/posts/${slug}`,
+      post_url: isDraft
+        ? null
+        : `https://gyuminlee.dev${langSafe === 'ko' ? '/ko' : ''}/posts/${slug}`,
       slug,
       build_estimate_seconds: 120,
     },

@@ -1,18 +1,20 @@
 {
   "presentations": [
     {
-      "title": "Claude Code agentic workflows for biotech",
-      "title_ko": "Claude Code 에이전틱 워크플로우 (바이오텍)",
-      "date": "2026-05-22",
-      "venue": "KRIBB internal seminar / KRIBB 합성생물학연구센터 내부 세미나",
-      "audience": "internal / 내부 세미나"
-    },
-    {
       "title": "Methanol stress adaptation in M. extorquens via ALE",
       "title_ko": "ALE로 *M. extorquens*의 메탄올 스트레스 적응을 분석",
       "date": "2026-05-29",
-      "venue": "Korea University / 고려대학교",
-      "audience": "Invited seminar (department / faculty) / 초청 세미나 (학과·교수진)"
+      "venue": "Korea University",
+      "venue_ko": "고려대학교",
+      "audience": "external"
+    },
+    {
+      "title": "Claude Code agentic workflows for biotech",
+      "title_ko": "Claude Code 에이전틱 워크플로우 (바이오텍)",
+      "date": "2026-05-22",
+      "venue": "KRIBB Center for Synthetic Biology internal seminar",
+      "venue_ko": "KRIBB 합성생물학연구센터 내부 세미나",
+      "audience": "internal"
     }
   ]
 }

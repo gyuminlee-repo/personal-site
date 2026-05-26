@@ -21,7 +21,9 @@ export interface Latest {
  */
 export async function getLatest(lang: 'en' | 'ko' = 'en'): Promise<Latest> {
   const latestPub = publications.publications[0];
-  const latestPres = presentations.presentations[0];
+  const latestPres = [...presentations.presentations].sort((a, b) =>
+    b.date.localeCompare(a.date),
+  )[0];
 
   const posts = await getCollection('posts', (p) => !p.data.draft && p.data.lang === lang);
   const sorted = posts.sort(

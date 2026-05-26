@@ -1,5 +1,6 @@
 ---
 import nowData from '../../data/now.json';
+import { italicize } from '../../lib/italic';
 
 interface Props { lang?: 'en' | 'ko'; }
 const { lang = 'en' } = Astro.props;
@@ -21,7 +22,7 @@ const items = lang === 'ko' ? nowData.items_ko : nowData.items_en;
       {items.map((item) => (
         <li class="flex gap-3 text-base md:text-lg leading-relaxed text-foreground">
           <span aria-hidden="true" class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-muted-foreground"></span>
-          <span>{item}</span>
+          <span set:html={italicize(item)} />
         </li>
       ))}
     </ul>

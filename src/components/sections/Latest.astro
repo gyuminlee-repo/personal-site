@@ -1,5 +1,6 @@
 ---
 import { getLatest } from '../../lib/latest';
+import { italicize } from '../../lib/italic';
 
 interface Props { lang?: 'en' | 'ko'; }
 const { lang = 'en' } = Astro.props;
@@ -33,6 +34,7 @@ const t = lang === 'ko'
     };
 
 const presTitle = lang === 'ko' && (latestPres as any).title_ko ? (latestPres as any).title_ko : latestPres.title;
+const presVenue = lang === 'ko' && (latestPres as any).venue_ko ? (latestPres as any).venue_ko : latestPres.venue;
 const postHref = latestPost ? t.postsBase + latestPost.slug : t.postsIndexHref;
 const postDateStr = latestPost ? latestPost.data.date.toISOString().split('T')[0] : '';
 ---
@@ -63,13 +65,14 @@ const postDateStr = latestPost ? latestPost.data.date.toISOString().split('T')[0
         class="group flex flex-col rounded-lg border border-border bg-card p-6 transition hover:border-foreground/40"
       >
         <span class="text-xs font-mono uppercase tracking-wider text-muted-foreground">{t.presEyebrow}</span>
-        <h3 class="mt-3 text-lg font-semibold leading-snug tracking-tight text-foreground transition group-hover:text-primary line-clamp-3">
-          {presTitle}
-        </h3>
+        <h3
+          class="mt-3 text-lg font-semibold leading-snug tracking-tight text-foreground transition group-hover:text-primary line-clamp-3"
+          set:html={italicize(presTitle)}
+        />
         <div class="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
           <time class="font-mono tabular-nums" datetime={latestPres.date}>{latestPres.date}</time>
           <span>·</span>
-          <span>{latestPres.venue}</span>
+          <span>{presVenue}</span>
         </div>
         <span class="mt-auto pt-4 text-sm text-muted-foreground group-hover:text-primary">{t.read} →</span>
       </a>

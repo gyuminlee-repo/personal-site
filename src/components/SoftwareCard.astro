@@ -50,7 +50,7 @@ const srGithubLabel = `${githubLabel}: ${project.title}`;
 
   <p class="text-base text-card-foreground">{tagline}</p>
 
-  <p class="text-sm text-muted-foreground">{description}</p>
+  {description && <p class="text-sm text-muted-foreground">{description}</p>}
 
   <ul class="flex flex-wrap gap-1.5" aria-label={lang === 'ko' ? '기술 스택' : 'Tech stack'}>
     {project.stack.map((tech) => (

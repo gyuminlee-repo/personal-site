@@ -2,7 +2,12 @@
 interface Props { lang?: 'en' | 'ko'; }
 const { lang = 'en' } = Astro.props;
 
-const buildDate = new Date().toISOString().split('T')[0];
+const buildDate = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Seoul',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(new Date());
 
 const copy = {
   en: {
