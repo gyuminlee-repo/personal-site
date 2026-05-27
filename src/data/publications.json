@@ -1,15 +1,15 @@
 {
   "publications": [
     {
-      "title": "Systems-Level Dissection of Methanol Adaptation in Methylorubrum extorquens",
+      "title": "Systems-Level Dissection of Methanol Adaptation in *Methylorubrum extorquens*",
       "authors": [
         "Gyu Min Lee"
       ],
       "year": 2026,
-      "journal": "",
+      "journal": "BITE (under revision)",
       "volume": "",
       "pages": "",
-      "abstract": "The transition to a sustainable bioeconomy demands robust microbial platforms capable of converting single-carbon (C1) feedstocks like methanol into value-added chemicals. Methylorubrum extorquens represents a key candidate for this role. However, utilizing its metabolic potential is critically hindered by two fundamental barriers: (1) the ‘strain selection problem’, the need to navigate the high genomic diversity of the species (e.g., the complex, plasmid-heavy AM1) to identify a stable and efficient strain, and (2) the ‘adaptation problem’, the need to elucidate the mechanisms of methanol to",
+      "abstract": "The transition to a sustainable bioeconomy demands robust microbial platforms capable of converting single-carbon (C1) feedstocks like methanol into value-added chemicals. *Methylorubrum extorquens* represents a key candidate for this role. However, utilizing its metabolic potential is critically hindered by two fundamental barriers: (1) the ‘strain selection problem’, the need to navigate the high genomic diversity of the species (e.g., the complex, plasmid-heavy AM1) to identify a stable and efficient strain, and (2) the ‘adaptation problem’, the need to elucidate the mechanisms of methanol to",
       "url": "https://scholar.google.com/scholar?cluster=17800352162623955715&hl=en&oi=scholarr",
       "citations": 0,
       "citedby_url": ""
@@ -51,7 +51,7 @@
       "citedby_url": ""
     },
     {
-      "title": "Structural and Transcriptomic Signatures of Adaptive Optimization in Methylorubrum extorquens PA1 Δfdh234 under Methanol Stress",
+      "title": "Structural and Transcriptomic Signatures of Adaptive Optimization in *Methylorubrum extorquens* PA1 Δ*fdh234* under Methanol Stress",
       "authors": [
         "Gyu Min LEE",
         "KIM Jaehyung",
@@ -61,13 +61,13 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "676-676",
-      "abstract": "Methylorubrum extorquensPA1 is a promising platform for methanol-based bioproduction. To streamline formate oxidation and explore adaptive responses, a Δfdh234strain was subjected to adaptive laboratory evolution under stepwise methanol conditions. All evolved strains exhibited significantly improved growth under both 0.5% and 5.0% methanol compared to controls. Genomic analysis revealed highly convergent mutations, most notably a Y57D substitution in MEXT_RS12810, encoding O-acetyl-L-homoserine sulfhydrylase, appearing in all evolved strains. Structural analysis indicated this mutation lies a",
+      "abstract": "*Methylorubrum extorquens*PA1 is a promising platform for methanol-based bioproduction. To streamline formate oxidation and explore adaptive responses, a Δ*fdh234*strain was subjected to adaptive laboratory evolution under stepwise methanol conditions. All evolved strains exhibited significantly improved growth under both 0.5% and 5.0% methanol compared to controls. Genomic analysis revealed highly convergent mutations, most notably a Y57D substitution in MEXT_RS12810, encoding O-acetyl-L-homoserine sulfhydrylase, appearing in all evolved strains. Structural analysis indicated this mutation lies a",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE12491336",
       "citations": 0,
       "citedby_url": ""
     },
     {
-      "title": "Deciphering High-Methanol Adaptation in Methylorubrum extorquens AM1 through Genomic and Transcriptomic Analyses",
+      "title": "Deciphering High-Methanol Adaptation in *Methylorubrum extorquens* AM1 through Genomic and Transcriptomic Analyses",
       "authors": [
         "Gyu Min LEE",
         "PHAM Khoi",
@@ -79,13 +79,13 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "674-674",
-      "abstract": "The increasing demand for sustainable bioproduction has highlighted the potential of methanol as a cost-effective and widely available feedstock. Methylorubrum extorquens AM1, a model methylotrophic bacterium, offers a promising platform for methanol-based bioproduction. Here, we employed adaptive laboratory evolution (ALE) to enhance the methanol tolerance of M. extorquens AM1. To elucidate the mechanisms underlying high-methanol adaptation, we conducted comprehensive genomic and transcriptomic analyses on evolved strains. Genomic sequencing revealed mutations in key regulatory and metabolic ",
+      "abstract": "The increasing demand for sustainable bioproduction has highlighted the potential of methanol as a cost-effective and widely available feedstock. *Methylorubrum extorquens* AM1, a model methylotrophic bacterium, offers a promising platform for methanol-based bioproduction. Here, we employed adaptive laboratory evolution (ALE) to enhance the methanol tolerance of *M. extorquens* AM1. To elucidate the mechanisms underlying high-methanol adaptation, we conducted comprehensive genomic and transcriptomic analyses on evolved strains. Genomic sequencing revealed mutations in key regulatory and metabolic ",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE12491334",
       "citations": 0,
       "citedby_url": ""
     },
     {
-      "title": "Pan-genome Analysis Revealed Comparable Genomic Characteristics of Central Metabolic Pathways in Methylorubrum extorquens",
+      "title": "Pan-genome Analysis Revealed Comparable Genomic Characteristics of Central Metabolic Pathways in *Methylorubrum extorquens*",
       "authors": [
         "Gyu Min LEE",
         "Zoe SCOTT-NEVROS",
@@ -96,13 +96,13 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "675-675",
-      "abstract": "Methylorubrum extorquensis a potentially important strain in methanol-based bioindustry. It is crucial to understand the central metabolic pathways of these strains for further progress as a platform bacterium in the bioindustry. However, there are few systems-level approaches comparing these strains. This study compared the genomic properties of seven completely sequenced M. extorquensstrains, including M. extorquensPA1 and the new sequenced ATCC 55366 strain. Pan-genome analysis revealed that the ortholog clusters comprised 3,507 core genome, 1,860 accessory genome, and 5,064 unique genome c",
+      "abstract": "*Methylorubrum extorquens*is a potentially important strain in methanol-based bioindustry. It is crucial to understand the central metabolic pathways of these strains for further progress as a platform bacterium in the bioindustry. However, there are few systems-level approaches comparing these strains. This study compared the genomic properties of seven completely sequenced *M. extorquens*strains, including *M. extorquens*PA1 and the new sequenced ATCC 55366 strain. Pan-genome analysis revealed that the ortholog clusters comprised 3,507 core genome, 1,860 accessory genome, and 5,064 unique genome c",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE12491335",
       "citations": 0,
       "citedby_url": ""
     },
     {
-      "title": "Investigation of Evolutionary Strategies of M. extorquens AM1 for Enhanced Methanol Tolerance through Systems Biology Approaches",
+      "title": "Investigation of Evolutionary Strategies of *M. extorquens* AM1 for Enhanced Methanol Tolerance through Systems Biology Approaches",
       "authors": [
         "Gyu Min LEE",
         "KO Seyoung",
@@ -113,13 +113,13 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "510-510",
-      "abstract": "Methylorubrum extorquens is a promising candidate that can use a single carbon substrate as sole carbon source. In this study, adaptive laboratory evolution was conducted to obtain evolved M. extorquens AM1 strains with enhanced methanol tolerance. Pan-genome analysis was performed on the two isolated evolved strains using nine completely sequenced M. extorquens strains. To investigate candidate genes associated with methanol adaptation, transcriptomic analysis was performed between different methanol concentrations. The genome-scale metabolic model of M. extorquens AM1 was used to identify th",
+      "abstract": "*Methylorubrum extorquens* is a promising candidate that can use a single carbon substrate as sole carbon source. In this study, adaptive laboratory evolution was conducted to obtain evolved *M. extorquens* AM1 strains with enhanced methanol tolerance. Pan-genome analysis was performed on the two isolated evolved strains using nine completely sequenced *M. extorquens* strains. To investigate candidate genes associated with methanol adaptation, transcriptomic analysis was performed between different methanol concentrations. The genome-scale metabolic model of *M. extorquens* AM1 was used to identify th",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11790945",
       "citations": 0,
       "citedby_url": ""
     },
     {
-      "title": "Pan-genome Analysis Reveals Comparative Genomic Features of Central Metabolic Pathways in Methylorubrum extorquens",
+      "title": "Pan-genome Analysis Reveals Comparative Genomic Features of Central Metabolic Pathways in *Methylorubrum extorquens*",
       "authors": [
         "Gyu Min Lee",
         "Zoe K Scott-Nevros",
@@ -130,13 +130,13 @@
       "journal": "Biotechnology and Bioprocess Engineering",
       "volume": "28",
       "pages": "990-1004",
-      "abstract": "Methylobacterium is a genus belonging to the pink-pigmented facultative methylotrophs, which can use C1 substrates as a sole carbon source. Methylorubrum extorquens (formerly Methylobacterium extorquens) is a potentially valuable bacteria in methanol-based bioindustry producing high-value-added chemicals. Thus, it is critical to understand the core metabolic pathways of M. extorquens strains for further advancement as a platform bacterium in the bioindustry. However, there are no reported systems biological approaches comparing different M. extorquens strains. This paper focuses on comparing t",
+      "abstract": "Methylobacterium is a genus belonging to the pink-pigmented facultative methylotrophs, which can use C1 substrates as a sole carbon source. *Methylorubrum extorquens* (formerly Methylobacterium extorquens) is a potentially valuable bacteria in methanol-based bioindustry producing high-value-added chemicals. Thus, it is critical to understand the core metabolic pathways of *M. extorquens* strains for further advancement as a platform bacterium in the bioindustry. However, there are no reported systems biological approaches comparing different *M. extorquens* strains. This paper focuses on comparing t",
       "url": "https://link.springer.com/article/10.1007/s12257-022-0154-1",
       "citations": 7,
       "citedby_url": "/scholar?hl=en&cites=17539695158591624795"
     },
     {
-      "title": "Systems Biology Analysis Reveals Effect of Adaptive Laboratory Evolution in M. extorquens AM1 for High Methanol Resistance",
+      "title": "Systems Biology Analysis Reveals Effect of Adaptive Laboratory Evolution in *M. extorquens* AM1 for High Methanol Resistance",
       "authors": [
         "Gyu Min LEE",
         "BANG Ina",
@@ -146,13 +146,13 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "409-409",
-      "abstract": "Methylorubrum extorquens (formerly Methylobacterium extorquens) is a promising candidate for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was employed to derive mutant strains of M. extorquensAM1 exhibiting enhanced resistance to elevated methanol concentrations. After the ALE experiment, five single colonies were isolated and resequenced. All the isolates unveiled mutations within the metY (base change) and KefB (1bp deletion) genes. Considering that MetY is involved in methoxine synthesis, which contributes to methanol toxicity, its mutation is likely associ",
+      "abstract": "*Methylorubrum extorquens* (formerly Methylobacterium extorquens) is a promising candidate for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was employed to derive mutant strains of *M. extorquens*AM1 exhibiting enhanced resistance to elevated methanol concentrations. After the ALE experiment, five single colonies were isolated and resequenced. All the isolates unveiled mutations within the *metY* (base change) and *kefB* (1bp deletion) genes. Considering that MetY is involved in methoxine synthesis, which contributes to methanol toxicity, its mutation is likely associ",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11639190",
       "citations": 0,
       "citedby_url": ""
     },
     {
-      "title": "Comparative Pan-genome Analysis Highlights Genomic Characteristics of Central Metabolic Processes in Methylorubrum extorquens",
+      "title": "Comparative Pan-genome Analysis Highlights Genomic Characteristics of Central Metabolic Processes in *Methylorubrum extorquens*",
       "authors": [
         "Gyu Min LEE",
         "Zoe K SCOTT-NEVROS",
@@ -163,13 +163,13 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "408-408",
-      "abstract": "Methylorubrum extorquensis a significant candidate for methanol-based bioindustrial applications. Understanding its central metabolic pathways is essential for its enhancement as a foundational bacterium in bioindustrial processes. Yet, comprehensive comparisons of these strains at the system level are limited. In this research, the genomic traits of seven fully sequenced M. extorquens strains, including M. extorquens PA1 and the newly sequenced ATCC 55366 strain, were analyzed. The pan-genome assessment identified 3,507 core, 1,860 accessory, and 5,064 unique genome clusters. Notably, the mos",
+      "abstract": "*Methylorubrum extorquens*is a significant candidate for methanol-based bioindustrial applications. Understanding its central metabolic pathways is essential for its enhancement as a foundational bacterium in bioindustrial processes. Yet, comprehensive comparisons of these strains at the system level are limited. In this research, the genomic traits of seven fully sequenced *M. extorquens* strains, including *M. extorquens* PA1 and the newly sequenced ATCC 55366 strain, were analyzed. The pan-genome assessment identified 3,507 core, 1,860 accessory, and 5,064 unique genome clusters. Notably, the mos",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11639189",
       "citations": 0,
       "citedby_url": ""
     },
     {
-      "title": "Adaptive Laboratory Evolution of Methylorubrum extorquens AM1 for High Methanol Resistance",
+      "title": "Adaptive Laboratory Evolution of *Methylorubrum extorquens* AM1 for High Methanol Resistance",
       "authors": [
         "Gyu Min LEE",
         "BANG Ina",
@@ -179,7 +179,7 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "660-660",
-      "abstract": "Methylorubrum extorquens (formerly Methylobacterium extorquens) is a promising bacterium for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants of M. extorquens AM1 with resistance to high methanol concentrations. ALE can be used to generate genetic diversity and select for desirable traits. Due to the toxicity of methanol, the ALE experiment was started from 0.5% v/v. The strain was cultured during 24 h until exponential phase at 30℃, 200 rpm culture condition, at intervals of 0.25% v/v to reach a final concentration of 2.5% v/v. Five sin",
+      "abstract": "*Methylorubrum extorquens* (formerly Methylobacterium extorquens) is a promising bacterium for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants of *M. extorquens* AM1 with resistance to high methanol concentrations. ALE can be used to generate genetic diversity and select for desirable traits. Due to the toxicity of methanol, the ALE experiment was started from 0.5% v/v. The strain was cultured during 24 h until exponential phase at 30℃, 200 rpm culture condition, at intervals of 0.25% v/v to reach a final concentration of 2.5% v/v. Five sin",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11410315",
       "citations": 0,
       "citedby_url": ""
@@ -207,7 +207,7 @@
       "citedby_url": "/scholar?hl=en&cites=335237878504211733"
     },
     {
-      "title": "Systems Evaluation Reveals Characterization of Methylorubrum extorquens AM1 with Improved Formate Tolerance",
+      "title": "Systems Evaluation Reveals Characterization of *Methylorubrum extorquens* AM1 with Improved Formate Tolerance",
       "authors": [
         "Gyu Min LEE",
         "KIM Donghyuk"
@@ -216,7 +216,7 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "593-593",
-      "abstract": "Formate is one of attractive microbial feedstocks. The most important advantage is that it has no safety concerns. Although Methylorubrum extorquens AM1 can convert formate to carbon dioxide by FDH, it showed slower growth than methanol. In this study, adaptive laboratory evolution (ALE) was used to improve formate tolerance. First, formate resistance of wild-type strain was checked on 1g/L to 14g/L at 1g/L intervals using sodium formate. As a result, wild-type strain eventually did not grow in 13g/L sodium formate during 72 h. Since wild-type strain showed big difference in growth at 5g/L",
+      "abstract": "Formate is one of attractive microbial feedstocks. The most important advantage is that it has no safety concerns. Although *Methylorubrum extorquens* AM1 can convert formate to carbon dioxide by FDH, it showed slower growth than methanol. In this study, adaptive laboratory evolution (ALE) was used to improve formate tolerance. First, formate resistance of wild-type strain was checked on 1g/L to 14g/L at 1g/L intervals using sodium formate. As a result, wild-type strain eventually did not grow in 13g/L sodium formate during 72 h. Since wild-type strain showed big difference in growth at 5g/L",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE10554853",
       "citations": 0,
       "citedby_url": ""

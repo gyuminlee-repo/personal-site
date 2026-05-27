@@ -1,5 +1,6 @@
 ---
 import pubsData from '../data/publications.json';
+import { italicize } from '../lib/italic';
 
 export interface Props {
   lang: 'en' | 'ko';
@@ -49,11 +50,9 @@ const formatVenue = (pub: Publication): string => {
         <div class="flex items-baseline justify-between gap-4">
           <h3 class="text-base md:text-lg font-medium text-foreground leading-snug">
             {pub.url ? (
-              <a href={pub.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary hover:underline underline-offset-4">
-                {pub.title}
-              </a>
+              <a href={pub.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary hover:underline underline-offset-4" set:html={italicize(pub.title)} />
             ) : (
-              pub.title
+              <span set:html={italicize(pub.title)} />
             )}
           </h3>
           {pub.citations > 0 && (

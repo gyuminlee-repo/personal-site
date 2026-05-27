@@ -4,10 +4,12 @@ export interface Props {
 }
 const { lang } = Astro.props;
 const label = lang === 'ko' ? 'CV PDF 내려받기' : 'Download CV (PDF)';
+const href = lang === 'ko' ? '/이규민_CV.pdf' : '/Gyumin_Lee_CV.pdf';
+const filename = lang === 'ko' ? '이규민_CV.pdf' : 'Gyumin_Lee_CV.pdf';
 ---
 <a
-  href="/이규민_CV.pdf"
-  download
+  href={href}
+  download={filename}
   class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:bg-secondary"
 >
   <svg
