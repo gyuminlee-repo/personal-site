@@ -33,7 +33,7 @@
       },
       {
         "label": "Tools",
-        "body": "Custom dry-lab tooling on top of AI coding agents — primer design, NGS verification, lab notebook automation — so the wet-lab cycle never has to wait."
+        "body": "Custom dry-lab tooling on top of AI coding agents (e.g., Claude Code) — primer design, NGS verification, lab notebook automation — so the wet-lab cycle never has to wait. Ongoing effort to integrate code agents into ALE, RNA-seq, and WGS analyses; plan to extend across synbio pipelines to shorten the data→hypothesis→experiment iteration cycle."
       }
     ]
   },
@@ -45,7 +45,7 @@
         "institution": "Ulsan National Institute of Science and Technology (UNIST)",
         "lab": "Systems Biology and Machine Learning Lab, advisor: Donghyuk Kim, Ph.D.",
         "period": "2019.03 – 2026.02",
-        "highlight": "Dissertation: Systems-level characterization of adaptive responses to methanol stress in *Methylorubrum extorquens*."
+        "highlight": "Dissertation: Systems-level characterization of adaptive responses to methanol stress in *Methylorubrum extorquens*. Three-axis integration: 8-strain pan-genome comparison defining the AM1 (plasmid-rich) vs. streamlined PA1 divergence; AM1 wild-type ~800-generation ALE identifying *metY* (F36L/S383L) and *kefB* adaptive variants; engineered PA1 Δ*fdh234* ALE converging on the *metY-1* Y57D substitution, with OAHS substrate-specificity rewiring proposed as a primary adaptive lever over catabolic flux optimization."
       },
       {
         "degree": "B.S., Genetic Engineering",

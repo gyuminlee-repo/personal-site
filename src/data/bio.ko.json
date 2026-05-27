@@ -8,10 +8,10 @@
     "pi": "이혜원 박사님",
     "location": "대한민국 대전",
     "focus_areas": [
-      "",
-      "",
-      "",
-      ""
+      "메탄자화균·메틸영양균 엔지니어링",
+      "적응 진화 (ALE)",
+      "멀티오믹스 통합 분석",
+      "합성생물학을 위한 에이전틱 엔지니어링"
     ],
     "contact": {
       "email": "sysbiogyumin@kribb.re.kr",
@@ -34,7 +34,7 @@
       },
       {
         "label": "도구",
-        "body": "AI 코딩 에이전트를 발판으로 dry-lab 도구를 직접 만듭니다. 프라이머 설계, NGS 검증, 실험 노트 자동화 등을 갖춰 wet-lab 주기가 멈추지 않도록 합니다."
+        "body": "AI 코딩 에이전트(Claude Code 등)를 발판으로 dry-lab 도구를 직접 만듭니다. ALE·RNA-seq·WGS 분석에 코드 에이전트를 접목하는 시도를 진행 중이며, 향후 합성생물학 파이프라인 전반에서 데이터→가설→실험 사이클을 단축하는 방향으로 확장할 계획입니다."
       }
     ]
   },
@@ -46,7 +46,7 @@
         "institution": "울산과학기술원 (UNIST)",
         "lab": "시스템 생물학 및 머신러닝 연구실, 지도교수 김동혁 교수님",
         "period": "2019.03 – 2026.02",
-        "highlight": ""
+        "highlight": "박사 학위 논문: *Methylorubrum extorquens* 메탄올 적응 메커니즘의 시스템 수준 규명. 3축 통합: 8개 균주 pan-genome 비교로 복잡한 AM1(plasmid-rich)과 간소화된 PA1의 진화적 분기를 정의, AM1 wild-type ~800 세대 ALE로 *metY* (F36L/S383L)와 *kefB* 적응 변이 발굴, engineered PA1 Δ*fdh234* ALE에서 *metY-1* Y57D 수렴 변이 발견. OAHS substrate specificity 재조정이 catabolic flux 최적화보다 우선하는 적응 기전을 제시."
       },
       {
         "degree": "학사, 유전공학",
@@ -65,14 +65,14 @@
         "org": "한국생명공학연구원 (KRIBB), 합성생물학연구센터",
         "lab": "이혜원 박사님 C1 team",
         "period": "2026.03 – 현재",
-        "highlight": ""
+        "highlight": "C1팀의 메탄자화균 균주 엔지니어링, 멀티오믹스 파이프라인 구축, 에이전틱 도구 개발을 수행하고 있습니다."
       },
       {
         "role": "석박통합과정 연구원",
         "org": "UNIST 화학공학과",
         "lab": "시스템 생물학 및 머신러닝 연구실 (김동혁 교수님)",
         "period": "2019.03 – 2026.02",
-        "highlight": ""
+        "highlight": "메틸영양균 ALE 수행, pan-genome 및 DEG 분석, 박테리오파지·식물 병원균 비교 유전체 분석."
       }
     ]
   },
@@ -81,15 +81,33 @@
     "columns": [
       {
         "label": "실험",
-        "items": ["", "", "", "", ""]
+        "items": [
+          "적응 진화 실험 (ALE)",
+          "메틸영양균·메탄자화균 배양",
+          "Allelic exchange 및 돌연변이 재현",
+          "Growth phenotyping",
+          "RNA-seq 라이브러리 제작"
+        ]
       },
       {
         "label": "오믹스 및 모델링",
-        "items": ["", "", "", "", ""]
+        "items": [
+          "Whole-genome sequencing 분석",
+          "Pan-genome 비교 분석",
+          "RNA-seq 및 DEG 분석",
+          "AlphaFold3 기반 구조-기능 해석",
+          "COBRApy 기반 GEM (Genome-scale Metabolic Model) 분석"
+        ]
       },
       {
         "label": "엔지니어링",
-        "items": ["", "", "", "", ""]
+        "items": [
+          "Python·R 오믹스 파이프라인 구축",
+          "시각화 자동화",
+          "Claude Code 에이전트 워크플로우 (합성생물학)",
+          "GitHub Actions CI 및 cron job 운영",
+          "TypeScript·Astro 기반 연구 도구 개발"
+        ]
       }
     ]
   }
