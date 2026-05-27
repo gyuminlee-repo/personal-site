@@ -33,7 +33,7 @@
       "citedby_url": "/scholar?hl=en&cites=13502015970635211160"
     },
     {
-      "title": "Integrated genomic and transcriptomic Insights into methanol tolerance mechanisms in Methylobacterium extorquens AM1, identifying key targets for strain engineering",
+      "title": "Integrated genomic and transcriptomic Insights into methanol tolerance mechanisms in *Methylobacterium extorquens* AM1, identifying key targets for strain engineering",
       "authors": [
         "Gyu Min Lee",
         "Khoi Nhat Pham",
@@ -45,7 +45,7 @@
       "journal": "Journal of Biological Engineering",
       "volume": "",
       "pages": "",
-      "abstract": "Methanol is an attractive one-carbon feedstock for sustainable biomanufacturing because of its abundance, cost-effectiveness, and industrial compatibility. However, its cytotoxicity limits its biotechnological applications in native methylotrophs such as Methylobacterium extorquens AM1. In this study, we developed AM1-derived strains capable of sustained growth under elevated methanol concentrations through adaptive laboratory evolution (ALE). From the evolved population, five representative strains were isolated, exhibiting up to a 1.68-fold increase in specific growth rates compared with tho",
+      "abstract": "Methanol is an attractive one-carbon feedstock for sustainable biomanufacturing because of its abundance, cost-effectiveness, and industrial compatibility. However, its cytotoxicity limits its biotechnological applications in native methylotrophs such as *Methylobacterium extorquens* AM1. In this study, we developed AM1-derived strains capable of sustained growth under elevated methanol concentrations through adaptive laboratory evolution (ALE). From the evolved population, five representative strains were isolated, exhibiting up to a 1.68-fold increase in specific growth rates compared with tho",
       "url": "https://link.springer.com/article/10.1186/s13036-025-00557-1",
       "citations": 0,
       "citedby_url": ""
@@ -130,7 +130,7 @@
       "journal": "Biotechnology and Bioprocess Engineering",
       "volume": "28",
       "pages": "990-1004",
-      "abstract": "Methylobacterium is a genus belonging to the pink-pigmented facultative methylotrophs, which can use C1 substrates as a sole carbon source. *Methylorubrum extorquens* (formerly Methylobacterium extorquens) is a potentially valuable bacteria in methanol-based bioindustry producing high-value-added chemicals. Thus, it is critical to understand the core metabolic pathways of *M. extorquens* strains for further advancement as a platform bacterium in the bioindustry. However, there are no reported systems biological approaches comparing different *M. extorquens* strains. This paper focuses on comparing t",
+      "abstract": "Methylobacterium is a genus belonging to the pink-pigmented facultative methylotrophs, which can use C1 substrates as a sole carbon source. *Methylorubrum extorquens* (formerly *Methylobacterium extorquens*) is a potentially valuable bacteria in methanol-based bioindustry producing high-value-added chemicals. Thus, it is critical to understand the core metabolic pathways of *M. extorquens* strains for further advancement as a platform bacterium in the bioindustry. However, there are no reported systems biological approaches comparing different *M. extorquens* strains. This paper focuses on comparing t",
       "url": "https://link.springer.com/article/10.1007/s12257-022-0154-1",
       "citations": 7,
       "citedby_url": "/scholar?hl=en&cites=17539695158591624795"
@@ -146,7 +146,7 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "409-409",
-      "abstract": "*Methylorubrum extorquens* (formerly Methylobacterium extorquens) is a promising candidate for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was employed to derive mutant strains of *M. extorquens*AM1 exhibiting enhanced resistance to elevated methanol concentrations. After the ALE experiment, five single colonies were isolated and resequenced. All the isolates unveiled mutations within the *metY* (base change) and *kefB* (1bp deletion) genes. Considering that MetY is involved in methoxine synthesis, which contributes to methanol toxicity, its mutation is likely associ",
+      "abstract": "*Methylorubrum extorquens* (formerly *Methylobacterium extorquens*) is a promising candidate for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was employed to derive mutant strains of *M. extorquens*AM1 exhibiting enhanced resistance to elevated methanol concentrations. After the ALE experiment, five single colonies were isolated and resequenced. All the isolates unveiled mutations within the *metY* (base change) and *kefB* (1bp deletion) genes. Considering that MetY is involved in methoxine synthesis, which contributes to methanol toxicity, its mutation is likely associ",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11639190",
       "citations": 0,
       "citedby_url": ""
@@ -179,7 +179,7 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "660-660",
-      "abstract": "*Methylorubrum extorquens* (formerly Methylobacterium extorquens) is a promising bacterium for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants of *M. extorquens* AM1 with resistance to high methanol concentrations. ALE can be used to generate genetic diversity and select for desirable traits. Due to the toxicity of methanol, the ALE experiment was started from 0.5% v/v. The strain was cultured during 24 h until exponential phase at 30℃, 200 rpm culture condition, at intervals of 0.25% v/v to reach a final concentration of 2.5% v/v. Five sin",
+      "abstract": "*Methylorubrum extorquens* (formerly *Methylobacterium extorquens*) is a promising bacterium for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants of *M. extorquens* AM1 with resistance to high methanol concentrations. ALE can be used to generate genetic diversity and select for desirable traits. Due to the toxicity of methanol, the ALE experiment was started from 0.5% v/v. The strain was cultured during 24 h until exponential phase at 30℃, 200 rpm culture condition, at intervals of 0.25% v/v to reach a final concentration of 2.5% v/v. Five sin",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11410315",
       "citations": 0,
       "citedby_url": ""
@@ -287,7 +287,7 @@
       "citedby_url": "/scholar?hl=en&cites=1096269495241527613"
     },
     {
-      "title": "Adaptive Laboratory Evolution of Methylobacterium extorquens AM1 for Formate Resistance",
+      "title": "Adaptive Laboratory Evolution of *Methylobacterium extorquens* AM1 for Formate Resistance",
       "authors": [
         "Gyu Min LEE",
         "KIM Donghyuk"
@@ -296,7 +296,7 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "139-139",
-      "abstract": "One of C1 compounds, formate has potential to become valuable resources since it can be used to synthesize industrially useful polymer. However, it is toxic at medium to high concentrations. Methylobacterium extorquens AM1 has been investigated as a model organism for methylotrophy. Although M. extorquens AM1 can utilize formate as sole carbon source, it showed slower growth than methanol. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants with resistance to high concentration formate. First, we checked formate resistance of wild type strain on 1g/L to 14g/L at 1g/L ",
+      "abstract": "One of C1 compounds, formate has potential to become valuable resources since it can be used to synthesize industrially useful polymer. However, it is toxic at medium to high concentrations. *Methylobacterium extorquens* AM1 has been investigated as a model organism for methylotrophy. Although *M. extorquens* AM1 can utilize formate as sole carbon source, it showed slower growth than methanol. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants with resistance to high concentration formate. First, we checked formate resistance of wild type strain on 1g/L to 14g/L at 1g/L ",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE09372677",
       "citations": 0,
       "citedby_url": ""
