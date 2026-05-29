@@ -8,6 +8,8 @@ bun.lockb
 .claude/
 .codex-review-passed
 notes/handoffs/
+.ruff_cache/
+.wrangler/
 
 # Translation cache (commit-safe but optional)
 # .translation-cache/
