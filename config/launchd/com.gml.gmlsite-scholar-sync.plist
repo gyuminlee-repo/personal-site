@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.gml.gmlsite-scholar-sync</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/gml/_workspace/cc/personal-site/scripts/scholar_sync_cron.sh</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>5</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>StandardOutPath</key>
+    <string>/Users/gml/Library/Logs/gmlsite-scholar-sync.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/gml/Library/Logs/gmlsite-scholar-sync.err</string>
+</dict>
+</plist>

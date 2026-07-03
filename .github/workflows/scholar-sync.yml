@@ -1,8 +1,9 @@
 name: Scholar Sync
 
+# Daily schedule moved to the always-on Mac (scripts/scholar_sync_cron.sh via
+# launchd) because Google Scholar bot-blocks GitHub's datacenter IPs. Kept here
+# for manual/backup runs only.
 on:
-  schedule:
-    - cron: '0 18 * * *'  # 03:00 KST daily
   workflow_dispatch:
 
 jobs:

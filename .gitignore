@@ -10,6 +10,9 @@ bun.lockb
 notes/handoffs/
 .ruff_cache/
 .wrangler/
+.venv-sync/
+__pycache__/
+*.pyc
 
 # Translation cache (commit-safe but optional)
 # .translation-cache/

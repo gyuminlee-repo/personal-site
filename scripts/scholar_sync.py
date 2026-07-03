@@ -219,7 +219,10 @@ def seed_minimal() -> dict:
 def main() -> int:
     try:
         data = fetch_scholar_data(SCHOLAR_ID)
-    except (RuntimeError, OSError, ValueError, ImportError) as exc:
+    except Exception as exc:  # noqa: BLE001 - top-level boundary: log + graceful fallback below
+        # scholarly raises MaxTriesExceededException (subclasses Exception, not
+        # RuntimeError) when Google Scholar bot-blocks the runner IP. The prior
+        # narrow tuple missed it, so the run exited red instead of keeping data.
         log.error("FAILED: %s: %s", type(exc).__name__, exc)
         traceback.print_exc(file=sys.stderr)
         fallback = load_fallback()
