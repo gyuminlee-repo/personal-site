@@ -65,8 +65,8 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "674-674",
-      "abstract": "The increasing demand for sustainable bioproduction has highlighted the potential of methanol as a cost-effective and widely available feedstock. Methylorubrum extorquens AM1, a model methylotrophic bacterium, offers a promising platform for methanol-based bioproduction. Here, we employed adaptive laboratory evolution (ALE) to enhance the methanol tolerance of M. extorquens AM1. To elucidate the mechanisms underlying high-methanol adaptation, we conducted comprehensive genomic and transcriptomic analyses on evolved strains. Genomic sequencing revealed mutations in key regulatory and metabolic ",
-      "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE12491334",
+      "abstract": "Methanol is a versatile and promising carbon feedstock for sustainable biomanufacturing due to its low cost, availability, and compatibility with existing industrial infrastructure. As a key intermediate in carbon recycling processes, methanol plays an important role in advancing carbon-neutral bioprocesses and circular bioeconomy strategies. Its potential to serve as a substrate for producing diverse value-added chemicals highlights its signicance in sustainable industrial applications. However, methanol toxicity limits its utilization in methylotrophic bacteria such as Methylorubrum extorque",
+      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12233486",
       "citations": 0,
       "citedby_url": ""
     },
@@ -100,7 +100,7 @@
       "volume": "",
       "pages": "510-510",
       "abstract": "Methylorubrum extorquens is a promising candidate that can use a single carbon substrate as sole carbon source. In this study, adaptive laboratory evolution was conducted to obtain evolved M. extorquens AM1 strains with enhanced methanol tolerance. Pan-genome analysis was performed on the two isolated evolved strains using nine completely sequenced M. extorquens strains. To investigate candidate genes associated with methanol adaptation, transcriptomic analysis was performed between different methanol concentrations. The genome-scale metabolic model of M. extorquens AM1 was used to identify th",
-      "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11790945",
+      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11790945",
       "citations": 0,
       "citedby_url": ""
     },
@@ -133,7 +133,7 @@
       "volume": "",
       "pages": "409-409",
       "abstract": "Methylorubrum extorquens (formerly Methylobacterium extorquens) is a promising candidate for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was employed to derive mutant strains of M. extorquensAM1 exhibiting enhanced resistance to elevated methanol concentrations. After the ALE experiment, five single colonies were isolated and resequenced. All the isolates unveiled mutations within the metY (base change) and KefB (1bp deletion) genes. Considering that MetY is involved in methoxine synthesis, which contributes to methanol toxicity, its mutation is likely associ",
-      "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11639190",
+      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11639190",
       "citations": 0,
       "citedby_url": ""
     },
@@ -150,7 +150,7 @@
       "volume": "",
       "pages": "408-408",
       "abstract": "Methylorubrum extorquensis a significant candidate for methanol-based bioindustrial applications. Understanding its central metabolic pathways is essential for its enhancement as a foundational bacterium in bioindustrial processes. Yet, comprehensive comparisons of these strains at the system level are limited. In this research, the genomic traits of seven fully sequenced M. extorquens strains, including M. extorquens PA1 and the newly sequenced ATCC 55366 strain, were analyzed. The pan-genome assessment identified 3,507 core, 1,860 accessory, and 5,064 unique genome clusters. Notably, the mos",
-      "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11639189",
+      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11639189",
       "citations": 0,
       "citedby_url": ""
     },
@@ -166,7 +166,7 @@
       "volume": "",
       "pages": "660-660",
       "abstract": "Methylorubrum extorquens (formerly Methylobacterium extorquens) is a promising bacterium for methanol-based bioindustry. In this study, adaptive laboratory evolution (ALE) was used to obtain mutants of M. extorquens AM1 with resistance to high methanol concentrations. ALE can be used to generate genetic diversity and select for desirable traits. Due to the toxicity of methanol, the ALE experiment was started from 0.5% v/v. The strain was cultured during 24 h until exponential phase at 30℃, 200 rpm culture condition, at intervals of 0.25% v/v to reach a final concentration of 2.5% v/v. Five sin",
-      "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11410315",
+      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11410315",
       "citations": 0,
       "citedby_url": ""
     },
@@ -202,7 +202,7 @@
       "journal": "한국생물공학회 학술대회",
       "volume": "",
       "pages": "593-593",
-      "abstract": "Formate is one of attractive microbial feedstocks. The most important advantage is that it has no safety concerns. Although Methylorubrum extorquens AM1 can convert formate to carbon dioxide by FDH, it showed slower growth than methanol. In this study, adaptive laboratory evolution (ALE) was used to improve formate tolerance. First, formate resistance of wild-type strain was checked on 1g/L to 14g/L at 1g/L intervals using sodium formate. As a result, wild-type strain eventually did not grow in 13g/L sodium formate during 72 h. Since wild-type strain showed big difference in growth at 5g/L",
+      "abstract": "Formate is one of attractive microbial feedstocks. The most important advantage is that it has no safety concerns. Although Methylorubrum extorquens AM1 can convert formate to carbon dioxide by FDH, it showed slower growth than methanol. In this study, adaptive laboratory evolution (ALE) was used to improve formate tolerance. First, formate resistance of wild-type strain was checked on 1g/L to 14g/L at 1g/L intervals using sodium formate. As a result, wild-type strain eventually did not grow in 13g/L sodium formate during 72 h. Since wild-type strain showed big difference in growth at 5g/L sod",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE10554853",
       "citations": 0,
       "citedby_url": ""
