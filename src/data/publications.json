@@ -15,7 +15,7 @@
       "pages": "e01901-24",
       "abstract": "Bovine mastitis, primarily caused by Staphylococcus aureus, significantly affects the dairy industry by reducing milk production and quality. The rise of antibiotic-resistant bacteria has prompted the need for alternative treatments. The three newly isolated bacteriophages, OPT-SA02, OPT-SC01, and OPT-SX11, were isolated from chicken fecal and sewage samples in South Korea. These bacteriophages were characterized via physiological and genomic analyses, identifying their therapeutic potential against S. aureus-induced mastitis. The bacteriophages were identified as members of the Herelleviridae",
       "url": "https://journals.asm.org/doi/abs/10.1128/jvi.01901-24",
-      "citations": 13,
+      "citations": 15,
       "citedby_url": "/scholar?hl=en&cites=13502015970635211160"
     },
     {
@@ -29,8 +29,8 @@
       ],
       "year": 2025,
       "journal": "Journal of Biological Engineering",
-      "volume": "",
-      "pages": "",
+      "volume": "20",
+      "pages": "2",
       "abstract": "Methanol is an attractive one-carbon feedstock for sustainable biomanufacturing because of its abundance, cost-effectiveness, and industrial compatibility. However, its cytotoxicity limits its biotechnological applications in native methylotrophs such as Methylobacterium extorquens AM1. In this study, we developed AM1-derived strains capable of sustained growth under elevated methanol concentrations through adaptive laboratory evolution (ALE). From the evolved population, five representative strains were isolated, exhibiting up to a 1.68-fold increase in specific growth rates compared with tho",
       "url": "https://link.springer.com/article/10.1186/s13036-025-00557-1",
       "citations": 0,
@@ -53,24 +53,6 @@
       "citedby_url": ""
     },
     {
-      "title": "Deciphering High-Methanol Adaptation in Methylorubrum extorquens AM1 through Genomic and Transcriptomic Analyses",
-      "authors": [
-        "Gyu Min LEE",
-        "PHAM Khoi",
-        "BANG Ina",
-        "KO Seyoung",
-        "KIM Donghyuk"
-      ],
-      "year": 2025,
-      "journal": "한국생물공학회 학술대회",
-      "volume": "",
-      "pages": "674-674",
-      "abstract": "Methanol is a versatile and promising carbon feedstock for sustainable biomanufacturing due to its low cost, availability, and compatibility with existing industrial infrastructure. As a key intermediate in carbon recycling processes, methanol plays an important role in advancing carbon-neutral bioprocesses and circular bioeconomy strategies. Its potential to serve as a substrate for producing diverse value-added chemicals highlights its signicance in sustainable industrial applications. However, methanol toxicity limits its utilization in methylotrophic bacteria such as Methylorubrum extorque",
-      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12233486",
-      "citations": 0,
-      "citedby_url": ""
-    },
-    {
       "title": "Pan-genome Analysis Revealed Comparable Genomic Characteristics of Central Metabolic Pathways in Methylorubrum extorquens",
       "authors": [
         "Gyu Min LEE",
@@ -84,6 +66,24 @@
       "pages": "675-675",
       "abstract": "Methylorubrum extorquensis a potentially important strain in methanol-based bioindustry. It is crucial to understand the central metabolic pathways of these strains for further progress as a platform bacterium in the bioindustry. However, there are few systems-level approaches comparing these strains. This study compared the genomic properties of seven completely sequenced M. extorquensstrains, including M. extorquensPA1 and the new sequenced ATCC 55366 strain. Pan-genome analysis revealed that the ortholog clusters comprised 3,507 core genome, 1,860 accessory genome, and 5,064 unique genome c",
       "url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE12491335",
+      "citations": 0,
+      "citedby_url": ""
+    },
+    {
+      "title": "Deciphering High-Methanol Adaptation in Methylorubrum extorquens AM1 through Genomic and Transcriptomic Analyses",
+      "authors": [
+        "Gyu Min LEE",
+        "KO Seyoung",
+        "Khoi Nhat PHAM",
+        "BANG Ina",
+        "KIM Donghyuk"
+      ],
+      "year": 2025,
+      "journal": "한국생물공학회 학술대회",
+      "volume": "",
+      "pages": "576-576",
+      "abstract": "Methanol is a versatile and promising carbon feedstock for sustainable biomanufacturing due to its low cost, availability, and compatibility with existing industrial infrastructure. As a key intermediate in carbon recycling processes, methanol plays an important role in advancing carbon-neutral bioprocesses and circular bioeconomy strategies. Its potential to serve as a substrate for producing diverse value-added chemicals highlights its signicance in sustainable industrial applications. However, methanol toxicity limits its utilization in methylotrophic bacteria such as Methylorubrum extorque",
+      "url": "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12233486",
       "citations": 0,
       "citedby_url": ""
     },
@@ -250,7 +250,7 @@
       "pages": "7516-7523",
       "abstract": "Among CO2-fixing metabolic pathways in nature, the linear Wood–Ljungdahl pathway (WLP) in phylogenetically diverse acetate-forming acetogens comprises the most energetically efficient pathway, requires the least number of reactions, and converts CO2 to formate and then into acetyl-CoA. Despite two genes encoding glycine synthase being well-conserved in WLP gene clusters, the functional role of glycine synthase under autotrophic growth conditions has remained uncertain. Here, using the reconstructed genome-scale metabolic model iSL771 based on the completed genome sequence, transcriptomics, 13C",
       "url": "https://www.pnas.org/doi/abs/10.1073/pnas.1912289117",
-      "citations": 181,
+      "citations": 183,
       "citedby_url": "/scholar?hl=en&cites=8483817784464502624"
     },
     {
@@ -269,7 +269,7 @@
       "pages": "428",
       "abstract": "Erwinia pyrifoliae is a Gram-negative bacterial plant pathogen that causes black shoot blight in apple and pear. Although earlier studies reported the genome comparison of Erwinia species, E. pyrifoliae strains for such analysis were isolated in 1996. In 2014, the strain E. pyrifoliae EpK1/15 was newly isolated in the apple tree showing black shoot blight in South Korea. This study aimed to better understand the similarities and differences caused by natural variations at the genomic level between newly isolated E. pyrifoliae EpK1/15 and the strain Ep1/96, which were isolated almost 20 years a",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7542023/",
-      "citations": 15,
+      "citations": 14,
       "citedby_url": "/scholar?hl=en&cites=1096269495241527613"
     },
     {
